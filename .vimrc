@@ -47,13 +47,13 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" ,v to open ~/.vimrc
+" ,V to open ~/.vimrc
 map <leader>V :tabnew ~/.vimrc<CR><C-W>_
 
-" ,V to reload ~/.vimrc and activate changes (have to save first)
+" ,v to reload ~/.vimrc and activate changes (have to save first)
 map <silent> <leader>v :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-" Alternatives for Ctrl+esc to exit insert mode.
+" Alternatives for Esc to exit insert mode.
 imap lkj <esc>
 imap kjh <esc>
 
