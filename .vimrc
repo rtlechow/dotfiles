@@ -47,6 +47,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" ,t to toggle NERDTree
+map <leader>t :NERDTreeToggle<CR>
+
 " ,V to open ~/.vimrc
 map <leader>V :tabnew ~/.vimrc<CR><C-W>_
 
@@ -87,3 +90,11 @@ ab ubr #!/usr/bin/ruby
 
 " Backspace by words.
 map <Bs> bdw.
+
+function ToSomaBuffer(text)
+  let name = substitute(system("whoami"), "\n", "", "")
+  call writefile(split(a:text, '\n'), "/tmp/". name . "_somarepl_buffer")
+endfunction
+  
+vmap <C-c><C-c> "ry :call ToSomaBuffer(@r)<CR>
+nmap <C-c><C-c> vip<C-c><C-c>
