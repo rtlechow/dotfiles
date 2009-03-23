@@ -79,6 +79,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 nmap <leader>i :!irb<CR>
 
+" Drop to shell.
+nmap <leader>s :sh<CR>
+
 " Improve autocomplete menu color.
 highlight Pmenu ctermbg=238 gui=bold
 
