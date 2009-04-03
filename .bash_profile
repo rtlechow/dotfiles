@@ -3,19 +3,12 @@ export EDITOR=vim
 # Vi style command line editing
 set -o vi
 
-# MacPorts
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# MacPorts, Shoes
+export PATH=/opt/local/bin:/opt/local/sbin:/Applications/Shoes.app/Contents/MacOS:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 
-# Terminal colours (after installing GNU coreutils)
-NM="\[\033[1;37m\]" #means no background and white lines
-HI="\[\033[0;37m\]" #change this for letter colors
-HII="\[\033[1;32m\]" #change this for letter colors
-SI="\[\033[1;33m\]" #this is for the current directory
-IN="\[\033[0m\]"
- 
-# Pretty prompt that shows current git branch, if one exists
-export PS1="$NM($HII\u$NM@$HII\h$NM:$SI\w \`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\\\\\*\ \(.+\)$/\(\\\\\\\\\1\)\/\`\[\033[37m\]\[\033[00m\]$NM) $IN"
+# Pretty prompt
+export PS1="(\[\033[1;33m\]\!\[\033[0m\] \[\$(prompt_username_color)\]\u\[\033[0m\]@\[\$(prompt_hostname_color)\]\h\[\033[0m\]:\[\033[1;33m\]\w\[\$(prompt_git_branch_color)\]\$(prompt_git_branch)\[\033[1;37m\])\[\033[0m\] "
 
 # Include .bashrc if it exists
 if [ -f ~/.bashrc ]; then

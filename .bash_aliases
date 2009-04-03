@@ -32,6 +32,10 @@ alias pwgen='pwgen -A -B -n 6'
 # Discover candidates for bash aliases based on usage history
 alias htop='cut -f1 -d" " .bash_history | sort | uniq -c | sort -nr | head -n 30'
 
+# Mac OSX
+alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
+alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+
 # Ruby
 alias gem='sudo gem' # Prefer this to --no-user-install or denying write to ~/.gem
 
