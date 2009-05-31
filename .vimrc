@@ -47,7 +47,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-"  to toggle paste
+" ,p to toggle paste
 set pastetoggle=<leader>p
 map <leader>p :set invpaste paste?<CR>
 
@@ -60,12 +60,15 @@ map <leader>V :tabnew ~/.vimrc<CR><C-W>_
 " ,v to reload ~/.vimrc and activate changes (have to save first)
 map <silent> <leader>v :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+" ,f to FuzzyFind
+map <leader>f :FuzzyFinderFileWithCurrentBufferDir<CR>
+
 " Alternatives for Esc to exit insert mode.
 imap lkj <esc>
 imap kjh <esc>
 
 " Toggle search highlighting. 
-nmap <silent> <leader>n :silent :set nohls!<CR>:silent :set nohls?<CR>
+nmap <silent> <leader>n :set invhls hls?<CR>
 
 " Toggle show tabs and trailing spaces.
 set listchars=tab:>-,trail:·,eol:$
@@ -98,11 +101,3 @@ ab ubr #!/usr/bin/ruby
 
 " Backspace by words.
 map <Bs> bdw.
-
-function ToSomaBuffer(text)
-  let name = substitute(system("whoami"), "\n", "", "")
-  call writefile(split(a:text, '\n'), "/tmp/". name . "_somarepl_buffer")
-endfunction
-  
-vmap <C-c><C-c> "ry :call ToSomaBuffer(@r)<CR>
-nmap <C-c><C-c> vip<C-c><C-c>
