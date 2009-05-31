@@ -5,7 +5,7 @@ set history=1000 " Increase history from 20 default to 1000
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 set nu " Enable line numbers.
 set noerrorbells " Disable error bells.
-set foldmethod=marker " Markers are used to specify folds.
+set foldmethod=syntax " Markers are used to specify folds.
 set esckeys " Allow cursor keys in insert mode.
 set hlsearch " Enable search result highlighting.
 set incsearch " Highlight dynamically as pattern is typed.
@@ -47,6 +47,10 @@ filetype on
 filetype plugin on
 filetype indent on
 
+"  to toggle paste
+set pastetoggle=<leader>p
+map <leader>p :set invpaste paste?<CR>
+
 " ,t to toggle NERDTree
 map <leader>t :NERDTreeToggle<CR>
 
@@ -77,6 +81,7 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+au BufNewFile,BufRead capfile setf ruby 
 nmap <leader>i :!irb<CR>
 
 " Drop to shell.

@@ -27,7 +27,7 @@ alias sv='sudo vim'
 alias untgz='tar -zxvf'
 alias f='find . | grep '
 alias p='ps aux | grep '
-alias pwgen='pwgen -A -B -n 6'
+alias pwgen='pwgen -A -B -n'
 
 # Discover candidates for bash aliases based on usage history
 alias htop='cut -f1 -d" " .bash_history | sort | uniq -c | sort -nr | head -n 30'
@@ -37,7 +37,8 @@ alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall F
 alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
 # Ruby
-alias gem='sudo gem' # Prefer this to --no-user-install or denying write to ~/.gem
+# Turns out this messes with how Shoes installs gems :(
+#alias gem='sudo gem' # Prefer this to --no-user-install or denying write to ~/.gem
 
 # Rails
 alias spin='ruby script/spin'

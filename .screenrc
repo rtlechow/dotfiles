@@ -5,13 +5,14 @@ nethack on
 deflogin on
 vbell on
 vbell_msg " *beep* "
-defscrollback 500 # Default is 100
+defscrollback 10000 # Default is 100
 
 # Keybindings
 escape ^Zz # Makes sense in Bash
 bind v screen -t "vim" vim # Cuz I don't care about seeing the version
 bind t screen -t "todo" vim "${HOME}/todo.gtd" # Cuz my hardstatus tells me the time
 bind s screen -t "ssh" ssh d # Cuz I can live without flow control
+bind m screen -t "mc" mc # Cuz I can live with ^M for last message
 bind ^k # Remove default kill
 bind L # Remove default login toggling
 bind ^\ # Remove default quit
