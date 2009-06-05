@@ -30,6 +30,10 @@ set ignorecase " In searches, ignore case of lower case letters.
 set smartcase " Override ignorecase if search contains upper case letters.  
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
 set shortmess=atI " Shorten command line text and other info tokens.
+set splitbelow splitright
+set cul
+set ls=2
+set statusline=%#StatusLine#%{GitBranchInfoString()}%#StatusLine#
 
 " The following is bad on shared systems because other vim sessions could clobber each other.
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Store backup files in separate directory instead of all over filesystem.
@@ -47,28 +51,44 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" ,p to toggle paste
+" Vertical split then hop to new buffer
+noremap <leader>v :vsp^M^W^W<CR>
+noremap <leader>h :split^M^W^W<CR>
+
+" Make Y work as expected
+noremap Y y$
+
+" Insert newline
+map <S-Enter> O<ESC>
+map <Enter> o<ESC>
+
+" Toggle paste
 set pastetoggle=<leader>p
 map <leader>p :set invpaste paste?<CR>
 
-" ,t to toggle NERDTree
-map <leader>t :NERDTreeToggle<CR>
+" Toggle NERDTree
+map <leader>n :NERDTreeToggle<CR>
 
-" ,V to open ~/.vimrc
+" Open ~/.vimrc
 map <leader>V :tabnew ~/.vimrc<CR><C-W>_
 
-" ,v to reload ~/.vimrc and activate changes (have to save first)
-map <silent> <leader>v :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+" Reload ~/.vimrc and activate changes (have to save first)
+map <silent> <leader>R :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-" ,f to FuzzyFind
+" FuzzyFinder
 map <leader>f :FuzzyFinderFileWithCurrentBufferDir<CR>
+map <leader>b :FuzzyFinderBuffer<CR>
 
 " Alternatives for Esc to exit insert mode.
-imap lkj <esc>
-imap kjh <esc>
+imap lkj <ESC>
+imap kjh <ESC>
+imap jj <ESC>
+imap uu _
+imap hh =>
+imap aa @
 
 " Toggle search highlighting. 
-nmap <silent> <leader>n :set invhls hls?<CR>
+nmap <silent> <leader>H :set invhls hls?<CR>
 
 " Toggle show tabs and trailing spaces.
 set listchars=tab:>-,trail:·,eol:$
@@ -86,6 +106,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 au BufNewFile,BufRead capfile setf ruby 
 nmap <leader>i :!irb<CR>
+map <leader>r :!ruby %<CR>
 
 " Drop to shell.
 nmap <leader>s :sh<CR>
