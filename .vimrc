@@ -67,17 +67,18 @@ set pastetoggle=<leader>p
 map <leader>p :set invpaste paste?<CR>
 
 " Toggle NERDTree
-map <leader>n :NERDTreeToggle<CR>
+let NERDTreeShowLineNumbers=1
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Open ~/.vimrc
-map <leader>V :tabnew ~/.vimrc<CR><C-W>_
+nnoremap <leader>V :tabnew ~/.vimrc<CR>
 
 " Reload ~/.vimrc and activate changes (have to save first)
-map <silent> <leader>R :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+nnoremap <silent> <leader>R :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " FuzzyFinder
-map <leader>f :FuzzyFinderFileWithCurrentBufferDir<CR>
-map <leader>b :FuzzyFinderBuffer<CR>
+nnoremap <leader>ff :FuzzyFinderFileWithCurrentBufferDir<CR>
+nnoremap <leader>fb :FuzzyFinderBuffer<CR>
 
 " Alternatives for Esc to exit insert mode.
 imap lkj <ESC>
@@ -88,11 +89,14 @@ imap hh =>
 imap aa @
 
 " Toggle search highlighting. 
-nmap <silent> <leader>H :set invhls hls?<CR>
+nnoremap <silent> <leader>H :set invhls hls?<CR>
+
+" Rerun the last command
+nnoremap <leader>. :<Up><CR>
 
 " Toggle show tabs and trailing spaces.
 set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
+nnoremap <silent> <leader>ss :set nolist!<CR>
 
 " Enable switching between if/elsif/else/end.
 runtime macros/matchit.vim
@@ -105,11 +109,11 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 au BufNewFile,BufRead capfile setf ruby 
-nmap <leader>i :!irb<CR>
-map <leader>r :!ruby %<CR>
+nnoremap <leader>i :!irb<CR>
+nnoremap <leader>r :!ruby %<CR>
 
 " Drop to shell.
-nmap <leader>s :sh<CR>
+nnoremap <leader>s :sh<CR>
 
 " Improve autocomplete menu color.
 highlight Pmenu ctermbg=238 gui=bold
