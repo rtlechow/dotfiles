@@ -16,6 +16,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Include .bash_private if it exists
+if [ -f ~/.bash_private ]; then
+    . ~/.bash_private
+fi
+
 # Colorize ls by default
 if [ "$TERM" != "dumb" ]; then
     export LS_OPTIONS='--color=auto'
