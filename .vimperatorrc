@@ -1,0 +1,23 @@
+"2.0 (created: 2009/03/28 23:48:07)
+set defsearch=yubnub
+set guioptions=
+set runtimepath=~/.vimperator
+
+javascript <<EOF
+(function(){
+  var feedPanel = document.createElement("statusbarpanel");
+  feedPanel.setAttribute("id", "feed-panel-clone");
+  feedPanel.appendChild(document.getElementById("feed-button"));
+  feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+  document.getElementById("status-bar")
+  .insertBefore(feedPanel, document.getElementById("security-button"));
+})();
+EOF
+
+"feedSomeKeys.js
+"autocmd LocationChange .* :fmapc
+"autocmd LocationChange mail\.google\.com/mail :fmap -depth 4 c / j k n p o u e x s r a y # [ ] z ? gi gs gt gd ga gc
+"autocmd LocationChange www\.google\.com/reader :fmap! -vkey j k n p m s t v y cA A r S N P X O gh ga gs gt gu u / ? <Space>
+
+autocmd LocationChange .* js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL)
+autocmd LocationChange .* js modes.passAllKeys = /www\.google\.com\/reader/.test(buffer.URL)

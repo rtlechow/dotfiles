@@ -33,7 +33,7 @@ set shortmess=atI " Shorten command line text and other info tokens.
 set splitbelow splitright
 set cul
 set ls=2
-set statusline=%#StatusLine#%{GitBranchInfoString()}%#StatusLine#
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " The following is bad on shared systems because other vim sessions could clobber each other.
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Store backup files in separate directory instead of all over filesystem.
@@ -57,6 +57,12 @@ noremap <leader>h :split^M^W^W<CR>
 
 " Make Y work as expected
 noremap Y y$
+
+" Buffer navigation
+map <Leader>, <C-^>
+map <Leader>] :bnext<CR>
+map <Leader>[ :bprev<CR>
+map <Leader>ls :buffers<CR>
 
 " Insert newline
 map <S-Enter> O<ESC>
