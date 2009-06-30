@@ -4,7 +4,7 @@ export EDITOR=vim
 set -o vi
 
 # MacPorts, Shoes
-export PATH=/opt/local/bin:/opt/local/sbin:/Applications/Shoes.app/Contents/MacOS:$PATH
+export PATH=~/Code/airsdk/bin:/opt/local/bin:/opt/local/sbin:/Applications/Shoes.app/Contents/MacOS:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 
 # Pretty prompt

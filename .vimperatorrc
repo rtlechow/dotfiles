@@ -1,7 +1,9 @@
-"2.0 (created: 2009/03/28 23:48:07)
-set defsearch=yubnub
-set guioptions=
+"2.1 (created: 2009/05/21 13:13:06)
+
 set runtimepath=~/.vimperator
+" vim: set ft=vimperator:
+set ds=yubnub
+set go=n
 
 javascript <<EOF
 (function(){
