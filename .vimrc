@@ -39,6 +39,9 @@ set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Store backup files in separate directory instead of all over filesystem.
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Store swap files in separate directory instead of all over file system.
 
+" Sudo write
+noremap <leader>W :w !sudo tee %<CR>
+
 " Speed up viewport scrolling.
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
@@ -117,6 +120,12 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 au BufNewFile,BufRead capfile setf ruby 
 nnoremap <leader>i :!irb<CR>
 nnoremap <leader>r :!ruby %<CR>
+
+" Objective-J
+augroup objective-j
+au! BufRead,BufNewFile *.j set filetype=objective-j
+au! Syntax objective-j source ~/.vim/syntax/objj.vim
+augroup END
 
 " Drop to shell.
 nnoremap <leader>s :sh<CR>
