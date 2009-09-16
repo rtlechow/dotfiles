@@ -89,3 +89,19 @@ prompt_git_branch() {
     fi
   fi
 }
+
+function f () {
+  find . -name "*${*}*"
+}
+
+function p () {
+  ps aux | grep "${*}"
+}
+
+function g () {
+  grep -Ir "$(echo $*)" .
+}
+
+function gg () {
+  grep -Irl $1 . | xargs grep --color=auto -I $2
+}

@@ -4,6 +4,7 @@
 alias ..='cd ..'
 alias ...='cd ../..'
 alias _='cd -'
+alias ~='cd ~'
 alias ls='ls --color'
 alias ll='ls -lh'
 alias la='ls -A'
@@ -21,12 +22,10 @@ function cl () {
 }
 
 # Common apps
-alias vbash='vim -p ~/.bash_profile ~/.bashrc ~/.bash_aliases && source ~/.bash_profile'
+alias vbash='vim -p ~/.bash_profile ~/.bashrc ~/.bash_aliases && . ~/.bash_profile'
 alias v='vim'
 alias sv='sudo vim'
 alias untgz='tar -zxvf'
-alias f='find . | grep '
-alias p='ps aux | grep '
 alias pwgen='pwgen -A -B -n'
 
 # Discover candidates for bash aliases based on usage history
@@ -35,6 +34,7 @@ alias htop='cut -f1 -d" " .bash_history | sort | uniq -c | sort -nr | head -n 30
 # Mac OSX
 alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+alias port='sudo port'
 
 # Ruby
 # Turns out this messes with how Shoes installs gems :(
