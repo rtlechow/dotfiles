@@ -39,6 +39,7 @@ alias port='sudo port'
 # Ruby
 # Turns out this messes with how Shoes installs gems :(
 #alias gem='sudo gem' # Prefer this to --no-user-install or denying write to ~/.gem
+alias gemsrv='gem server -d $HOME/.gem/ruby/1.8'
 
 # Rails
 alias spin='ruby script/spin'
