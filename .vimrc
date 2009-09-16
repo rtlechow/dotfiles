@@ -5,7 +5,7 @@ set history=1000 " Increase history from 20 default to 1000
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 set nu " Enable line numbers.
 set noerrorbells " Disable error bells.
-set foldmethod=syntax " Markers are used to specify folds.
+set foldmethod=marker " Markers are used to specify folds.
 set esckeys " Allow cursor keys in insert mode.
 set hlsearch " Enable search result highlighting.
 set incsearch " Highlight dynamically as pattern is typed.
@@ -104,8 +104,9 @@ nnoremap <silent> <leader>H :set invhls hls?<CR>
 nnoremap <leader>. :<Up><CR>
 
 " Toggle show tabs and trailing spaces.
-set listchars=tab:>-,trail:·,eol:$
-nnoremap <silent> <leader>ss :set nolist!<CR>
+set lcs=tab:>-,trail:·,eol:$,nbsp:_
+set fcs=fold:-
+nnoremap <silent> <leader>c :set nolist!<CR>
 
 " Enable switching between if/elsif/else/end.
 runtime macros/matchit.vim
@@ -141,6 +142,13 @@ ab ubr #!/usr/bin/ruby
 
 " Backspace by words.
 map <Bs> bdw.
+
+" http://vim.wikia.com/wiki/Change_to_the_directory_of_the_current_file
+if exists('+autochdir')
+  set autochdir
+else
+  autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+endif
 
 " http://ja.pastebin.ca/raw/1243579
 " }}}
@@ -184,4 +192,3 @@ if exists("+showtabline")
     endfunction
     set tabline=%!MyTabLine()
 endif
-
