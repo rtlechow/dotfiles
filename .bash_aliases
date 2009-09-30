@@ -44,7 +44,7 @@ alias gemsrv='gem server -d $HOME/.gem/ruby/1.8'
 # Rails
 alias spin='ruby script/spin'
 alias migrate='rake db:migrate'
-alias server='ruby script/server -p 40000'
+alias server='ruby script/server'
 alias generate='ruby script/generate'
 alias plugin='ruby script/plugin'
 alias console='ruby script/console'
