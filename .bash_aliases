@@ -28,7 +28,7 @@ alias sv='sudo vim'
 alias untgz='tar -zxvf'
 alias pwgen='pwgen -A -B -n'
 
-# Discover candidates for bash aliases based on usage history
+# Show most-used commands
 alias htop='cut -f1 -d" " .bash_history | sort | uniq -c | sort -nr | head -n 30'
 
 # Mac OSX
@@ -42,13 +42,13 @@ alias port='sudo port'
 alias gemsrv='gem server -d $HOME/.gem/ruby/1.8'
 
 # Rails
-alias spin='ruby script/spin'
-alias migrate='rake db:migrate'
-alias server='ruby script/server'
-alias generate='ruby script/generate'
-alias plugin='ruby script/plugin'
-alias console='ruby script/console'
-alias routes='rake routes'
+alias ssp='ruby script/spin'
+alias ss='ruby script/server'
+alias sg='ruby script/generate'
+alias sp='ruby script/plugin'
+alias sc='ruby script/console'
+alias rdbm='rake db:migrate'
+alias rr='rake routes'
 alias tlog='tail -fn 300 log/development.log'
 
 # History
