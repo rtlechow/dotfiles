@@ -47,6 +47,7 @@ alias ss='ruby script/server'
 alias sg='ruby script/generate'
 alias sp='ruby script/plugin'
 alias sc='ruby script/console'
+alias sdbc='ruby script/dbconsole -p'
 alias rdbm='rake db:migrate'
 alias rr='rake routes'
 alias tlog='tail -fn 300 log/development.log'
@@ -76,8 +77,10 @@ function gch() {
     git checkout $1
   fi
 } 
-alias gco='git commit -m'
-alias gd='git diff --color'
+alias gco='git commit -v -m'
+alias gca='git commit -a -v -m'
+alias gd='git diff'
+alias gdc='git diff --cached'
 alias gl='git log'
 alias gmv='git mv'
 alias gp='git push'
