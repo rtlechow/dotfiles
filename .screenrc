@@ -36,10 +36,6 @@ hardstatus off # turn sending of screen messages to hardstatus off
 hardstatus alwayslastline
 hardstatus string '%{= kg}(%{G}%H %l%{g})%= %{= kw}%?%-Lw%?%{g}(%{W}%n*%f%t%?(%u)%?%{g})%{w}%?%+Lw%?%?%= %{g}(%{B}%d/%m %{W}%c%{g})'
 termcapinfo xterm*|linux*|rxvt*|Eterm* OP # set these terminals up to be 'optimal' instead of vt100
-# To get screen to add lines to xterm's scrollback buffer, uncomment the
-# following termcapinfo line which tells xterm to use the normal screen buffer
-# (which has scrollback), not the alternate screen buffer.
-#termcapinfo xterm|xterms|xs|rxvt ti@:te@
 defnonblock 5 # Enable non-blocking mode to better cope with flaky ssh connections.
 # terminfo and termcap for nice 256 color terminal
 attrcolor b ".I" # # allow bold colors - necessary for some reason
