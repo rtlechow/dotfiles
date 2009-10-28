@@ -21,16 +21,18 @@ export PATH=/Users/rtl/Code/airsdk/bin:$PATH
 # Shoes
 export PATH=/Applications/Shoes.app/Contents/MacOS:$PATH
 
-# MAMP
-export PATH=/Applications/MAMP/Library/bin:$PATH
-
-# MacPorts, Shoes
+# MacPorts
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=/opt/local/apache2/bin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 
 # System Ruby
 export PATH=/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin:$PATH
+
+# Apache
+export PATH=/opt/local/apache2/bin:$PATH
+
+# MySQL 64 Bit
+export PATH=/usr/local/mysql/bin:$PATH
 
 # RubyGems
 export GEM_HOME=$HOME/.gems/ruby/1.8
