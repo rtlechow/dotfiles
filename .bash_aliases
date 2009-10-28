@@ -94,3 +94,13 @@ alias sai='sudo aptitude install'
 alias sau='sudo aptitude update'
 
 bind "set completion-ignore-case on"
+
+# MySQL
+alias myup='sudo mysqld_safe --user=mysql &'
+alias mydown='sudo mysqladmin shutdown'
+
+# Apache
+alias ap='sudo apachectl'
+alias apup='sudo apachectl start'
+alias apdown='sudo apachectl stop'
+alias aprestart='sudo apachectl restart'
