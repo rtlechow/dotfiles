@@ -26,7 +26,7 @@ if [ "$TERM" != "dumb" ]; then
     export LS_OPTIONS='--color=auto'
     eval `dircolors ~/.dir_colors`
     export GREP_OPTIONS='--color=auto'
-    export GREP_COLOR='1;32'
+    export GREP_COLOR='0;32'
 fi
 
 # Enable programmable completion features (you don't need to enable this, if it's already enabled in /etc/bash.bashrc and /etc/profile sources /etc/bash.bashrc)
