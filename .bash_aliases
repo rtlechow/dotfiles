@@ -11,6 +11,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias le='less -R +C'
 alias cls='clear && ll'
+alias du1='du -h --max-depth=1'
 # Compress the cd, ls -l series of commands.
 alias lc="cl"
 function cl () {
