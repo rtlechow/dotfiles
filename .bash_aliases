@@ -77,8 +77,8 @@ function gch() {
 } 
 alias gco='git commit -v -m'
 alias gca='git commit -a -v -m'
-alias gd='git diff'
-alias gdc='git diff --cached'
+alias gd='git diff --color-words'
+alias gdc='git diff --color-words --cached'
 alias gl='git log'
 alias gmv='git mv'
 alias gp='git push'
