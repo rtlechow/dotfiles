@@ -43,3 +43,7 @@ export PATH=$HOME/.gems/ruby/1.8/bin:$PATH
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
+
+# rvm-install added:
+if [[ -s /Users/rtl/.rvm/scripts/rvm ]] ; then source /Users/rtl/.rvm/scripts/rvm ; fi
+
