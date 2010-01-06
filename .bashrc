@@ -106,6 +106,10 @@ function gg () {
   grep -Irl $1 . | xargs grep --color=auto -I $2
 }
 
+function a () {
+  ack -r "$(echo $*)" .
+}
+
 # rvm-install added:
 if [[ -s /Users/rtl/.rvm/scripts/rvm ]] ; then source /Users/rtl/.rvm/scripts/rvm ; fi
 
