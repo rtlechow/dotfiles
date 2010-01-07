@@ -1,0 +1,48 @@
+[user]
+  name = R.T. Lechow
+  email = rtlechow@gmail.com
+[alias]
+  pl = pull
+  st = status
+  di = diff --color-words
+  ch = checkout
+  ci = commit
+  br = branch
+  sta = stash
+  lg = log -p
+  llg = log --date=local
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  web = instaweb --httpd=webrick
+  webstop = instaweb --httpd=webrick --stop
+  undo=reset --hard
+  serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+  add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+  graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+  prettylog = "log --graph --pretty=format:\"%Cred%h%Creset — %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative"
+  track = checkout --track -b
+[core]
+  pager = less
+  whitespace = trailing-space
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+  plain = blue
+[color "diff"]
+  plain = normal
+  meta = yellow
+  frag = magenta
+  old = red
+  new = green
+  commit = cyan
+  whitespace = yellow red
+[color "status"]
+  header = blue
+  added = green
+  changed = yellow
+  untracked = cyan
+  nobranch = red
