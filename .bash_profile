@@ -7,7 +7,7 @@ set -o vi
 export VIMRUNTIME=`vim -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo $VIMRUNTIME|quit' | tr -d '\015' `
 
 # Pretty prompt
-export PS1="(\[\033[1;33m\]\!\[\033[0m\] \[\$(prompt_username_color)\]\u\[\033[0m\]@\[\$(prompt_hostname_color)\]\h\[\033[0m\]:\[\033[1;33m\]\w\[\$(prompt_git_branch_color)\]\$(prompt_git_branch)\[\033[1;37m\])\[\033[0;37m\] "
+export PS1="\$(~/.rvm/bin/rvm-prompt i v) (\[\033[1;33m\]\!\[\033[0m\] \[\$(prompt_username_color)\]\u\[\033[0m\]@\[\$(prompt_hostname_color)\]\h\[\033[0m\]:\[\033[1;33m\]\w\[\$(prompt_git_branch_color)\]\$(prompt_git_branch)\[\033[1;37m\])\[\033[0;37m\] "
 
 # Larger bash history (default is 500)
 export HISTFILESIZE=10000

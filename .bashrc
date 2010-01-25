@@ -112,4 +112,3 @@ function a () {
 
 # rvm-install added:
 if [[ -s /Users/rtl/.rvm/scripts/rvm ]] ; then source /Users/rtl/.rvm/scripts/rvm ; fi
-
