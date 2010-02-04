@@ -1,5 +1,5 @@
 " rails.vim - Detect a rails application
-" Author:       Tim Pope <vimNOSPAM@tpope.info>
+" Author:       Tim Pope <vimNOSPAM@tpope.org>
 " GetLatestVimScripts: 1567 1 :AutoInstall: rails.vim
 " URL:          http://rails.vim.tpope.net/
 
@@ -8,8 +8,6 @@
 " :help add-local-help (hint: :helptags ~/.vim/doc) Afterwards, you should be
 " able to do :help rails
 
-" ============================================================================
-
 " Exit quickly when:
 " - this plugin was already loaded (or disabled)
 " - when 'compatible' is set
@@ -17,15 +15,6 @@ if &cp || (exists("g:loaded_rails") && g:loaded_rails) && !(exists("g:rails_debu
   finish
 endif
 let g:loaded_rails = 1
-
-" Apparently, the nesting level within Vim when the Ruby interface is
-" initialized determines how much stack space Ruby gets.  In previous
-" versions of rails.vim, sporadic stack overflows occured when omnicomplete
-" was used.  This was apparently due to rails.vim having first initialized
-" ruby deep in a nested function call.
-if has("ruby")
-  silent! ruby nil
-endif
 
 " Utility Functions {{{1
 
