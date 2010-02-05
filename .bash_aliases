@@ -66,7 +66,6 @@ alias ga='git add'
 alias gb='git branch -a -v'
 alias gbd='git branch -d'
 alias gbr='git checkout -b'
-alias gch='git checkout'
 function gch() {
   if [ -z "$1" ]
   then

@@ -6,7 +6,9 @@ set history=1000 " Increase history from 20 default to 1000
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 set nu " Enable line numbers.
 set noerrorbells " Disable error bells.
-set foldmethod=marker " Markers are used to specify folds.
+set foldmethod=syntax " Markers are used to specify folds.
+set foldenable
+set foldlevel=1
 set esckeys " Allow cursor keys in insert mode.
 set hlsearch " Enable search result highlighting.
 set incsearch " Highlight dynamically as pattern is typed.
