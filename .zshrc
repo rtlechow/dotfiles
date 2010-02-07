@@ -1,8 +1,8 @@
 typeset -U path manpath gem_home gem_path
-path=(~/bin ~/.gems/ruby/1.8/bin /opt/local/libexec/git-core /opt/local/apache2/bin /opt/local/bin /opt/local/sbin $path)
+path=(~/bin ~/.gems/ruby/1.8/bin /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin /usr/local/mysql/bin /opt/local/libexec/git-core /opt/local/apache2/bin /opt/local/bin /opt/local/sbin $path)
 manpath=($manpath /opt/local/share/man /opt/local/man)
-gem_home=(~/.gems/ruby/1.8)
-gem_path=($gem_home)
+export GEM_HOME='/Users/rtl/.gems/ruby/1.8'
+export GEM_PATH='/Users/rtl/.gems/ruby/1.8'
 
 autoload -U compinit
 compinit
@@ -13,9 +13,8 @@ colors
 export editor='vim'
 ls_options='--color=auto'
 eval `dircolors ~/.dir_colors`
-grep_options='--color=auto'
-grep_color='0;32'
-
+export grep_options='--color=auto'
+export grep_color='0;32'
 
 histfile=~/.zsh_history
 histsize=1000

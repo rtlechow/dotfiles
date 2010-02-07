@@ -20,8 +20,8 @@ function cl() {
 }
 
 # Common apps
-alias vzsh='vim -p ~/.zshrc ~/.zsh/aliases && . ~/.zshrc'
 alias v='vim'
+alias vz='vim -p ~/.zshrc ~/.zsh/aliases && . ~/.zshrc'
 alias sv='sudo vim'
 alias untgz='tar -zxvf'
 alias pwgen='pwgen -A -B -n'
@@ -39,7 +39,14 @@ alias ssp='ruby script/spin'
 alias ss='ruby script/server'
 alias sg='ruby script/generate'
 alias sp='ruby script/plugin'
-alias sc='ruby script/console'
+sc () {
+  if [ -f ./script/rails ]; then
+    rails console $argv
+  else
+    ./script/console $argv
+  fi
+}
+
 alias sdbc='ruby script/dbconsole -p'
 alias rdbm='rake db:migrate'
 alias rr='rake routes'
