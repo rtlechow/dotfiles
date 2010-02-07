@@ -80,6 +80,7 @@ precmd() {
 }
 export PS1='${fg[white]}$(/Users/rtl/.rvm/bin/rvm-prompt i v) ${fg_bold[white]}(${fg[yellow]}%h ${fg[green]}%n${fg[white]}@${fg[green]}%m${fg[white]}:${fg[yellow]}%3~${fg[white]} $vcs_info_msg_0_${reset_color}) ${fg[white]}'
 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case insensitive completion
 zstyle ':completion:*:cd:*' ignore-parents parent pwd # cd will never select the parent directory (e.g.: cd ../<TAB>)
 zstyle ':completion:*' completer _expand _complete
 

@@ -10,7 +10,7 @@ set foldmethod=syntax " Markers are used to specify folds.
 set foldenable
 set foldlevel=1
 set esckeys " Allow cursor keys in insert mode.
-set hlsearch " Enable search result highlighting.
+set nohlsearch " Enable search result highlighting.
 set incsearch " Highlight dynamically as pattern is typed.
 set noinsertmode " Don't start vim in insert mode.
 set magic " Enable extended regexes.
