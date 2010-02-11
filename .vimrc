@@ -114,13 +114,7 @@ nnoremap <silent> <leader>c :set nolist!<CR>
 " Enable switching between if/elsif/else/end.
 runtime macros/matchit.vim
 
-" Ruby.
-autocmd BufNewFile,BufRead *.rb source ~/.vim/scripts/rubysnippets.vim 
-autocmd Filetype ruby source ~/.Vim/ruby-macros.vim
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+" Ruby
 au BufNewFile,BufRead capfile setf ruby 
 nnoremap <leader>i :!irb<CR>
 nnoremap <leader>r :!ruby %<CR>
