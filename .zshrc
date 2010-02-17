@@ -90,3 +90,4 @@ autoload -U ~/.zsh/functions/*(:t)
 
 # rvm-install added:
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
+function git(){hub $@}
