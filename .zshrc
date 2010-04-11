@@ -1,9 +1,7 @@
 typeset -U path manpath gem_home gem_path
-path=(~/bin ~/.gem/ruby/1.8/bin /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin /usr/local/mysql/bin /opt/local/libexec/git-core /opt/local/apache2/bin /opt/local/bin /opt/local/sbin $path)
+path=(~/bin /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin /usr/local/bin /usr/local/mysql/bin /opt/local/apache2/bin /opt/local/bin /opt/local/sbin $path)
 manpath=($manpath /opt/local/share/man /opt/local/man)
 export EDITOR=/usr/bin/vim
-export GEM_HOME=$HOME/.gem/ruby/1.8
-export GEM_PATH=$HOME/.gem/ruby/1.8
 
 autoload -U compinit
 compinit
@@ -22,6 +20,7 @@ histsize=1000
 savehist=1000
 reporttime=10
 
+setopt autopushd
 setopt nobeep
 setopt nobgnice
 setopt nohup
@@ -58,28 +57,63 @@ fi
 [ -d "$HOME/Documents" ] && hash -d docs="$HOME/Documents"
 [ -d "$HOME/.irssi/logs" ] && hash -d irc="$HOME/.irssi/logs"
 
-# Git Prompt
-autoload -Uz vcs_info
-# set formats
-# %b - branchname
-# %u - unstagedstr (see below)
-# %c - stagedstr (see below)
-# %a - action (e.g. rebase-i)
-# %R - repository path
-# %S - path in the repository
-FMT_BRANCH="${fg[green]}%u%c%b${reset_color}" # e.g. master¹²
-FMT_ACTION="${fg[white]}(${fg[red]}%a${fg[white]})"   # e.g. (rebase-i)
-FMT_PATH="%R${fg[yellow]}/%S"              # e.g. ~/repo/subdir
-zstyle ':vcs_info:*:prompt:*' check-for-changes true
-zstyle ':vcs_info:*:prompt:*' unstagedstr "${fg[blue]}"  # display ¹ if there are unstaged changes
-zstyle ':vcs_info:*:prompt:*' stagedstr "${fg[red]}"    # display ² if there are staged changes
-zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}" "${FMT_PATH}"
-zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"              "${FMT_PATH}"
-zstyle ':vcs_info:*:prompt:*' nvcsformats   ""                           "%~"
-precmd() {
-  vcs_info 'prompt'
-}
-export PS1='${fg[white]}$($HOME/.rvm/bin/rvm-prompt i v) ${fg_bold[white]}(${fg[yellow]}%h ${fg[green]}%n${fg[white]}@${fg[green]}%m${fg[white]}:${fg[yellow]}%3~${fg[white]} $vcs_info_msg_0_${reset_color}) ${fg[white]}'
+if [[ -x `which git` ]]; then
+  function git-branch-name () {
+    git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
+  }
+  function git-dirty () {
+    git status 2> /dev/null | grep "nothing to commit (working directory clean)"
+    echo $?
+  }
+  function gsrb () {
+    branch=$(git-branch-name)
+    git checkout master
+    git svn rebase
+    git checkout "${branch}"
+    git rebase master
+  }
+  function git-need-to-push() {
+    if pushtime=$(echo $1 | grep 'Your branch is ahead' 2> /dev/null); then
+      echo "↑ "
+    fi
+  }
+  function git-prompt() {
+    gstatus=$(git status 2> /dev/null)
+    branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
+    dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'nothing to commit (working directory clean)'; echo $?)
+    if [[ x$branch != x ]]; then
+      dirty_color=$fg[green]
+      push_status=$(git-need-to-push $gstatus 2> /dev/null)
+      if [[ $dirty = 1 ]] { dirty_color=$fg[red] }
+      [ x$branch != x ] && echo " %{$dirty_color%}$branch%{$reset_color%} $push_status"
+    fi
+  }
+  function git-scoreboard () {
+    git log | grep '^Author' | sort | uniq -ci | sort -r
+  }
+  function git-track () {
+    branch=$(git-branch-name)
+    git config branch.$branch.remote origin
+    git config branch.$branch.merge refs/heads/$branch
+    echo "tracking origin/$tracking"
+  }
+  function github-init () {
+    git config branch.$(git-branch-name).remote origin
+    git config branch.$(git-branch-name).merge refs/heads/$(git-branch-name)
+  }
+  function github-url () {
+    git config remote.origin.url | sed -En 's/git(@|:\/\/)github.com(:|\/)(.+)\/(.+).git/https:\/\/github.com\/\3\/\4/p'
+  }
+  # Seems to be the best OS X jump-to-github alias from http://tinyurl.com/2mtncf
+  function github-go () {
+    open $(github-url)
+  }
+  function nhgk () {
+    nohup gitk --all &
+  }
+fi
+
+export PS1='${fg[white]}$($HOME/.rvm/bin/rvm-prompt i v) ${fg_bold[white]}(${fg[yellow]}%h ${fg[green]}%n${fg[white]}@${fg[green]}%m${fg[white]}:${fg[yellow]}%3~${fg[white]}`git-prompt`${reset_color}) ${fg[white]}'
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case insensitive completion
 zstyle ':completion:*:cd:*' ignore-parents parent pwd # cd will never select the parent directory (e.g.: cd ../<TAB>)
@@ -90,4 +124,8 @@ autoload -U ~/.zsh/functions/*(:t)
 
 # rvm-install added:
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
-function git(){hub $@}
+
+bindkey -v
+bindkey 'jj' vi-cmd-mode
+bindkey '^A' vi-beginning-of-line
+bindkey '^E' vi-end-of-line
