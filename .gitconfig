@@ -46,3 +46,5 @@
   changed = yellow
   untracked = cyan
   nobranch = red
+[merge]
+  tool = vimdiff
