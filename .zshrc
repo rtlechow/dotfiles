@@ -112,7 +112,7 @@ if [[ -x `which git` ]]; then
   }
 fi
 
-export PS1='${fg[white]}$($HOME/.rvm/bin/rvm-prompt i v) ${fg_bold[white]}(${fg[yellow]}%h ${fg[green]}%n${fg[white]}@${fg[green]}%m${fg[white]}:${fg[yellow]}%3~${fg[white]}`git-prompt`${reset_color}) ${fg[white]}'
+export PS1='${fg[white]}$($HOME/.rvm/bin/rvm-prompt i v g) ${fg_bold[white]}(${fg[yellow]}%h ${fg[green]}%n${fg[white]}@${fg[green]}%m${fg[white]}:${fg[yellow]}%3~${fg[white]}`git-prompt`${reset_color}) ${fg[white]}'
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case insensitive completion
 zstyle ':completion:*:cd:*' ignore-parents parent pwd # cd will never select the parent directory (e.g.: cd ../<TAB>)
@@ -128,3 +128,9 @@ bindkey -v
 bindkey 'jj' vi-cmd-mode
 bindkey '^A' vi-beginning-of-line
 bindkey '^E' vi-end-of-line
+
+# Ruby GC
+export RUBY_HEAP_MIN_SLOTS=500000
+export RUBY_HEAP_SLOTS_INCREMENT=250000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=500000000
