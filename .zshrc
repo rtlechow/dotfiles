@@ -1,6 +1,5 @@
 typeset -U path manpath gem_home gem_path
-path=(~/bin /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin /usr/local/bin /usr/local/mysql/bin /opt/local/apache2/bin /opt/local/bin /opt/local/sbin $path)
-manpath=($manpath /opt/local/share/man /opt/local/man)
+path=(~/.bin /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin /usr/local/bin /usr/local/mysql/bin $path)
 export EDITOR=/usr/bin/vim
 
 autoload -U compinit
