@@ -1,4 +1,4 @@
-IgnoreFiles = %w[. .. Rakefile .gitignore extras]
+IgnoreFiles = %w[. .. .git Rakefile .gitignore extras]
 
 desc "Install dotfiles"
 task :install do
