@@ -72,7 +72,6 @@ map <Leader>ls :buffers<CR>
 
 " Insert newline
 map <S-Enter> O<ESC>
-map <Enter> o<ESC>
 
 " Toggle paste
 set pastetoggle=<leader>p
