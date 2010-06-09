@@ -1,4 +1,5 @@
 set t_Co=256
+call pathogen#runtime_append_all_bundles()
 colorscheme railscasts
 let mapleader="," " Remap mapleader from \ to , because \ is not in a standard position on all keyboards. The ',' command does exist in Vim (see |,|), but you probably never use it.
 let $PAGER='' " Clear variable inside vim. This is to handle the case where you start Vim normally and want to use Vim's 'Man' function.
@@ -109,9 +110,6 @@ nnoremap <leader>. :<Up><CR>
 set lcs=tab:>-,trail:·,eol:$,nbsp:_
 set fcs=fold:-
 nnoremap <silent> <leader>c :set nolist!<CR>
-
-" Enable switching between if/elsif/else/end.
-runtime macros/matchit.vim
 
 " Ruby
 au BufNewFile,BufRead capfile setf ruby 
