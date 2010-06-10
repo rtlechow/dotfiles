@@ -79,7 +79,7 @@ set pastetoggle=<leader>p
 map <leader>p :set invpaste paste?<CR>
 
 " Toggle NERDTree
-let NERDTreeShowLineNumbers=1
+let NERDTreeShowLineNumbers=0
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Open ~/.vimrc
@@ -87,10 +87,6 @@ nnoremap <leader>V :tabnew ~/.vimrc<CR>
 
 " Reload ~/.vimrc and activate changes (have to save first)
 nnoremap <silent> <leader>R :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-" FuzzyFinder
-nnoremap <leader>ff :FuzzyFinderFileWithCurrentBufferDir<CR>
-nnoremap <leader>fb :FuzzyFinderBuffer<CR>
 
 " Alternatives for Esc to exit insert mode.
 imap lkj <ESC>
@@ -112,7 +108,6 @@ set fcs=fold:-
 nnoremap <silent> <leader>c :set nolist!<CR>
 
 " Ruby
-au BufNewFile,BufRead capfile setf ruby 
 nnoremap <leader>i :!irb<CR>
 nnoremap <leader>r :!ruby %<CR>
 
@@ -120,11 +115,6 @@ nnoremap <leader>r :!ruby %<CR>
 augroup objective-j
 au! BufRead,BufNewFile *.j set filetype=objective-j
 au! Syntax objective-j source ~/.vim/syntax/objj.vim
-augroup END
-
-" Markdown
-augroup mkd
-  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
 augroup END
 
 " Drop to shell.
