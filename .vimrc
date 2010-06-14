@@ -132,13 +132,6 @@ ab ubr #!/usr/bin/ruby
 " Backspace by words.
 map <Bs> bdw.
 
-" http://vim.wikia.com/wiki/Change_to_the_directory_of_the_current_file
-if exists('+autochdir')
-  set autochdir
-else
-  autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
-endif
-
 " http://ja.pastebin.ca/raw/1243579
 " }}}
 " MyTabLine {{{
