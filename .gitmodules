@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/jslint"]
 	path = .vim/bundle/jslint
 	url = http://github.com/hallettj/jslint.vim.git
+[submodule ".vim/bundle/markdown-preview"]
+	path = .vim/bundle/markdown-preview
+	url = http://github.com/robgleeson/vim-markdown-preview.git
