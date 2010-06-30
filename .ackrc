@@ -5,5 +5,3 @@
 --type-set=haml=.haml
 --type-set=sass=.sass
 --type-set=cucumber=.feature
---type-add=ruby=.rake
---type-add=sql=.sql
