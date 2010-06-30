@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/markdown-preview"]
 	path = .vim/bundle/markdown-preview
 	url = http://github.com/robgleeson/vim-markdown-preview.git
+[submodule ".vim/bundle/html5validator"]
+	path = .vim/bundle/html5validator
+	url = http://github.com/hokaccha/vim-html5validator.git
