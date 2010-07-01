@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/html5validator"]
 	path = .vim/bundle/html5validator
 	url = http://github.com/hokaccha/vim-html5validator.git
+[submodule ".vim/bundle/taglist"]
+	path = .vim/bundle/taglist
+	url = http://github.com/jc00ke/taglist.vim.git
