@@ -117,6 +117,9 @@ au! BufRead,BufNewFile *.j set filetype=objective-j
 au! Syntax objective-j source ~/.vim/syntax/objj.vim
 augroup END
 
+" LESS is CSS.
+au! BufRead,BufNewFile *.less set filetype=css
+
 " Drop to shell.
 nnoremap <leader>s :sh<CR>
 
