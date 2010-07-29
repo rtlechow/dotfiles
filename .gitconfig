@@ -3,7 +3,7 @@
   email = rtlechow@gmail.com
 [alias]
   pl = pull
-  st = status
+  st = status -s
   di = diff --color-words
   ch = checkout
   ci = commit
@@ -48,3 +48,5 @@
   nobranch = red
 [merge]
   tool = vimdiff
+[push]
+  default = tracking
