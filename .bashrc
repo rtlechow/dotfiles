@@ -1,5 +1,5 @@
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+if [[ -n $PS1 ]] ; then
 
 # Store duplicate commands in history and append all histories, so I can identify and refactor frequently used commands
 # export HISTCONTROL=ignoredups
@@ -112,3 +112,5 @@ function a () {
 
 # rvm-install added:
 if [[ -s /Users/rtl/.rvm/scripts/rvm ]] ; then source /Users/rtl/.rvm/scripts/rvm ; fi
+
+fi
