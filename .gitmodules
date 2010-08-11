@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/jekyll"]
 	path = .vim/bundle/jekyll
 	url = http://github.com/csexton/jekyll.vim.git
+[submodule ".vim/bundle/googlereader"]
+	path = .vim/bundle/googlereader
+	url = http://github.com/mattn/googlereader-vim.git
