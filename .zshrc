@@ -113,7 +113,7 @@ if [[ -x `which git` ]]; then
   }
 fi
 
-export PS1='${fg[white]}$($HOME/.rvm/bin/rvm-prompt i v g) ${fg_bold[white]}(${fg[yellow]}%h ${fg[green]}%n${fg[white]}@${fg[green]}%m${fg[white]}:${fg[yellow]}%3~${fg[white]}`git-prompt`${reset_color}) ${fg[white]}'
+export PS1='${fg[white]}$($HOME/.rvm/bin/rvm-prompt i v g) ${fg_bold[white]}(${fg[yellow]}%h ${fg[cyan]}%n${fg[white]}@${fg[magenta]}%m${fg[white]}:${fg[yellow]}%3~${fg[white]}`git-prompt`${reset_color}) ${fg[white]}'
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case insensitive completion
 zstyle ':completion:*:cd:*' ignore-parents parent pwd # cd will never select the parent directory (e.g.: cd ../<TAB>)
