@@ -67,3 +67,15 @@
 [submodule ".vim/bundle/repl"]
 	path = .vim/bundle/repl
 	url = http://github.com/ujihisa/repl.vim.git
+[submodule ".vim/bundle/vim-conque"]
+	path = .vim/bundle/vim-conque
+	url = http://github.com/rson/vim-conque.git
+[submodule ".vim/bundle/vim-unimpaired"]
+	path = .vim/bundle/vim-unimpaired
+	url = http://github.com/tpope/vim-unimpaired.git
+[submodule ".vim/bundle/gist"]
+	path = .vim/bundle/gist
+	url = http://github.com/mattn/gist-vim.git
+[submodule ".vim/bundle/css-color"]
+	path = .vim/bundle/css-color
+	url = http://github.com/skammer/vim-css-color.git
