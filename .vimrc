@@ -46,6 +46,12 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Store swap files in separa
 " Sudo write
 noremap <leader>W :w !sudo tee %<CR>
 
+" Faster split navigation.
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Speed up viewport scrolling.
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
@@ -197,8 +203,8 @@ nnoremap <silent> <C-f>p     :FufFile<CR>
 nnoremap <silent> <C-f><C-d> :FufDirWithCurrentBufferDir<CR>
 nnoremap <silent> <C-f>d     :FufDirWithFullCwd<CR>
 nnoremap <silent> <C-f>D     :FufDir<CR>
-nnoremap <silent> <C-j>      :FufMruFile<CR>
-nnoremap <silent> <C-k>      :FufMruCmd<CR>
+" nnoremap <silent> <C-j>      :FufMruFile<CR>
+" nnoremap <silent> <C-k>      :FufMruCmd<CR>
 nnoremap <silent> <C-b>      :FufBookmark<CR>
 nnoremap <silent> <C-f><C-t> :FufTag<CR>
 nnoremap <silent> <C-f>t     :FufTag!<CR>
