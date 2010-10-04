@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/sparkup"]
 	path = .vim/bundle/sparkup
 	url = http://github.com/rstacruz/sparkup.git
+[submodule ".vim/bundle/rake"]
+	path = .vim/bundle/rake
+	url = http://github.com/tpope/vim-rake.git
