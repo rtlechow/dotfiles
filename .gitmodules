@@ -64,3 +64,6 @@
 [submodule ".vim/bundle/rake"]
 	path = .vim/bundle/rake
 	url = http://github.com/tpope/vim-rake.git
+[submodule ".vim/bundle/repl"]
+	path = .vim/bundle/repl
+	url = http://github.com/ujihisa/repl.vim.git
