@@ -91,3 +91,6 @@
 [submodule ".vim/bundle/unicode"]
 	path = .vim/bundle/unicode
 	url = http://github.com/vim-scripts/unicode.vim.git
+[submodule ".vim/bundle/abolish"]
+	path = .vim/bundle/abolish
+	url = http://github.com/tpope/vim-abolish.git
