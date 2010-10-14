@@ -1,6 +1,7 @@
 typeset -U path manpath gem_home gem_path
 path=(~/.bin /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin /usr/local/bin /usr/local/mysql/bin $path)
 export EDITOR=/usr/bin/vim
+export AUTOFEATURE=true
 
 autoload -U compinit
 compinit
