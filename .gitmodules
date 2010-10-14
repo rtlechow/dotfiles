@@ -85,3 +85,6 @@
 [submodule ".vim/bundle/haskell"]
 	path = .vim/bundle/haskell
 	url = http://github.com/vim-scripts/haskell.vim.git
+[submodule ".vim/bundle/trailing-whitespace"]
+	path = .vim/bundle/trailing-whitespace
+	url = http://github.com/vim-scripts/trailing-whitespace.vim.git
