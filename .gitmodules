@@ -88,3 +88,6 @@
 [submodule ".vim/bundle/trailing-whitespace"]
 	path = .vim/bundle/trailing-whitespace
 	url = http://github.com/vim-scripts/trailing-whitespace.vim.git
+[submodule ".vim/bundle/unicode"]
+	path = .vim/bundle/unicode
+	url = http://github.com/vim-scripts/unicode.vim.git
