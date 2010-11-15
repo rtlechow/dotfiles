@@ -32,16 +32,21 @@ alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Fi
 alias port='sudo port'
 
 # Ruby
+alias be='bundle exec'
 alias gemsrv='gem server -d $HOME/.gem/ruby/1.8'
 
 # Rails
-alias ssp='ruby script/spin'
-alias ss='ruby script/server'
-alias sg='ruby script/generate'
-alias sp='ruby script/plugin'
+alias sr='script/rails'
+ss () {
+  if [ -f ./script/rails ]; then
+    ./script/rails server $argv
+  else
+    ./script/server $argv
+  fi
+}
 sc () {
   if [ -f ./script/rails ]; then
-    rails console $argv
+    ./script/rails console $argv
   else
     ./script/console $argv
   fi
