@@ -116,7 +116,6 @@ nnoremap <silent> <leader>c :set nolist!<CR>
 " Ruby
 nnoremap <leader>i :!irb<CR>
 nnoremap <leader>r :!ruby %<CR>
-au! BufRead,BufNewFile *.ru set filetype=ruby
 
 " Objective-J
 augroup objective-j
