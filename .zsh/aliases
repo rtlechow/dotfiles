@@ -21,7 +21,6 @@ function cl() {
 
 # Common apps
 alias v='vim'
-alias vz='vim -p ~/.zshrc ~/.zsh/aliases && . ~/.zshrc'
 alias sv='sudo vim'
 alias untgz='tar -zxvf'
 alias pwgen='pwgen -A -B -n'
@@ -29,11 +28,6 @@ alias pwgen='pwgen -A -B -n'
 # Mac OSX
 alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
-alias port='sudo port'
-
-# Ruby
-alias be='bundle exec'
-alias gemsrv='gem server -d $HOME/.gem/ruby/1.8'
 
 # Rails
 alias sr='script/rails'

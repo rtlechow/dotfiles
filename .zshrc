@@ -1,7 +1,6 @@
 typeset -U path manpath gem_home gem_path
-path=(~/.bin /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin /usr/local/bin /usr/local/mysql/bin $path)
-export EDITOR=/usr/bin/vim
-export AUTOFEATURE=true
+path=(~/.bin /usr/local/bin $path)
+export editor='/usr/local/bin/vim'
 
 autoload -U compinit
 compinit
@@ -9,7 +8,6 @@ compinit
 autoload colors
 colors
 
-export editor='vim'
 ls_options='--color=auto'
 eval `dircolors ~/.dir_colors`
 export grep_options='--color=auto'
@@ -131,9 +129,4 @@ bindkey 'jj' vi-cmd-mode
 bindkey '^A' vi-beginning-of-line
 bindkey '^E' vi-end-of-line
 
-# Ruby GC
-export RUBY_HEAP_MIN_SLOTS=500000
-export RUBY_HEAP_SLOTS_INCREMENT=250000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=500000000
 source "`brew --prefix`/etc/grc.bashrc"
