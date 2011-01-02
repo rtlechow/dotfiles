@@ -4,15 +4,18 @@
 [submodule ".vim/bundle/fuzzyfinder"]
 	path = .vim/bundle/fuzzyfinder
 	url = http://github.com/vim-bundles/fuzzyfinder.git
+  ignore = untracked
 [submodule ".vim/bundle/histwin"]
 	path = .vim/bundle/histwin
 	url = http://github.com/chrisbra/histwin.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/snipmate"]
 	path = .vim/bundle/snipmate
 	url = http://github.com/msanders/snipmate.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/cucumber"]
 	path = .vim/bundle/cucumber
 	url = http://github.com/tpope/vim-cucumber.git
@@ -28,15 +31,18 @@
 [submodule ".vim/bundle/pastie"]
 	path = .vim/bundle/pastie
 	url = http://github.com/tpope/vim-pastie.git
+  ignore = untracked
 [submodule ".vim/bundle/rails"]
 	path = .vim/bundle/rails
 	url = http://github.com/tpope/vim-rails.git
 [submodule ".vim/bundle/speeddating"]
 	path = .vim/bundle/speeddating
 	url = http://github.com/tpope/vim-speeddating.git
+  ignore = untracked
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = http://github.com/tpope/vim-surround.git
+  ignore = untracked
 [submodule ".vim/bundle/supertab"]
 	path = .vim/bundle/supertab
 	url = http://github.com/ervandew/supertab.git
@@ -49,15 +55,19 @@
 [submodule ".vim/bundle/html5validator"]
 	path = .vim/bundle/html5validator
 	url = http://github.com/hokaccha/vim-html5validator.git
+  ignore = untracked
 [submodule ".vim/bundle/taglist"]
 	path = .vim/bundle/taglist
 	url = http://github.com/jc00ke/taglist.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/jekyll"]
 	path = .vim/bundle/jekyll
 	url = http://github.com/csexton/jekyll.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/googlereader"]
 	path = .vim/bundle/googlereader
 	url = http://github.com/mattn/googlereader-vim.git
+  ignore = untracked
 [submodule ".vim/bundle/sparkup"]
 	path = .vim/bundle/sparkup
 	url = http://github.com/rstacruz/sparkup.git
@@ -70,9 +80,11 @@
 [submodule ".vim/bundle/vim-conque"]
 	path = .vim/bundle/vim-conque
 	url = http://github.com/rson/vim-conque.git
+  ignore = untracked
 [submodule ".vim/bundle/vim-unimpaired"]
 	path = .vim/bundle/vim-unimpaired
 	url = http://github.com/tpope/vim-unimpaired.git
+  ignore = untracked
 [submodule ".vim/bundle/gist"]
 	path = .vim/bundle/gist
 	url = http://github.com/mattn/gist-vim.git
@@ -85,9 +97,11 @@
 [submodule ".vim/bundle/trailing-whitespace"]
 	path = .vim/bundle/trailing-whitespace
 	url = http://github.com/vim-scripts/trailing-whitespace.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/unicode"]
 	path = .vim/bundle/unicode
 	url = http://github.com/vim-scripts/unicode.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/abolish"]
 	path = .vim/bundle/abolish
 	url = http://github.com/tpope/vim-abolish.git
