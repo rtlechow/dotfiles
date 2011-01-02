@@ -1,6 +1,6 @@
 typeset -U path manpath gem_home gem_path
 path=(~/.bin /usr/local/bin $path)
-export editor='/usr/local/bin/vim'
+export EDITOR='/usr/local/bin/vim'
 
 autoload -U compinit
 compinit
@@ -8,15 +8,14 @@ compinit
 autoload colors
 colors
 
-ls_options='--color=auto'
 eval `dircolors ~/.dir_colors`
-export grep_options='--color=auto'
-export grep_color='0;32'
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='0;32'
 
-histfile=~/.zsh_history
-histsize=1000
-savehist=1000
-reporttime=10
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+REPORTTIME=10
 
 setopt autopushd
 setopt nobeep
