@@ -111,6 +111,8 @@
 [submodule ".vim/bundle/apidock"]
 	path = .vim/bundle/apidock
 	url = http://github.com/mileszs/apidock.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+  ignore = untracked
