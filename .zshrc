@@ -1,6 +1,6 @@
 typeset -U path manpath gem_home gem_path
 path=(~/.bin /usr/local/bin $path)
-export EDITOR='/usr/local/bin/vim'
+export EDITOR='vim'
 
 autoload -U compinit
 compinit
