@@ -94,10 +94,6 @@
 [submodule ".vim/bundle/haskell"]
 	path = .vim/bundle/haskell
 	url = http://github.com/vim-scripts/haskell.vim.git
-[submodule ".vim/bundle/trailing-whitespace"]
-	path = .vim/bundle/trailing-whitespace
-	url = http://github.com/vim-scripts/trailing-whitespace.vim.git
-  ignore = untracked
 [submodule ".vim/bundle/unicode"]
 	path = .vim/bundle/unicode
 	url = http://github.com/vim-scripts/unicode.vim.git
@@ -115,4 +111,8 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+  ignore = untracked
+[submodule ".vim/bundle/trailing-whitespace"]
+	path = .vim/bundle/trailing-whitespace
+	url = https://github.com/vim-scripts/trailing-whitespace.git
   ignore = untracked
