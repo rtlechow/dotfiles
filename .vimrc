@@ -1,5 +1,6 @@
 set t_Co=256
-call pathogen#runtime_append_all_bundles()
+silent! call pathogen#runtime_append_all_bundles()
+silent! call pathogen#helptags()
 colorscheme molokai
 let mapleader="," " Remap mapleader from \ to , because \ is not in a standard position on all keyboards. The ',' command does exist in Vim (see |,|), but you probably never use it.
 let $PAGER='' " Clear variable inside vim. This is to handle the case where you start Vim normally and want to use Vim's 'Man' function.
@@ -31,7 +32,7 @@ set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes s
 set autoindent " Copy indent from last line when starting new line.
 set backspace=start,indent,eol
 set ignorecase " In searches, ignore case of lower case letters.
-set smartcase " Override ignorecase if search contains upper case letters.  
+set smartcase " Override ignorecase if search contains upper case letters.
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
 set shortmess=atI " Shorten command line text and other info tokens.
 set splitbelow splitright
@@ -102,7 +103,7 @@ imap uu _
 imap hh =>
 imap aa @
 
-" Toggle search highlighting. 
+" Toggle search highlighting.
 nnoremap <silent> <leader>H :set invhls hls?<CR>
 
 " Rerun the last command
@@ -116,15 +117,6 @@ nnoremap <silent> <leader>c :set nolist!<CR>
 " Ruby
 nnoremap <leader>i :!irb<CR>
 nnoremap <leader>r :!ruby %<CR>
-
-" Objective-J
-augroup objective-j
-au! BufRead,BufNewFile *.j set filetype=objective-j
-au! Syntax objective-j source ~/.vim/syntax/objj.vim
-augroup END
-
-" LESS is CSS.
-au! BufRead,BufNewFile *.less set filetype=css
 
 " Drop to shell.
 nnoremap <leader>s :sh<CR>
@@ -183,11 +175,6 @@ if exists("+showtabline")
     endfunction
     set tabline=%!MyTabLine()
 endif
-
-function! StripWhitespace ()
-    exec ':%s/ \+$//gc'
-endfunction
-noremap <leader>t :call StripWhitespace ()<CR>
 
 let g:fuf_modesDisable = []
 let g:fuf_abbrevMap = {
