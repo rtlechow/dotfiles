@@ -116,3 +116,7 @@
 	path = .vim/bundle/trailing-whitespace
 	url = https://github.com/vim-scripts/trailing-whitespace.git
   ignore = untracked
+[submodule ".vim/bundle/ZenCoding.vim"]
+	path = .vim/bundle/ZenCoding.vim
+	url = https://github.com/vim-scripts/ZenCoding.vim.git
+  ignore = untracked
