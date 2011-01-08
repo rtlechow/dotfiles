@@ -1,6 +1,7 @@
 typeset -U path manpath gem_home gem_path
 path=(~/.bin /usr/local/bin $path)
 export EDITOR='vim'
+export RUBYOPT='rubygems'
 
 autoload -U compinit
 compinit
@@ -111,7 +112,7 @@ if [[ -x `which git` ]]; then
   }
 fi
 
-export PS1='${fg[white]}$($HOME/.rvm/bin/rvm-prompt s u p g) ${fg_bold[white]}(${fg[yellow]}%h ${fg[cyan]}%n${fg[white]}@${fg[magenta]}%m${fg[white]}:${fg[yellow]}%3~${fg[white]}`git-prompt`${reset_color}) ${fg[white]}'
+export PS1='${fg_bold[white]}(${fg[yellow]}%h ${fg[cyan]}%n${fg[white]}@${fg[magenta]}%m${fg[white]}:${fg[yellow]}%3~${fg[white]}`git-prompt`${reset_color}) ${fg[white]}'
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case insensitive completion
 zstyle ':completion:*:cd:*' ignore-parents parent pwd # cd will never select the parent directory (e.g.: cd ../<TAB>)
@@ -119,9 +120,6 @@ zstyle ':completion:*' completer _expand _complete
 
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
-
-# rvm-install added:
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 bindkey -v
 bindkey 'jj' vi-cmd-mode
