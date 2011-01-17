@@ -126,4 +126,4 @@ bindkey 'jj' vi-cmd-mode
 bindkey '^A' vi-beginning-of-line
 bindkey '^E' vi-end-of-line
 
-source "`brew --prefix`/etc/grc.bashrc"
+[[ -x `which brew` && -r "`brew --prefix`/etc/grc.bashrc" ]] && source "`brew --prefix`/etc/grc.bashrc"
