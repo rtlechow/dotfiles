@@ -4,8 +4,9 @@ alias ...='../..'
 alias  ....='../../..'
 alias .....='../../../..'
 alias ls='ls --color=auto'
-alias ll='ls -lh'
+alias lh='ls -lh'
 alias la='ls -A'
+alias lah='ls -lAh'
 alias l='ls -CF'
 alias le='less -R +C'
 alias cls='clear && ll'
@@ -13,9 +14,9 @@ alias du1='du -h --max-depth=1'
 alias lc="cl"
 function cl() {
  if [ $# = 0 ]; then
-  cd && l
+  cd && ls
  else
-  cd "$*" && ll
+  cd "$*" && lh
  fi
 }
 
@@ -28,6 +29,10 @@ alias pwgen='pwgen -A -B -n'
 # Mac OSX
 alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+
+# Ruby
+mri () { path=(/usr/bin $path) }
+yarv () { path=(/usr/local/bin $path) }
 
 # Rails
 alias sr='script/rails'

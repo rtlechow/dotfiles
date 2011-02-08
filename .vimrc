@@ -39,6 +39,7 @@ set splitbelow splitright
 set cul
 set ls=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set autowrite
 
 " The following is bad on shared systems because other vim sessions could clobber each other.
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Store backup files in separate directory instead of all over filesystem.
@@ -133,76 +134,5 @@ ab ubr #!/usr/bin/ruby
 " Backspace by words.
 map <Bs> bdw.
 
-" http://ja.pastebin.ca/raw/1243579
-" }}}
-" MyTabLine {{{
-" This is an attempt to emulate the default Vim-7 tabs as closely as possible but with numbered tabs.
-" TODO: set truncation when tabs don't fit on line, see :h columns
-if exists("+showtabline")
-    function! MyTabLine()
-        let s = ''
-        for i in range(tabpagenr('$'))
-            " set up some oft-used variables
-            let tab = i + 1 " range() starts at 0
-            let winnr = tabpagewinnr(tab) " gets current window of current tab
-            let buflist = tabpagebuflist(tab) " list of buffers associated with the windows in the current tab
-            let bufnr = buflist[winnr - 1] " current buffer number
-            let bufname = bufname(bufnr) " gets the name of the current buffer in the current window of the current tab
-
-            let s .= '%' . tab . 'T' " start a tab
-            let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#') " if this tab is the current tab...set the right highlighting
-            let s .= ' #' . tab " current tab number
-            let n = tabpagewinnr(tab,'$') " get the number of windows in the current tab
-            if n > 1
-                let s .= ':' . n " if there's more than one, add a colon and display the count
-            endif
-      let bufmodified = getbufvar(bufnr, "&mod")
-            if bufmodified
-                let s .= ' +'
-            endif
-            if bufname != ''
-                let s .= ' ' . pathshorten(bufname) . ' ' " outputs the one-letter-path shorthand & filename
-            else
-                let s .= ' [No Name] '
-            endif
-        endfor
-        let s .= '%#TabLineFill#' " blank highlighting between the tabs and the righthand close 'X'
-        let s .= '%T' " resets tab page number?
-        let s .= '%=' " seperate left-aligned from right-aligned
-        let s .= '%#TabLine#' " set highlight for the 'X' below
-        let s .= '%999XX' " places an 'X' at the far-right
-        return s
-    endfunction
-    set tabline=%!MyTabLine()
-endif
-
-let g:fuf_modesDisable = []
-let g:fuf_abbrevMap = {
-      \   '^vr:' : map(filter(split(&runtimepath, ','), 'v:val !~ "after$"'), 'v:val . ''/**/'''),
-      \   '^m0:' : [ '/mnt/d/0/', '/mnt/j/0/' ],
-      \ }
-let g:fuf_mrufile_maxItem = 300
-let g:fuf_mrucmd_maxItem = 400
-nnoremap <silent> <C-n>      :FufBuffer<CR>
-nnoremap <silent> <C-p>      :FufFileWithCurrentBufferDir<CR>
-nnoremap <silent> <C-f><C-p> :FufFileWithFullCwd<CR>
-nnoremap <silent> <C-f>p     :FufFile<CR>
-nnoremap <silent> <C-f><C-d> :FufDirWithCurrentBufferDir<CR>
-nnoremap <silent> <C-f>d     :FufDirWithFullCwd<CR>
-nnoremap <silent> <C-f>D     :FufDir<CR>
-" nnoremap <silent> <C-j>      :FufMruFile<CR>
-" nnoremap <silent> <C-k>      :FufMruCmd<CR>
-nnoremap <silent> <C-b>      :FufBookmark<CR>
-nnoremap <silent> <C-f><C-t> :FufTag<CR>
-nnoremap <silent> <C-f>t     :FufTag!<CR>
-noremap  <silent> g]         :FufTagWithCursorWord!<CR>
-nnoremap <silent> <C-f><C-f> :FufTaggedFile<CR>
-nnoremap <silent> <C-f><C-j> :FufJumpList<CR>
-nnoremap <silent> <C-f><C-g> :FufChangeList<CR>
-nnoremap <silent> <C-f><C-q> :FufQuickfix<CR>
-nnoremap <silent> <C-f><C-l> :FufLine<CR>
-nnoremap <silent> <C-f><C-h> :FufHelp<CR>
-nnoremap <silent> <C-f><C-b> :FufAddBookmark<CR>
-vnoremap <silent> <C-f><C-b> :FufAddBookmarkAsSelectedText<CR>
-nnoremap <silent> <C-f><C-e> :FufEditInfo<CR>
-nnoremap <silent> <C-f><C-r> :FufRenewCache<CR>
+autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+autocmd BufNewFile,BufRead *_test.rb compiler rubyunit

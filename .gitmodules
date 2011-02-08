@@ -120,3 +120,6 @@
 	path = .vim/bundle/ZenCoding.vim
 	url = https://github.com/vim-scripts/ZenCoding.vim.git
   ignore = untracked
+[submodule ".vim/bundle/makegreen"]
+	path = .vim/bundle/makegreen
+	url = https://github.com/reinh/vim-makegreen.git
