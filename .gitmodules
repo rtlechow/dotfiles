@@ -1,10 +1,6 @@
 [submodule ".vim/bundle/ack"]
 	path = .vim/bundle/ack
 	url = http://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/fuzzyfinder"]
-	path = .vim/bundle/fuzzyfinder
-	url = http://github.com/vim-bundles/fuzzyfinder.git
-  ignore = untracked
 [submodule ".vim/bundle/histwin"]
 	path = .vim/bundle/histwin
 	url = http://github.com/chrisbra/histwin.vim.git
