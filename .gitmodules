@@ -45,9 +45,9 @@
 [submodule ".vim/bundle/jslint"]
 	path = .vim/bundle/jslint
 	url = http://github.com/hallettj/jslint.vim.git
-[submodule ".vim/bundle/markdown-preview"]
-	path = .vim/bundle/markdown-preview
-	url = http://github.com/robgleeson/vim-markdown-preview.git
+[submodule ".vim/bundle/hammer"]
+	path = .vim/bundle/hammer
+	url = https://github.com/robgleeson/hammer.vim.git
 [submodule ".vim/bundle/html5validator"]
 	path = .vim/bundle/html5validator
 	url = http://github.com/hokaccha/vim-html5validator.git
