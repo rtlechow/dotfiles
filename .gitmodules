@@ -87,6 +87,7 @@
 [submodule ".vim/bundle/dbext"]
 	path = .vim/bundle/dbext
 	url = http://github.com/vim-scripts/dbext.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/haskell"]
 	path = .vim/bundle/haskell
 	url = http://github.com/vim-scripts/haskell.vim.git
@@ -97,6 +98,7 @@
 [submodule ".vim/bundle/abolish"]
 	path = .vim/bundle/abolish
 	url = http://github.com/tpope/vim-abolish.git
+  ignore = untracked
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = http://github.com/scrooloose/nerdcommenter.git
