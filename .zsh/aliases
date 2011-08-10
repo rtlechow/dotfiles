@@ -94,8 +94,8 @@ alias gs='git status'
 alias git_remove_missing_files="gs | awk '/deleted:(.*)/ {print $3}' | xargs git rm"
 
 # MySQL
-alias -g myup='sudo mysqld_safe --user=mysql &'
-alias -g mydown='sudo mysqladmin shutdown'
+alias -g myup='mysql.server start'
+alias -g mydown='mysql.server stop'
 
 # Apache
 alias -g ap='sudo apachectl'
