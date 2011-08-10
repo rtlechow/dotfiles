@@ -121,9 +121,9 @@
 [submodule ".vim/bundle/makegreen"]
 	path = .vim/bundle/makegreen
 	url = https://github.com/reinh/vim-makegreen.git
-[submodule ".vim/bundle/html5"]
-	path = .vim/bundle/html5
-	url = https://github.com/othree/html5.vim
 [submodule ".vim/bundle/vim-javascript"]
 	path = .vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule ".vim/bundle/html5.vim"]
+	path = .vim/bundle/html5.vim
+	url = https://github.com/othree/html5.vim.git
