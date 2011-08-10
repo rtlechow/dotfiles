@@ -60,10 +60,6 @@
 	path = .vim/bundle/jekyll
 	url = http://github.com/csexton/jekyll.vim.git
   ignore = untracked
-[submodule ".vim/bundle/googlereader"]
-	path = .vim/bundle/googlereader
-	url = http://github.com/mattn/googlereader-vim.git
-  ignore = untracked
 [submodule ".vim/bundle/sparkup"]
 	path = .vim/bundle/sparkup
 	url = http://github.com/rstacruz/sparkup.git
