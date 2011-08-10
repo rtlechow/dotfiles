@@ -136,3 +136,15 @@ map <Bs> bdw.
 
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 autocmd BufNewFile,BufRead *_test.rb compiler rubyunit
+
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets/sass<cr>
+map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
+map <leader>gg :topleft 100 :split Gemfile<cr>
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
