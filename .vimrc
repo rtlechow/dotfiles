@@ -101,7 +101,7 @@ imap lkj <ESC>
 imap kjh <ESC>
 imap jj <ESC>
 imap uu _
-imap hh =>
+imap hh <space>=><space>
 imap aa @
 
 " Toggle search highlighting.
