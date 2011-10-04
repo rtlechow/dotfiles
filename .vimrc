@@ -141,3 +141,4 @@ map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+set wildignore+=.git,tmp/**,vendor/bundle/**
