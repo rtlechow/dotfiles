@@ -73,7 +73,7 @@ if [[ -x `which git` ]]; then
   }
   function git-need-to-push() {
     if pushtime=$(echo $1 | grep 'Your branch is ahead' 2> /dev/null); then
-      echo "↑ "
+      echo "↑"
     fi
   }
   function git-prompt() {
@@ -84,7 +84,7 @@ if [[ -x `which git` ]]; then
       dirty_color=$fg[green]
       push_status=$(git-need-to-push $gstatus 2> /dev/null)
       if [[ $dirty = 1 ]] { dirty_color=$fg[red] }
-      [ x$branch != x ] && echo " %{$dirty_color%}$branch%{$reset_color%} $push_status"
+      [ x$branch != x ] && echo "(%{$dirty_color%}$branch%{$reset_color%}$push_status)"
     fi
   }
   function git-scoreboard () {
@@ -112,7 +112,7 @@ if [[ -x `which git` ]]; then
   }
 fi
 
-export PS1='${fg_bold[white]}(${fg[yellow]}%h ${fg[cyan]}%n${fg[white]}@${fg[magenta]}%m${fg[white]}:${fg[yellow]}%3~${fg[white]}`git-prompt`${reset_color}) ${fg[white]}'
+export PS1='${fg[magenta]}%m${fg[white]}:${fg[cyan]}%1~${fg[white]}`git-prompt`${fg[white]}%# '
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case insensitive completion
 zstyle ':completion:*:cd:*' ignore-parents parent pwd # cd will never select the parent directory (e.g.: cd ../<TAB>)
