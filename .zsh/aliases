@@ -93,6 +93,10 @@ alias grm='git rm'
 alias gs='git status'
 alias git_remove_missing_files="gs | awk '/deleted:(.*)/ {print $3}' | xargs git rm"
 
+# Postgres
+alias -g pgup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias -g pgdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
 # MySQL
 alias -g myup='mysql.server start'
 alias -g mydown='mysql.server stop'
