@@ -1,5 +1,6 @@
 typeset -U path manpath gem_home gem_path
 path=(~/.bin /usr/local/bin $path)
+cdpath=(~/code $cdpath)
 export EDITOR='vim'
 export RUBYOPT='rubygems'
 
