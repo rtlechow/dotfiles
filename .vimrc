@@ -134,6 +134,7 @@ map <Bs> bdw.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 autocmd BufNewFile,BufRead *_test.rb compiler rubyunit
 
+map <leader>gs :Gstatus<cr>
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
