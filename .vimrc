@@ -83,6 +83,8 @@ map <S-Enter> O<ESC>
 set pastetoggle=<leader>p
 map <leader>p :set invpaste paste?<CR>
 
+map <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
+
 " Open ~/.vimrc
 nnoremap <leader>V :tabnew ~/.vimrc<CR>
 
