@@ -30,6 +30,11 @@ task :install do
   end
 end
 
+desc 'Update submodules'
+task :update do
+  system %Q{git submodule foreach git pull}
+end
+
 def replace_file(file)
   system %Q{rm "$HOME/#{file}"}
   link_file(file)
