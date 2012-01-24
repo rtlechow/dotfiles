@@ -6,7 +6,7 @@ let mapleader="," " Remap mapleader from \ to , because \ is not in a standard p
 let $PAGER='' " Clear variable inside vim. This is to handle the case where you start Vim normally and want to use Vim's 'Man' function.
 set history=1000 " Increase history from 20 default to 1000
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
-set nu " Enable line numbers.
+set nonu " Disable line numbers.
 set noerrorbells " Disable error bells.
 set foldmethod=syntax " Markers are used to specify folds.
 set foldenable
