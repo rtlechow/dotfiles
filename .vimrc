@@ -67,10 +67,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" Vertical split then hop to new buffer
-noremap <leader>v :vsp^M^W^W<CR>
-noremap <leader>h :split^M^W^W<CR>
-
 " Make Y work as expected
 noremap Y y$
 
