@@ -147,6 +147,7 @@ autocmd BufNewFile,BufRead *_test.rb compiler rubyunit
 
 autocmd BufReadPost fugitive://* set bufhidden=delete
 map <leader>gs :Gstatus<cr>
+map <leader>gb :Gblame<cr>
 
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
