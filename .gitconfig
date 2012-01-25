@@ -2,6 +2,7 @@
   name = R.T. Lechow
   email = rtlechow@gmail.com
 [alias]
+  au = add -u
   pl = pull
   st = status -s
   di = diff --color-words
@@ -22,6 +23,10 @@
   graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
   prettylog = "log --graph --pretty=format:\"%Cred%h%Creset — %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative"
   track = checkout --track -b
+  prune-all = !git remote | xargs -n 1 git remote prune
+  w = whatchanged
+  rank = shortlog -sn --no-merges
+  whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
 [core]
   pager = less
   whitespace = trailing-space
