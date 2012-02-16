@@ -1,3 +1,4 @@
+stty -ixon
 typeset -U path manpath gem_home gem_path
 path=(~/.bin /usr/local/bin $path)
 cdpath=(~/code ~/Dropbox ~/code/work $cdpath)
