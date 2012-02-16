@@ -33,6 +33,7 @@ alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Fi
 # Ruby
 mri () { path=(/usr/bin $path) }
 yarv () { path=(/usr/local/bin $path) }
+alias be='bundle exec'
 
 # Rails
 alias sr='script/rails'
