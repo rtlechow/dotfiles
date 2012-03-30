@@ -41,6 +41,7 @@ set ls=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set autowrite
 set grepprg=ack
+set diffopt=filler,vertical
 
 " The following is bad on shared systems because other vim sessions could clobber each other.
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Store backup files in separate directory instead of all over filesystem.
