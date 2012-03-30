@@ -2,16 +2,19 @@
   name = R.T. Lechow
   email = rtlechow@gmail.com
 [alias]
+  b = branch
+  a = add
   au = add -u
-  pl = pull
-  st = status -s
-  di = diff --color-words
   ch = checkout
   ci = commit
-  br = branch
+  d = diff --color-words
+  l = log -p
+  ll = log --date=local
+  p = pull
+  ps = push
+  s = status -s
   sta = stash
-  lg = log -p
-  llg = log --date=local
+  w = whatchanged
   unstage = reset HEAD --
   last = log -1 HEAD
   web = instaweb --httpd=webrick
@@ -24,12 +27,12 @@
   prettylog = "log --graph --pretty=format:\"%Cred%h%Creset — %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative"
   track = checkout --track -b
   prune-all = !git remote | xargs -n 1 git remote prune
-  w = whatchanged
   rank = shortlog -sn --no-merges
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
 [core]
   pager = less
   whitespace = trailing-space
+  excludesfile = ~/.gitignore
 [color]
   ui = auto
 [color "branch"]
