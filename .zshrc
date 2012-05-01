@@ -4,6 +4,7 @@ path=(~/.bin /usr/local/bin $path)
 cdpath=(~/code ~/Dropbox ~/code/work $cdpath)
 export EDITOR='vim'
 export RUBYOPT='rubygems'
+export BUNDLE_PATH='vendor/bundle'
 
 autoload -U compinit
 compinit
