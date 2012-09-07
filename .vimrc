@@ -147,14 +147,8 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 map <leader>gs :Gstatus<cr>
 map <leader>gb :Gblame<cr>
 
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+let g:ctrlp_map = ',f'
+let g:ctrlp_working_path_mode = 'rc'
 set wildignore+=.git,tmp/**,vendor/bundle/**
 
 function! RunTests(filename)
