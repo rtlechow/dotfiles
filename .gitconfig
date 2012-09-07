@@ -60,3 +60,5 @@
   default = tracking
 [branch]
   autosetuprebase = always
+[credential]
+	helper = osxkeychain
