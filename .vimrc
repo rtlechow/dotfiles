@@ -92,10 +92,7 @@ nnoremap <leader>V :tabnew ~/.vimrc<CR>
 " Reload ~/.vimrc and activate changes (have to save first)
 nnoremap <silent> <leader>R :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-" Alternatives for Esc to exit insert mode.
-imap lkj <ESC>
-imap kjh <ESC>
-imap jj <ESC>
+" imaps
 imap uu _
 imap hh <space>=><space>
 imap aa @
