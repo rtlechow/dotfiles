@@ -166,6 +166,8 @@ function! RunTests(filename)
   :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
   if match(a:filename, '\.feature$') != -1
     exec ":!bundle exec cucumber " . a:filename
+  elseif match(a:filename, 'Spec.js$') != -1
+    exec ":!bundle exec jasmine-headless-webkit -c " . a:filename
   else
     if filereadable("Isolate") && filereadable("script/test")
       exec ":!rake isolate:sh\\['script/test " . a:filename . "'\\]"
@@ -194,7 +196,7 @@ function! RunTestFile(...)
   endif
 
   " Run the tests for the previously-marked file.
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
+  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|Spec.js\)$') != -1
   if in_test_file
     call SetTestFile()
   elseif !exists("t:rtl_test_file")
