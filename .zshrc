@@ -1,6 +1,6 @@
 stty -ixon
 typeset -U path manpath gem_home gem_path
-path=(~/.bin /usr/local/bin $path)
+path=(~/.bin /usr/local/bin $(brew --prefix coreutils)/libexec/gnubin ~/.rvm/bin $path)
 cdpath=(~/code ~/Dropbox ~/code/work $cdpath)
 export EDITOR='vim'
 export RUBYOPT='rubygems'
