@@ -154,24 +154,31 @@ set wildignore+=.git,tmp/**,vendor/bundle/**
 function! RunTests(filename)
   " Write the file and run tests for the given filename
   :w
-  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-  if match(a:filename, '\.feature$') != -1
-    exec ":!bundle exec cucumber " . a:filename
-  elseif match(a:filename, 'Spec.js$') != -1
-    exec ":!bundle exec jasmine-headless-webkit -c " . a:filename
-  else
-    if filereadable("Isolate") && filereadable("script/test")
-      exec ":!rake isolate:sh\\['script/test " . a:filename . "'\\]"
-    elseif filereadable("script/test")
-      exec ":!script/test " . a:filename
-    elseif filereadable("Isolate")
-      exec ":!rake isolate:sh\\['rspec --color " . a:filename . "'\\]"
-    elseif filereadable("Gemfile")
-      exec ":!bundle exec rspec --color " . a:filename
-    else
-      exec ":!rspec --color " . a:filename
-    end
+  if filereadable('script/test')
+    exec ':!script/test ' . a:filename
+    return
   end
+  let runners = {
+    \'\.feature$': 'cucumber',
+    \'Spec.js$': 'jasmine-headless-webkit',
+    \'_spec.rb$': 'rspec --color',
+    \'_test.rb$': 'ruby -I test'
+    \}
+  for key in keys(runners)
+    if match(a:filename, key) != -1
+      let runner = runners[key]
+    end
+  endfor
+  if filereadable('Isolate')
+    let command = ':!rake isolate:sh\["' . runner . ' ' . a:filename . '"\]'
+  elseif filereadable('Gemfile')
+    let command = ':!bundle exec ' . runner . ' ' . a:filename
+  else
+    let command = ':!' . runner . ' ' . a:filename
+  end
+  silent !echo '\n\n\n\n\n\n\n\n\n\n'
+  silent exec ':!echo ' . command
+  exec command
 endfunction
 
 function! SetTestFile()
@@ -187,7 +194,7 @@ function! RunTestFile(...)
   endif
 
   " Run the tests for the previously-marked file.
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|Spec.js\)$') != -1
+  let in_test_file = match(expand("%"), '\(.feature\|_test.rb\|_spec.rb\|Spec.js\)$') != -1
   if in_test_file
     call SetTestFile()
   elseif !exists("t:rtl_test_file")
