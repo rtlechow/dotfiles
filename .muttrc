@@ -1,0 +1,119 @@
+set folder           = ~/.mail               # mailbox location
+set alias_file       = ~/.mutt/alias         # where to store aliases
+set header_cache     = ~/.mutt/cache/headers # where to store headers
+set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
+set certificate_file = ~/.mutt/certificates  # where to store certs
+set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
+set tmpdir           = ~/.mutt/temp          # where to keep temp files
+set signature        = ~/.mutt/sig           # my signature file
+
+set wait_key = no        # shut up, mutt
+set mbox_type = Maildir  # mailbox type
+set timeout = 3          # idle time before scanning
+set mail_check = 0       # minimum time between scans
+unset move               # gmail does that
+set delete               # don't ask, just do
+unset confirmappend      # don't ask, just do!
+set quit                 # don't ask, just do!!
+unset mark_old           # read/new is good enough for me
+set beep_new             # bell on new mails
+set pipe_decode          # strip headers and eval mimes when piping
+set thorough_search      # strip headers and eval mimes before searching
+
+#set status_chars  = " *%A"
+#set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+ignore *                                # ignore all headers
+unignore from: to: cc: date: subject:   # show only these
+unhdr_order *                           # some distros order things by default
+hdr_order from: to: cc: date: subject:  # and in this order
+
+set spoolfile = "+gmail.com/INBOX"
+# Alternate email addresses.
+alternates rtlechow@learnhub.com
+# Mailboxes to show in the sidebar.
+mailboxes +gmail.com/INBOX \
+          +gmail.com/archive \
+          +gmail.com/sent \
+          +gmail.com/drafts \
+# Other special folders.
+set mbox      = "+gmail.com/archive"
+set postponed = "+gmail.com/drafts"
+
+set date_format = "%m/%d"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort = threads                         # like gmail
+set sort_aux = reverse-last-date-received  # like gmail
+set uncollapse_jump                        # don't collapse on an unread message
+set sort_re                                # thread based on regex
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+bind index gg       first-entry
+bind index G        last-entry
+
+bind index R        group-reply
+bind index <tab>    sync-mailbox
+bind index <space>  collapse-thread
+
+# Ctrl-R to mark all as read
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# Sync email
+macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
+macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+
+# Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+# --- colors --- #
+color indicator brightdefault     color239
+color normal    default     default
+color tree      color83     black
+color status    default     color239
+color error     white       red         # lower bar
+color message   default     color239    # lower bar
+color signature  brightcolor67        default    # signature
+color attachment yellow     black      # MIME attachments
+color search     black          color149   # search matches
+color tilde      brightcolor248 default    # ~ at bottom of msg
+color markers    red            default    # + at beginning of wrapped lines
+##--- header ---##
+color hdrdefault color67     default # default header lines
+color header     color163    default  "^Subject:"
+color header     color179    default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # email
+color header     color163    default "(http|https|ftp)://[\-\.\,/+=&%~_:?\#a-zA-Z0-9]+" # URL
+##--- index ---##
+color index    color67          default  ~F  # Flagged
+#color index   brightblue   default  ~P  # From me
+color index    color67    default  ~Q  # replied
+color index    color83        default  ~N  # New
+color index    color83        default  ~O  # Old
+color index    color83        default "~l ~O"  # Old + list
+color index    color163         default  ~T  # Tagged
+color index    color15          color1   ~D  # Deleted
+#color index   color15        black "~N ~D"       # New + Deleted
+#color index   color83          default "~l ~N"
+#color index   red            default "~l ~N ~D"
+#color index   brightblue   default "~l ~Q"
+#color index   brightcyan     default "~l ~T"
+##--- body ---##
+color   quoted          color242  default
+color   quoted1         color182  default
+color   quoted2         color242  default
+color   quoted3         color182  default
+color   quoted4         color242  default
+color body color179 default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # email
+color body color163 default "(http|https|ftp)://[\-\.\,/+=&%~_:?\#a-zA-Z0-9]+" # URL
+## not allowed
+#color signature color179 default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # email
+#color signature color163 default "(http|https|ftp)://[\-\.\,/+=&%~_:?\#a-zA-Z0-9]+" # URL
+#color body brightgreen default "(^| |[-.[:alnum:]]+:+)~?\(/[-_.'[:alnum:]]+\)+/?" # Unix file path
+#color body brightgreen  default "(^| +)[[:alpha:]]:[-_.[:alnum:]\]+" # DOS file path
+#color body brightmagenta default "(^|[ '\"]+)\\$[[:alpha:]][-_[:alpha:]]+" # variable
+# in sync with vim's mail syntax
+color body brightdefault default "\\<_[[:alnum:]]+_\\>" # bold _bla_
+color body brightdefault default "\\*[[:alnum:]]+\\*" # bold *bla*
+#color body yellow default "(^| )[;:8o][-^o]?[)>(|/\\]+" # smiley
+#color body red default "[!?]{3,}" # exclamation
+#color body green default "^ *[-+*o] +" # list item
