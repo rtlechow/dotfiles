@@ -149,7 +149,10 @@ map <leader>gb :Gblame<cr>
 
 let g:ctrlp_map = ',f'
 let g:ctrlp_working_path_mode = 'rc'
-set wildignore+=.git,tmp/**,vendor/bundle/**
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](\.git|\.hg|\.svn|tmp)$',
+  \ 'file': '\.png$\|\.jpg$\|\.gif$',
+  \ }
 
 function! RunTests(filename)
   " Write the file and run tests for the given filename
