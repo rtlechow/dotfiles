@@ -30,3 +30,6 @@
 [submodule ".vim/bundle/vim-rvm"]
 	path = .vim/bundle/vim-rvm
 	url = https://github.com/tpope/vim-rvm.git
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
