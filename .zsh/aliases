@@ -114,6 +114,11 @@ alias sa='sudo aptitude'
 alias sai='sudo aptitude install'
 alias sau='sudo aptitude update'
 
+function d() {
+  if [ ! -z $1 ]; then
+    curl dict://dict.org/d:$1
+  fi
+}
 function f() {
   if [ ! -z $1 ]; then
     find . -name "*${*}*"
