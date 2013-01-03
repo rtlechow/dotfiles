@@ -25,6 +25,7 @@ alias v='vim'
 alias sv='sudo vim'
 alias untgz='tar -zxvf'
 alias pwgen='pwgen -A -B -n'
+alias irc='ssh irc -t tmux a'
 
 # Mac OSX
 alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
