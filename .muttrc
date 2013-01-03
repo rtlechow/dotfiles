@@ -117,3 +117,7 @@ color body brightdefault default "\\*[[:alnum:]]+\\*" # bold *bla*
 #color body yellow default "(^| )[;:8o][-^o]?[)>(|/\\]+" # smiley
 #color body red default "[!?]{3,}" # exclamation
 #color body green default "^ *[-+*o] +" # list item
+
+set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+bind editor <Tab> complete-query
+bind editor ^T    complete
