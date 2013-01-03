@@ -81,6 +81,7 @@ if [[ -x `which git` ]]; then
     fi
   }
   function git-prompt() {
+    if [ "$(git rev-parse --show-toplevel)" = $HOME ]; then return; fi
     gstatus=$(git status 2> /dev/null)
     branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
     dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'nothing to commit.*working directory clean'; echo $?)
