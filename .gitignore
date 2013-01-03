@@ -1,9 +1,11 @@
+.DS_Store
 .Trash/
 .Xauthority
 .Xdefaults
 .Xmodmap
 .adobe/
 .asepriterc
+.aspell*
 .bash_history
 .bash_login
 .bashrc
