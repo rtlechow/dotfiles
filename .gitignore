@@ -55,3 +55,14 @@
 /Pictures
 /Public
 /code
+.RSA/
+.bundle/
+.bin/
+.fonts/
+.gvimrc
+Calibre Library/
+.npm/
+.npmrc
+.rediscli_history
+.rnd
+.subversion/
