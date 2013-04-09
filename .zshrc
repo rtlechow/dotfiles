@@ -7,7 +7,6 @@ export EDITOR='vim'
 export RUBYOPT='rubygems'
 export BUNDLE_PATH='vendor/bundle'
 export MAGLEV_HOME='/usr/local/src/maglev'
-export MAGLEV_OPTS='-Mpersistent'
 
 autoload -U compinit
 compinit
