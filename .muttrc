@@ -30,7 +30,7 @@ hdr_order from: to: cc: date: subject:  # and in this order
 
 set spoolfile = "+gmail.com/INBOX"
 # Alternate email addresses.
-alternates rtlechow@learnhub.com
+alternates rtlechow+foo@gmail.com
 # Mailboxes to show in the sidebar.
 mailboxes +gmail.com/INBOX \
           +gmail.com/archive \
