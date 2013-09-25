@@ -121,3 +121,6 @@ color body brightdefault default "\\*[[:alnum:]]+\\*" # bold *bla*
 set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
 bind editor <Tab> complete-query
 bind editor ^T    complete
+
+macro index \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'

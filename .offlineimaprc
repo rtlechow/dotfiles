@@ -26,7 +26,7 @@ cert_fingerprint = b0ba392bba326e6feb1add4d04fa0fb86cd173fa
 maxconnections = 1
 remoteuser = rtlechow@gmail.com
 remotepasseval = get_keychain_pass(account="rtlechow@gmail.com", server="imap.gmail.com")
-realdelete = no
+realdelete = yes
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
                             '[Gmail]/Starred':   'flagged',
