@@ -5,8 +5,7 @@ path=($(brew --prefix coreutils)/libexec/gnubin $path)
 cdpath=(~/code ~/Dropbox ~/code/work $cdpath)
 export EDITOR='vim'
 export RUBYOPT='rubygems'
-export BUNDLE_PATH='vendor/bundle'
-export MAGLEV_HOME='/usr/local/src/maglev'
+export JAVA_HOME='/Library/Java/Home'
 
 autoload -U compinit
 compinit
