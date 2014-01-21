@@ -1,0 +1,1 @@
+text/html; iconv -t utf-8 %s | pandoc -f html -t markdown; copiousoutput; description=HTML Text; test=type pandoc >/dev/null

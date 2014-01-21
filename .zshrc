@@ -6,7 +6,7 @@ manpath=($(brew --prefix coreutils)/libexec/gnuman/ $manpath)
 cdpath=(~/code ~/Dropbox ~/code/work $cdpath)
 export EDITOR='vim'
 export RUBYOPT='rubygems'
-export BUNDLE_PATH='vendor/bundle'
+export JAVA_HOME='/Library/Java/Home'
 
 autoload -U compinit
 compinit
@@ -133,3 +133,6 @@ bindkey '^A' vi-beginning-of-line
 bindkey '^E' vi-end-of-line
 
 [[ -x `which brew` && -r "`brew --prefix`/etc/grc.bashrc" ]] && source "`brew --prefix`/etc/grc.bashrc"
+
+export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
