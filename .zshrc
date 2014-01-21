@@ -132,3 +132,6 @@ bindkey '^A' vi-beginning-of-line
 bindkey '^E' vi-end-of-line
 
 [[ -x `which brew` && -r "`brew --prefix`/etc/grc.bashrc" ]] && source "`brew --prefix`/etc/grc.bashrc"
+
+export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
