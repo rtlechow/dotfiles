@@ -1,0 +1,2 @@
+--languages=-javascript,sql
+--exclude=.git
