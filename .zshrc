@@ -54,13 +54,6 @@ if [[ -r ~/.zsh/aliases ]]; then
   . ~/.zsh/aliases
 fi
 
-[ -d "$HOME/Downloads" ] && hash -d downs="$HOME/Downloads"
-[ -d "$HOME/Code" ] && hash -d code="$HOME/Code"
-[ -d "$HOME/Code/work" ] && hash -d work="$HOME/Code/work"
-[ -d "$HOME/Desktop" ] && hash -d desk="$HOME/Desktop"
-[ -d "$HOME/Documents" ] && hash -d docs="$HOME/Documents"
-[ -d "$HOME/.irssi/logs" ] && hash -d irc="$HOME/.irssi/logs"
-
 if [[ -x `which git` ]]; then
   function git-branch-name () {
     git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
