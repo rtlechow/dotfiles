@@ -65,6 +65,7 @@ function h() {
 }
 
 # Git
+alias fix='git diff --name-only | uniq | xargs $EDITOR'
 alias ga='git add'
 alias gb='git branch -a -v'
 alias gbd='git branch -d'
