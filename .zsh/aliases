@@ -53,11 +53,6 @@ sc () {
   fi
 }
 
-alias sdbc='ruby script/dbconsole -p'
-alias rdbm='rake db:migrate'
-alias rr='rake routes'
-alias tlog='tail -fn 300 log/development.log'
-
 # History
 alias h="history | grep "
 function h() {
