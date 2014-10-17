@@ -64,3 +64,9 @@
 	helper = osxkeychain
 [init]
 	templatedir = ~/.git_template
+[github]
+	user = rtlechow
+[ghi]
+	token = !security find-internet-password -a rtlechow -s github.com -l 'ghi token' -w
+[status]
+	displaycommentprefix = true
