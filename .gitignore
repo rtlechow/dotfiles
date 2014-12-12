@@ -87,3 +87,5 @@ Calibre Library/
 .tddium
 .trc
 btsync/
+.node-gyp/
+Virtualbox VMs/
