@@ -89,3 +89,4 @@ Calibre Library/
 btsync/
 .node-gyp/
 Virtualbox VMs/
+.boot2docker/
