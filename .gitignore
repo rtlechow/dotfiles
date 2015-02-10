@@ -90,3 +90,5 @@ btsync/
 .node-gyp/
 Virtualbox VMs/
 .boot2docker/
+.Tribler
+.pry_history
