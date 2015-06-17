@@ -7,7 +7,11 @@ cdpath=(~/code ~/Dropbox ~/code/work $cdpath)
 export EDITOR='vim'
 export RUBYOPT='rubygems'
 export JAVA_HOME='/Library/Java/Home'
-source ~/.zsh/docker
+
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
 
 autoload -U compinit
 compinit
