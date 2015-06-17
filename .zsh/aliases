@@ -38,20 +38,6 @@ alias be='bundle exec'
 
 # Rails
 alias sr='script/rails'
-ss () {
-  if [ -f ./script/rails ]; then
-    ./script/rails server $argv
-  else
-    ./script/server $argv
-  fi
-}
-sc () {
-  if [ -f ./script/rails ]; then
-    ./script/rails console $argv
-  else
-    ./script/console $argv
-  fi
-}
 
 # History
 alias h="history | grep "
