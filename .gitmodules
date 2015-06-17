@@ -45,3 +45,6 @@
 [submodule "vim-mkd"]
 	path = .vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+[submodule ".vim/bundle/vim-crystal"]
+	path = .vim/bundle/vim-crystal
+	url = https://github.com/rhysd/vim-crystal
