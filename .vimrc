@@ -165,10 +165,10 @@ function! RunTests(filename)
     return
   end
   let runners = {
-    \'\.feature$': 'cucumber',
-    \'Spec.js$': 'jasmine-headless-webkit',
-    \'_spec.rb$': 'rspec --color',
-    \'_test.rb$': 'ruby -I test'
+    \'\.feature': 'cucumber',
+    \'Spec.js': 'jasmine-headless-webkit',
+    \'_spec.rb': 'rspec --color',
+    \'_test.rb': 'ruby -I test'
     \}
   for key in keys(runners)
     if match(a:filename, key) != -1
