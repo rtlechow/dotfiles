@@ -48,3 +48,6 @@
 [submodule ".vim/bundle/vim-crystal"]
 	path = .vim/bundle/vim-crystal
 	url = https://github.com/rhysd/vim-crystal
+[submodule ".vim/bundle/vim-haml"]
+	path = .vim/bundle/vim-haml
+	url = https://github.com/tpope/vim-haml.git
