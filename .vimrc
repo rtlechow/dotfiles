@@ -153,7 +153,7 @@ let g:ctrlp_map = ',f'
 map <leader>F :CtrlPClearCache<cr>:CtrlP<cr>
 let g:ctrlp_working_path_mode = 'rc'
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/](\.git|\.hg|\.svn|tmp)$',
+  \ 'dir': '\v[\/](\.git|\.hg|\.svn|tmp|coverage)$',
   \ 'file': '\.png$\|\.jpg$\|\.gif$',
   \ }
 

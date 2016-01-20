@@ -2,6 +2,7 @@
 --ignore-dir=tmp
 --ignore-dir=vendor
 --ignore-dir=migrations
+--ignore-dir=coverage
 --type-set=haml=.haml
 --type-set=sass=.sass
 --type-set=cucumber=.feature
