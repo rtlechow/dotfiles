@@ -36,7 +36,6 @@ set smartcase " Override ignorecase if search contains upper case letters.
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
 set shortmess=atI " Shorten command line text and other info tokens.
 set splitbelow splitright
-set cul
 set ls=2
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set autowrite
