@@ -8,7 +8,7 @@ set history=1000 " Increase history from 20 default to 1000
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 set nonu " Disable line numbers.
 set noerrorbells " Disable error bells.
-set foldmethod=syntax " Markers are used to specify folds.
+" Too slow on large ruby files. set foldmethod=syntax " Markers are used to specify folds.
 set foldenable
 set foldlevel=1
 set esckeys " Allow cursor keys in insert mode.
@@ -149,6 +149,8 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 map <leader>gs :Gstatus<cr>
 map <leader>gb :Gblame<cr>
 
+let g:ctrlp_user_command =
+  \ ['.git', 'cd %s && git ls-files . -co --exclude-standard']
 let g:ctrlp_map = ',f'
 map <leader>F :CtrlPClearCache<cr>:CtrlP<cr>
 let g:ctrlp_working_path_mode = 'rc'
