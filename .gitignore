@@ -93,3 +93,4 @@ Virtualbox VMs/
 .boot2docker/
 .Tribler
 .pry_history
+*.css.map
