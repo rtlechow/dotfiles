@@ -32,8 +32,6 @@ alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall F
 alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
 # Ruby
-mri () { path=(/usr/bin $path) }
-yarv () { path=(/usr/local/bin $path) }
 alias be='bundle exec'
 
 # Rails
