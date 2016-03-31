@@ -94,3 +94,4 @@ Virtualbox VMs/
 .Tribler
 .pry_history
 *.css.map
+.composer
