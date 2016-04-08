@@ -50,6 +50,7 @@ function h() {
 
 # Git
 alias fix='git diff --name-only | uniq | xargs $EDITOR'
+alias gda='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
 alias ga='git add'
 alias gb='git branch -v'
 alias gba='git branch -a -v'
