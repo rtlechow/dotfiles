@@ -1,6 +1,7 @@
 [user]
   name = R.T. Lechow
   email = rtlechow@gmail.com
+  signingkey = E04FBCAB
 [alias]
   b = branch
   a = add

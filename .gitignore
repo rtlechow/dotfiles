@@ -98,3 +98,4 @@ Virtualbox VMs/
 .docker
 node_modules
 .wget-hsts
+.gnupg
