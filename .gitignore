@@ -95,3 +95,6 @@ Virtualbox VMs/
 .pry_history
 *.css.map
 .composer
+.docker
+node_modules
+.wget-hsts
