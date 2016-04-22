@@ -21,6 +21,10 @@ function cl() {
 }
 
 # Common apps
+alias a='ack'
+alias g='grep -Ir'
+alias p='ps aux | grep'
+alias d='curl dict://dict.org/d:'
 alias v='vim'
 alias sv='sudo vim'
 alias untgz='tar -zxvf'
@@ -97,33 +101,13 @@ alias sa='sudo aptitude'
 alias sai='sudo aptitude install'
 alias sau='sudo aptitude update'
 
-function d() {
-  if [ ! -z $1 ]; then
-    curl dict://dict.org/d:$1
-  fi
-}
 function f() {
   if [ ! -z $1 ]; then
     find . -name "*${*}*"
   fi
 }
-function p() {
-  if [ ! -z $1 ]; then
-    ps aux | grep "${*}"
-  fi
-}
-function g() {
-  if [ ! -z $1 ]; then
-    grep -Ir "$(echo $*)" .
-  fi
-}
 function gg() {
   if [ ! -z $1 ]; then
     grep -Irl $1 . | xargs grep --color=auto -I $2
-  fi
-}
-function a () {
-  if [ ! -z $1 ]; then
-    ack -r "$(echo $*)" .
   fi
 }
