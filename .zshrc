@@ -3,7 +3,7 @@ typeset -U path manpath gem_home gem_path
 path=(~/.bin /usr/local/bin $path)
 path=($(brew --prefix coreutils)/libexec/gnubin $path)
 manpath=($(brew --prefix coreutils)/libexec/gnuman/ $manpath)
-cdpath=(~/code ~/Dropbox ~/code/work $cdpath)
+cdpath=(~/src ~/Dropbox ~/src/work $cdpath)
 export EDITOR='vim'
 export RUBYOPT='rubygems'
 export JAVA_HOME='/Library/Java/Home'
