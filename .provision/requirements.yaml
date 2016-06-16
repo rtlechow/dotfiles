@@ -1,4 +1,4 @@
 - src: geerlingguy.homebrew
   version: 1.4.1
 - src: zzet.rbenv
-  version: 2.2.4
+  version: 2.2.5
