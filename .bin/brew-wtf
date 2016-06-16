@@ -1,1 +1,0 @@
-curl -L `brew info $1 | sed -n '2p'` | sed -e 's#<[^>]*>##g' | sed -e '/<!--/,/-->/d' | sed -e '/^$/d' | less

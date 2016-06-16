@@ -1,1 +1,0 @@
-tmux command-prompt "new-window 'cd %1; vim' \; new-window 'cd %1; bundle exec autotest' \; new-window 'cd %1; script/rails server' \; new-window 'cd %1; script/rails console'"

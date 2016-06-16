@@ -58,7 +58,6 @@
 /src
 .RSA/
 .bundle/
-.bin/
 .fonts/
 .gvimrc
 Calibre Library/
