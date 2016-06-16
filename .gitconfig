@@ -71,3 +71,13 @@
 	token = !security find-internet-password -a rtlechow -s github.com -l 'ghi token' -w
 [status]
 	displaycommentprefix = true
+[merge "ours"]
+	driver = true
+[diff]
+	compactionHeuristic = true
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[interactive]
+	diffFilter = diff-highlight

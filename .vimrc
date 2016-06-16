@@ -166,9 +166,9 @@ function! RunTests(filename)
     return
   end
   let runners = {
-    \'\.feature': 'cucumber',
+    \'\.feature': 'bin/cucumber',
     \'Spec.js': 'jasmine-headless-webkit',
-    \'_spec.rb': 'rspec --color',
+    \'_spec.rb': 'bin/rspec --color',
     \'_test.rb': 'ruby -I test'
     \}
   for key in keys(runners)
