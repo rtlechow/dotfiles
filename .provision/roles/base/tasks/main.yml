@@ -1,6 +1,6 @@
 - name: change shell
   user:
-    name: "{{ ansible_ssh_user }}"
+    name: rtl
     shell: /usr/local/bin/zsh
 - name: clone dotfiles
   git: repo=git@github.com:rtlechow/dotfiles.git dest=/Users/rtl force=no update=no

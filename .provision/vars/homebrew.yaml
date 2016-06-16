@@ -4,6 +4,7 @@ homebrew_taps:
   - homebrew/dupes
   - homebrew/versions
   - homebrew/completions
+  - caskroom/versions
 homebrew_upgrade_all_packages: true
 homebrew_installed_packages:
   - ack
@@ -31,7 +32,7 @@ homebrew_cask_apps:
   - google-chrome
   - dropbox
   - dockertoolbox
-  - iterm2
+  - iterm2-beta
   - spectacle
   - flux
   - battle-net
