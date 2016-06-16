@@ -1,0 +1,45 @@
+homebrew_taps:
+  - caskroom/cask
+  - homebrew/binary
+  - homebrew/dupes
+  - homebrew/versions
+homebrew_upgrade_all_packages: true
+homebrew_installed_packages:
+  - ack
+  - ansible
+  - cloc
+  - coreutils
+  - ctags
+  - gcc
+  - gist
+  - git
+  - gnupg
+  - hub
+  - mutt
+  - offlineimap
+  - pv
+  - pwgen
+  - ssh-copy-id
+  - tmux
+  - urlview
+  - vim
+  - watch
+  - wget
+  - zsh
+homebrew_cask_apps:
+  - google-chrome
+  - dropbox
+  - dockertoolbox
+  - iterm2
+  - spectacle
+  - flux
+  - battle-net
+  - cyberduck
+  - disk-inventory-x
+  - skype
+  - spotify
+  - transmission
+  - vlc
+  - virtualbox
+  - virtualbox-extension-pack
+  - vagrant

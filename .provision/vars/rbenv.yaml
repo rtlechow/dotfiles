@@ -1,0 +1,26 @@
+default_gems_file: default-gems
+rbenv_owner: rtl
+rbenv_group: rtl
+rbenv:
+  env: user
+  version: v1.0.0
+  ruby_version: 2.3.1
+rbenv_users:
+  - rtl
+rbenv_plugins:
+  - { name: 'ruby-build',
+      repo: 'https://github.com/rbenv/ruby-build.git',
+      version: 'v20160602'
+    }
+  - { name: 'rbenv-default-gems',
+      repo: 'https://github.com/rbenv/rbenv-default-gems.git',
+      version: 'v1.0.0'
+    }
+  - { name: 'rbenv-aliases',
+      repo: 'https://github.com/tpope/rbenv-aliases.git',
+      version: 'v1.1.0'
+    }
+  - { name: 'rbenv-ctags',
+      repo: 'https://github.com/tpope/rbenv-ctags.git',
+      version: 'v1.0.1'
+    }

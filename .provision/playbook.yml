@@ -1,0 +1,11 @@
+- hosts: localhost
+  connection: local
+
+  vars_files:
+    - vars/homebrew.yaml
+    - vars/rbenv.yaml
+
+  roles:
+    - vendor/geerlingguy.homebrew
+    - base
+    - vendor/zzet.rbenv

@@ -99,3 +99,9 @@ Virtualbox VMs/
 node_modules
 .wget-hsts
 .gnupg
+.ansible
+.ansible-env
+.ansible_galaxy
+.oracle_jre_usage/
+.provision/vendor
+.provision/playbook.retry

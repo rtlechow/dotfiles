@@ -1,0 +1,2 @@
+ansible-galaxy install -p .provision/vendor -r .provision/requirements.yaml
+ansible-playbook -K .provision/playbook.yml
