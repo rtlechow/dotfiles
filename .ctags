@@ -1,2 +1,3 @@
---languages=-javascript,sql
+--tag-relative=yes
+--recurse=yes
 --exclude=.git
