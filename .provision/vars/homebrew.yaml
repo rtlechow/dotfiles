@@ -16,6 +16,7 @@ homebrew_installed_packages:
   - gcc
   - gist
   - git
+  - git-extras
   - gnupg
   - hub
   - mutt
