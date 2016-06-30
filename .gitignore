@@ -104,3 +104,4 @@ node_modules
 .oracle_jre_usage/
 .provision/vendor
 .provision/playbook.retry
+.bash_sessions/
