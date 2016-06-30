@@ -12,6 +12,7 @@ homebrew_installed_packages:
   - cloc
   - coreutils
   - ctags
+  - diff-so-fancy
   - gcc
   - gist
   - git
