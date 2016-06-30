@@ -76,4 +76,4 @@
 [diff]
 	compactionHeuristic = true
 [interactive]
-	diffFilter = diff-so-fancy
+	diffFilter = less -RFX
