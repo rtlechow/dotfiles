@@ -33,7 +33,7 @@
 [core]
   pager = less
   whitespace = trailing-space
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore_global
 [color]
   ui = auto
 [color "branch"]
