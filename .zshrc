@@ -3,14 +3,11 @@ configs=(
   env.sh
   options.zsh
   aliases.zsh
+  ../.localrc
 )
 for f in $configs; do
   [[ -f $shdir/$f ]] && . $shdir/$f
 done
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
 
 autoload -U compinit
 compinit
