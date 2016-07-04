@@ -2,3 +2,4 @@
   user:
     name: rtl
     shell: /usr/local/bin/zsh
+- script: ../../../vars/osx-setup.sh
