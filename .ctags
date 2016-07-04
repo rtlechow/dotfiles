@@ -1,3 +1,4 @@
 --tag-relative=yes
 --recurse=yes
 --exclude=.git
+--languages=-sql,html
