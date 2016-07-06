@@ -28,12 +28,15 @@ function cl() {
 alias a='ack'
 alias g='grep -Ir'
 alias p='ps aux | grep'
-alias d='curl dict://dict.org/d:'
+function d() {
+  curl dict://dict.org/d:$1 | less
+}
 alias v='vim'
 alias sv='sudo vim'
 alias untgz='tar -zxvf'
 alias pwgen='pwgen -A -B -n'
 alias irc='ssh irc -t tmux a'
+alias -g A='| ack '
 
 # Mac OSX
 alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
