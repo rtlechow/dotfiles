@@ -6,8 +6,6 @@ function provision() {
 # Basic directory navigation
 alias ..='cd ..'
 alias ...='../..'
-alias  ....='../../..'
-alias .....='../../../..'
 alias ls='ls --color=auto'
 alias lh='ls -lh'
 alias la='ls -A'
@@ -44,9 +42,6 @@ alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Fi
 
 # Ruby
 alias be='bundle exec'
-
-# Rails
-alias sr='script/rails'
 
 # History
 alias h="history | grep "
