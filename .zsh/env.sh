@@ -1,4 +1,5 @@
 export EDITOR='vim'
+export LESS='-RFX'
 export RUBYOPT='rubygems'
 export JAVA_HOME='/Library/Java/Home'
 export GREP_OPTIONS='--color=auto --exclude-dir=.git'

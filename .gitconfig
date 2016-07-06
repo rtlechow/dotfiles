@@ -31,7 +31,7 @@
   rank = shortlog -sn --no-merges
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
 [core]
-  pager = diff-so-fancy | less -RFX
+  pager = diff-so-fancy | less
   whitespace = trailing-space
   excludesfile = ~/.gitignore_global
 [color]
@@ -76,6 +76,6 @@
 [diff]
 	compactionHeuristic = true
 [interactive]
-	diffFilter = less -RFX
+	diffFilter = less
 [diff-so-fancy]
 	markEmptyLines = false

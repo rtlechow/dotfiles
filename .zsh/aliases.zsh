@@ -13,7 +13,6 @@ alias lh='ls -lh'
 alias la='ls -A'
 alias lah='ls -lAh'
 alias l='ls -CF'
-alias le='less -R +C'
 alias cls='clear && ll'
 alias du1='du -h --max-depth=1'
 alias lc="cl"
