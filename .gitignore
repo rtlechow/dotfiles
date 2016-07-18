@@ -33,6 +33,7 @@
 .rspec
 .ruby_inline/
 .rvm/
+.nvm/
 .sh_history
 .sqlite_history
 .ssh/
