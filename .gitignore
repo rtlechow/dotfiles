@@ -106,3 +106,4 @@ node_modules
 .provision/vendor
 .provision/playbook.retry
 .bash_sessions/
+.eyrc
