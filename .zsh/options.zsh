@@ -24,6 +24,7 @@ setopt ignoreeof
 setopt autocd
 setopt extendedglob
 setopt globdots
+setopt menu_complete
 
 # History
 setopt appendhistory

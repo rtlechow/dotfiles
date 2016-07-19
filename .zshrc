@@ -23,7 +23,7 @@ autoload -U ~/.zsh/functions/*(:t)
 source ~/.zsh/functions/_git_prompt
 source ~/.zsh/functions/rake-fast.plugin.zsh
 
-export PS1='${fg[magenta]}%m${fg[white]}:${fg[cyan]}%1~${fg[white]}`git-prompt`${fg[white]}%# '
+export PS1='%{$fg[magenta]%}%m%{$fg[white]%}:%{$fg[cyan]%}%1~%{$fg[white]%}`git-prompt`%{$fg[white]%}%# '
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
