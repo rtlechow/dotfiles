@@ -22,7 +22,7 @@ nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
 
 [Repository gmail-remote]
 type = Gmail
-cert_fingerprint = 4260032671de93c421d57c3267926f58716650a0
+cert_fingerprint = bbaf4b833c7b0ffde4eb46941342bc3c361c6a39
 maxconnections = 1
 remoteuser = rtlechow@gmail.com
 remotepasseval = get_keychain_pass(account="rtlechow@gmail.com", server="imap.gmail.com")
