@@ -107,3 +107,4 @@ node_modules
 .provision/playbook.retry
 .bash_sessions/
 .eyrc
+.s3cfg
