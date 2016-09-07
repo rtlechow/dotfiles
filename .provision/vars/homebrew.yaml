@@ -33,7 +33,6 @@ homebrew_installed_packages:
 homebrew_cask_apps:
   - google-chrome
   - dropbox
-  - dockertoolbox
   - iterm2-beta
   - spectacle
   - flux
@@ -44,6 +43,4 @@ homebrew_cask_apps:
   - spotify
   - transmission
   - vlc
-  - virtualbox
-  - virtualbox-extension-pack
   - vagrant
