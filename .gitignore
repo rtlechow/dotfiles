@@ -108,3 +108,4 @@ node_modules
 .bash_sessions/
 .eyrc
 .s3cfg
+.phantomjs/

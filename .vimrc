@@ -218,3 +218,5 @@ endfunction
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
 map <leader>a :call RunTests('')<cr>
+
+let g:jsx_ext_required = 0
