@@ -80,7 +80,7 @@ alias gmv='git mv'
 alias gp='git pull'
 alias gps='git push'
 alias grm='git rm'
-alias gs='git status'
+alias gs='git status -sb'
 alias git_remove_missing_files="gs | awk '/deleted:(.*)/ {print $3}' | xargs git rm"
 
 # Postgres
