@@ -23,6 +23,7 @@ homebrew_installed_packages:
   - offlineimap
   - pv
   - pwgen
+  - spaceman-diff
   - ssh-copy-id
   - tmux
   - urlview

@@ -79,3 +79,5 @@
 	diffFilter = less
 [diff-so-fancy]
 	markEmptyLines = false
+[diff "spaceman-diff"]
+  command = spaceman-diff
