@@ -104,7 +104,7 @@ alias sau='sudo aptitude update'
 
 function f() {
   if [ ! -z $1 ]; then
-    find . -name "*${*}*"
+    find . -not -iwholename '*.git*' -name "*${*}*"
   fi
 }
 function gg() {
