@@ -3,6 +3,8 @@ function provision() {
   ansible-playbook -K ~/.provision/playbook.yml
 }
 
+alias update_submodules='git pull --recurse-submodules && git submodule update'
+
 # Basic directory navigation
 alias ..='cd ..'
 alias ...='../..'
