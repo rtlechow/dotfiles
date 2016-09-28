@@ -24,7 +24,6 @@ function cl() {
 
 # Common apps
 alias a='ack'
-alias g='grep -Ir'
 alias p='ps aux | grep'
 function d() {
   curl dict://dict.org/d:$1 | less
@@ -55,6 +54,7 @@ function h() {
 }
 
 # Git
+alias g='git'
 eval "$(hub alias -s)"
 alias update_submodules='git pull --recurse-submodules && git submodule update'
 alias fix='git diff --name-only | uniq | xargs $EDITOR'

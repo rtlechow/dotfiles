@@ -3,21 +3,23 @@
   email = rtlechow@gmail.com
   signingkey = E04FBCAB
 [alias]
-  b = branch
   a = add
   au = add -u
+  b = branch -v
+  bl = blame
+  cb = checkout -b
   ch = checkout
   ci = commit
-  d = diff --color-words
+  d = diff
+  dc = diff --cached
   l = log -p
-  ll = log --date=local
+  last = log -1 HEAD
   p = pull
   ps = push
   s = status -s
   sta = stash
   w = whatchanged
   unstage = reset HEAD --
-  last = log -1 HEAD
   web = instaweb --httpd=webrick
   webstop = instaweb --httpd=webrick --stop
   undo=reset --hard
