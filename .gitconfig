@@ -16,6 +16,7 @@
   last = log -1 HEAD
   m = merge
   p = pull
+  pr = pull-request
   ps = push
   s = status -s
   sta = stash
