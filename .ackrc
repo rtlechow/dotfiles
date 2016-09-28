@@ -1,4 +1,5 @@
 -r
+--nogroup
 --ignore-dir=log
 --ignore-dir=doc
 --ignore-dir=tmp
