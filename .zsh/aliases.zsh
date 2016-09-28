@@ -32,6 +32,7 @@ alias v='vim'
 alias sv='sudo vim'
 alias untgz='tar -zxvf'
 alias pwgen='pwgen -A -B -n'
+alias pw='printf "%s-%s-%s-%s\n" $(grep -v "[A-Z]" /usr/share/dict/words | shuf -n 4)'
 alias irc='ssh irc -t tmux a'
 alias -g A='| ack '
 
