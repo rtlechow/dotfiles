@@ -85,3 +85,5 @@
 	markEmptyLines = false
 [diff "spaceman-diff"]
   command = spaceman-diff
+[commit]
+	verbose = true
