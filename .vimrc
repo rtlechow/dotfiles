@@ -158,65 +158,15 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.png$\|\.jpg$\|\.gif$',
   \ }
 
-function! RunTests(filename)
-  " Write the file and run tests for the given filename
-  :w
-  if filereadable('script/test')
-    exec ':!script/test ' . a:filename
-    return
-  end
-  let runners = {
-    \'\.feature': 'bin/cucumber',
-    \'Spec.js': 'jasmine-headless-webkit',
-    \'_spec.rb': 'bin/rspec --color',
-    \'_test.rb': 'ruby -I test'
-    \}
-  for key in keys(runners)
-    if match(a:filename, key) != -1
-      let runner = runners[key]
-    end
-  endfor
-  if filereadable('Isolate')
-    let command = ':!rake isolate:sh\["' . runner . ' ' . a:filename . '"\]'
-  elseif filereadable('Gemfile')
-    let command = ':!bundle exec ' . runner . ' ' . a:filename
-  else
-    let command = ':!' . runner . ' ' . a:filename
-  end
-  silent !echo '\n\n\n\n\n\n\n\n\n\n'
-  silent exec ':!echo ' . command
-  exec command
-endfunction
-
-function! SetTestFile()
-  " Set the spec file that tests will be run for.
-  let t:rtl_test_file=@%
-endfunction
-
-function! RunTestFile(...)
-  if a:0
-    let command_suffix = a:1
-  else
-    let command_suffix = ""
-  endif
-
-  " Run the tests for the previously-marked file.
-  let in_test_file = match(expand("%"), '\(.feature\|_test.rb\|_spec.rb\|Spec.js\)$') != -1
-  if in_test_file
-    call SetTestFile()
-  elseif !exists("t:rtl_test_file")
-    return
-  end
-  call RunTests(t:rtl_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest()
-  let spec_line_number = line('.')
-  call RunTestFile(":" . spec_line_number)
-endfunction
-
-map <leader>t :call RunTestFile()<cr>
-map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+let test#strategy = {
+  \ 'nearest': 'basic',
+  \ 'file':    'dispatch',
+  \ 'suite':   'basic'
+\}
 
 let g:jsx_ext_required = 0

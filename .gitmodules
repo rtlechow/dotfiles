@@ -60,3 +60,9 @@
 [submodule ".vim/bundle/vim-rubocop"]
 	path = .vim/bundle/vim-rubocop
 	url = https://github.com/ngmy/vim-rubocop
+[submodule ".vim/bundle/vim-test"]
+	path = .vim/bundle/vim-test
+	url = https://github.com/janko-m/vim-test
+[submodule ".vim/bundle/vim-dispatch"]
+	path = .vim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
