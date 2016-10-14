@@ -139,10 +139,6 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
-autocmd BufNewFile,BufRead *.liquid set filetype=liquid.html
-autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-autocmd BufNewFile,BufRead *_test.rb compiler rubyunit
-
 autocmd FileType gitcommit setlocal spell
 autocmd BufReadPost fugitive://* set bufhidden=delete
 map <leader>gs :Gstatus<cr>
