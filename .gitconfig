@@ -10,6 +10,7 @@
   cb = checkout -b
   ch = checkout
   ci = commit
+  ca = commit --amend
   d = diff
   dc = diff --cached
   l = log -p
