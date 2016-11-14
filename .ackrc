@@ -9,3 +9,4 @@
 --type-set=haml=.haml
 --type-set=sass=.sass
 --type-set=cucumber=.feature
+--ignore-file=ext:svg
