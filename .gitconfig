@@ -11,6 +11,7 @@
   ch = checkout
   ci = commit
   ca = commit --amend
+  cp = cherry-pick
   d = diff
   dc = diff --cached
   l = log -p
