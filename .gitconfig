@@ -80,7 +80,8 @@
 [merge "ours"]
 	driver = true
 [diff]
-	compactionHeuristic = true
+  indentHeuristic = true
+  submodule = diff
 [interactive]
 	diffFilter = less
 [diff-so-fancy]
