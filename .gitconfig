@@ -23,9 +23,8 @@
   ps = push
   s = status -s
   sta = stash
-  w = whatchanged
-  undo=reset --hard
   unstage = reset HEAD --
+  w = whatchanged
   web = instaweb --httpd=webrick
   webstop = instaweb --httpd=webrick --stop
   serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
