@@ -27,6 +27,7 @@
 .local/
 .mail/
 .mutt/temp/
+.mutt/cache/
 .mysql_history
 .ncftp/
 .offlineimap/
@@ -109,3 +110,4 @@ node_modules
 .eyrc
 .s3cfg
 .phantomjs/
+.packer.d/

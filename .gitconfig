@@ -7,10 +7,11 @@
   au = add -u
   b = branch -v
   bl = blame
+  ca = commit --amend
   cb = checkout -b
   ch = checkout
   ci = commit
-  ca = commit --amend
+  cl = clean
   cp = cherry-pick
   d = diff
   dc = diff --cached
@@ -23,10 +24,10 @@
   s = status -s
   sta = stash
   w = whatchanged
+  undo=reset --hard
   unstage = reset HEAD --
   web = instaweb --httpd=webrick
   webstop = instaweb --httpd=webrick --stop
-  undo=reset --hard
   serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
   edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"

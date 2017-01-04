@@ -25,6 +25,8 @@ function cl() {
 # Common apps
 alias a='ack'
 alias b='bundle'
+alias dc='docker-compose'
+alias dm='docker-machine'
 alias p='ps aux | grep'
 function d() {
   curl dict://dict.org/d:$1 | less
