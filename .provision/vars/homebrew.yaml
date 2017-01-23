@@ -19,6 +19,7 @@ homebrew_installed_packages:
   - git-extras
   - gnupg
   - hub
+  - less
   - mutt
   - offlineimap
   - pv
