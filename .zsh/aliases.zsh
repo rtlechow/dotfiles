@@ -1,5 +1,5 @@
 function provision() {
-  ansible-galaxy install -p ~/.provision/vendor -r ~/.provision/requirements.yaml
+  ansible-galaxy install -vvv -r ~/.provision/requirements.yaml
   ansible-playbook -K ~/.provision/playbook.yml
 }
 

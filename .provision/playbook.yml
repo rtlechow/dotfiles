@@ -6,6 +6,6 @@
     - vars/rbenv.yaml
 
   roles:
-    - vendor/geerlingguy.homebrew
+    - geerlingguy.homebrew
     - base
-    - vendor/zzet.rbenv
+    - zzet.rbenv
