@@ -4,4 +4,5 @@
 --exclude=vendor/*
 --exclude=log/*
 --exclude=db/*
+--exclude=*.min.js
 --languages=-sql,html
