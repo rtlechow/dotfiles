@@ -26,7 +26,7 @@ source ~/.zsh/functions/rake-fast.plugin.zsh
 export PS1='%{$fg[magenta]%}%m%{$fg[white]%}:%{$fg[cyan]%}%1~%{$fg[white]%}`git-prompt`%{$fg[white]%}%# '
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+eval "$(rbenv init - --no-rehash)"
 
 export NVM_DIR="$HOME/.nvm"
-source "$(brew --prefix nvm)/nvm.sh"
+source "/usr/local/opt/nvm/nvm.sh" --no-use

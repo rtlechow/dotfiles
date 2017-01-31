@@ -1,7 +1,7 @@
 typeset -U path manpath gem_home gem_path
 path=(~/.bin /usr/local/bin $path)
-path=($(brew --prefix coreutils)/libexec/gnubin $path)
-manpath=($(brew --prefix coreutils)/libexec/gnuman/ $manpath)
+path=(/usr/local/opt/coreutils/libexec/gnubin $path)
+manpath=(/usr/local/opt/coreutils/libexec/gnuman/ $manpath)
 cdpath=(~/src ~/Dropbox ~/src/work $cdpath)
 
 HISTFILE=~/.zsh_history
