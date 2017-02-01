@@ -10,3 +10,5 @@
 --type-set=sass=.sass
 --type-set=cucumber=.feature
 --ignore-file=ext:svg
+--ignore-file=ext:map
+--ignore-file=firstlinematch:/.{200}/
