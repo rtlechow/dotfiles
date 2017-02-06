@@ -111,3 +111,4 @@ node_modules
 .s3cfg
 .phantomjs/
 .packer.d/
+Blizzard/
