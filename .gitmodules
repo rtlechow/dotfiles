@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/vim-dispatch"]
 	path = .vim/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
+[submodule ".vim/bundle/table-mode"]
+	path = .vim/bundle/table-mode
+	url = git@github.com:dhruvasagar/vim-table-mode.git

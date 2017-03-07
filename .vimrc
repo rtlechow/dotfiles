@@ -166,3 +166,4 @@ let test#strategy = {
 \}
 
 let g:jsx_ext_required = 0
+let g:table_mode_corner = '|'

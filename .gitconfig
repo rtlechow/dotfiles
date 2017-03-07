@@ -64,9 +64,10 @@
 [merge]
   tool = vimdiff
 [push]
-  default = tracking
+	default = current
 [branch]
   autosetuprebase = always
+	autosetupmerge = always
 [credential]
 	helper = osxkeychain
 [init]
