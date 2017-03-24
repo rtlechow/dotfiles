@@ -35,11 +35,14 @@ alternates rtlechow+foo@gmail.com
 # Mailboxes to show in the sidebar.
 mailboxes +gmail.com/INBOX \
           +gmail.com/archive \
-          +gmail.com/sent \
           +gmail.com/drafts \
+          +gmail.com/sent \
+          +gmail.com/trash \
 # Other special folders.
 set mbox      = "+gmail.com/archive"
 set postponed = "+gmail.com/drafts"
+set record    = "+gmail.com/sent"
+set trash     = "+gmail.com/trash"
 
 set date_format = "%m/%d"
 set index_format = "[%Z]  %D  %-20.20F  %s"

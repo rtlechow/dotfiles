@@ -21,6 +21,7 @@
   p = pull
   pr = pull-request
   ps = push
+  r = rebase
   s = status -s
   sta = stash
   unstage = reset HEAD --
