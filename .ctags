@@ -6,3 +6,6 @@
 --exclude=db/*
 --exclude=*.min.js
 --languages=-sql,html
+--regex-Ruby=/(^|^[[:blank:]]*)task[ \t\:']*([A-Za-z0-9_]*)/\2/t,tasks/
+--regex-Ruby=/(^|^[[:blank:]]*)namespace[ \t\:]*([A-Za-z0-9_]*)/\2/n,namespaces/
+--regex-Ruby=/(^|^[[:blank:]]*)event[ \t\:]*([A-Za-z0-9_]*) do/\2!/e,events/
