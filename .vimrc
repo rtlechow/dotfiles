@@ -160,10 +160,12 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 let test#strategy = {
-  \ 'nearest': 'basic',
+  \ 'nearest': 'dispatch',
   \ 'file':    'dispatch',
   \ 'suite':   'basic'
 \}
 
 let g:jsx_ext_required = 0
 let g:table_mode_corner = '|'
+let g:dbext_default_history_file = '~/.dbext_history'
+let g:rails_erb_yaml = 1

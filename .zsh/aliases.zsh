@@ -26,11 +26,13 @@ function cl() {
 alias a='ack'
 alias b='bundle'
 alias dc='docker-compose'
+alias dcl='docker-compose logs -f --tail 10'
 alias dm='docker-machine'
-alias p='ps aux | grep'
+alias p='ps aux | grep -v grep | grep -E'
 function d() {
   curl dict://dict.org/d:$1 | less
 }
+alias tl='tail -f log/*'
 alias v='vim'
 alias sv='sudo vim'
 alias untgz='tar -zxvf'

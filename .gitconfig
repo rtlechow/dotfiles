@@ -5,7 +5,7 @@
 [alias]
   a = add
   au = add -u
-  b = branch -v
+  b = branch -v --sort=authordate
   bl = blame
   ca = commit --amend
   cb = checkout -b
@@ -92,3 +92,8 @@
   command = spaceman-diff
 [commit]
 	verbose = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -113,3 +113,4 @@ node_modules
 .phantomjs/
 .packer.d/
 Blizzard/
+.dbext_history
