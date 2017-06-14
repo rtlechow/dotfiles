@@ -7,7 +7,6 @@ fsync = False
 [Account gmail]
 localrepository = gmail-local
 remoterepository = gmail-remote
-status_backend = sqlite
 postsynchook = notmuch new
 
 [Repository gmail-local]
