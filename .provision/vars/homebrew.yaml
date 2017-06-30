@@ -33,16 +33,20 @@ homebrew_installed_packages:
   - wget
   - zsh
 homebrew_cask_apps:
-  - google-chrome
-  - dropbox
-  - iterm2-beta
-  - spectacle
-  - flux
+  - backblaze
   - battle-net
   - cyberduck
   - disk-inventory-x
+  - dropbox
+  - flux
+  - google-chrome
+  - iterm2-beta
   - skype
+  - sequel-pro
+  - spectacle
   - spotify
+  - steam
   - transmission
+  - virtualbox
+  - virtualbox-extension-pack
   - vlc
-  - vagrant
