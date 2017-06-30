@@ -62,7 +62,6 @@ function h() {
 # Git
 alias g='git'
 eval "$(hub alias -s)"
-alias update_submodules='git pull --recurse-submodules && git submodule update'
 alias fix='git diff --name-only | uniq | xargs $EDITOR'
 alias ga='git add'
 alias gb='git branch -v'
@@ -90,6 +89,23 @@ alias gps='git push'
 alias grm='git rm'
 alias gs='git status -sb'
 alias git_remove_missing_files="gs | awk '/deleted:(.*)/ {print $3}' | xargs git rm"
+alias update_submodules='git pull --recurse-submodules && git submodule update'
+function git-delete-squashed() {
+  if [[ $* =~ 'dry' ]]
+  then
+    echo "Dry run"
+    git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && echo $branch; done
+  else
+    read -q "REPLY?Wet run, continue?"
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+      echo 'Continuing'
+      git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
+    else
+      echo 'Aborting'
+    fi
+  fi
+}
 
 # Postgres
 alias -g pgup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
