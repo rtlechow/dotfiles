@@ -114,3 +114,8 @@ node_modules
 .packer.d/
 Blizzard/
 .dbext_history
+.bin/
+.githubrc
+.lbryum/
+.mitmproxy/
+.vegas/
