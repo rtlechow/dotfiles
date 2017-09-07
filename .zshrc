@@ -9,7 +9,6 @@ for f in $configs; do
   [[ -f $shdir/$f ]] && . $shdir/$f
 done
 
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case insensitive completion
 zstyle ':completion:*:cd:*' ignore-parents parent pwd # cd will never select the parent directory (e.g.: cd ../<TAB>)
 zstyle ':completion:*' completer _expand _complete
 
