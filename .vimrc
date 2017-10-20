@@ -1,4 +1,5 @@
 set t_Co=256
+set rtp+=/usr/local/opt/fzf
 execute pathogen#infect()
 execute pathogen#helptags()
 colorscheme molokai
@@ -105,7 +106,7 @@ nnoremap <leader>. :<Up><CR>
 " Toggle show tabs and trailing spaces.
 set lcs=tab:>-,trail:·,eol:$,nbsp:_
 set fcs=fold:-
-nnoremap <silent> <leader>c :set nolist!<CR>
+nnoremap <silent> <leader>C :set nolist!<CR>
 
 " Ruby
 nnoremap <leader>i :!irb<CR>
@@ -144,21 +145,10 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 map <leader>gs :Gstatus<cr>
 map <leader>gb :Gblame<cr>
 
-let g:ctrlp_user_command =
-  \ ['.git', 'cd %s && git ls-files . -co --exclude-standard']
-let g:ctrlp_map = ',f'
-map <leader>F :CtrlPClearCache<cr>:CtrlP<cr>
-let g:ctrlp_working_path_mode = 'rc'
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/](\.git|\.hg|\.svn|tmp|coverage)$',
-  \ 'file': '\.png$\|\.jpg$\|\.gif$',
-  \ }
-
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
 let test#strategy = {
   \ 'nearest': 'dispatch',
   \ 'file':    'dispatch',
@@ -169,3 +159,12 @@ let g:jsx_ext_required = 0
 let g:table_mode_corner = '|'
 let g:dbext_default_history_file = '~/.dbext_history'
 let g:rails_erb_yaml = 1
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+nmap <Leader>f :Files<CR>
+nmap <Leader>c :Tags<CR>
+nmap <Leader>b :Buffers<CR>
+nmap <Leader>g :Ag<CR>

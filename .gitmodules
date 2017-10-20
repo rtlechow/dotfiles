@@ -73,3 +73,6 @@
 [submodule ".vim/bundle/dbext"]
 	path = .vim/bundle/dbext
 	url = https://github.com/vim-scripts/dbext.vim
+[submodule ".vim/bundle/fzf"]
+	path = .vim/bundle/fzf
+	url = https://github.com/junegunn/fzf.vim
