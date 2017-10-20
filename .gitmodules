@@ -10,17 +10,10 @@
 	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
   ignore = all
-[submodule ".vim/bundle/vim-ruby"]
-	path = .vim/bundle/vim-ruby
-	url = https://github.com/vim-ruby/vim-ruby.git
-  ignore = all
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
   ignore = all
-[submodule ".vim/bundle/vim-javascript"]
-	path = .vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
 [submodule ".vim/bundle/vim-eunuch"]
 	path = .vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
@@ -33,30 +26,9 @@
 [submodule ".vim/bundle/jellybeans.vim"]
 	path = .vim/bundle/jellybeans.vim
 	url = https://github.com/nanotech/jellybeans.vim
-[submodule ".vim/bundle/vim-coffee-script"]
-	path = .vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule ".vim/bundle/vim-slim"]
-	path = .vim/bundle/vim-slim
-	url = https://github.com/slim-template/vim-slim.git
 [submodule ".vim/bundle/vim-rbenv"]
 	path = .vim/bundle/vim-rbenv
 	url = git://github.com/tpope/vim-rbenv.git
-[submodule "vim-mkd"]
-	path = .vim/bundle/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
-[submodule ".vim/bundle/vim-crystal"]
-	path = .vim/bundle/vim-crystal
-	url = https://github.com/rhysd/vim-crystal
-[submodule ".vim/bundle/vim-haml"]
-	path = .vim/bundle/vim-haml
-	url = https://github.com/tpope/vim-haml.git
-[submodule ".vim/bundle/scss-syntax"]
-	path = .vim/bundle/scss-syntax
-	url = https://github.com/cakebaker/scss-syntax.vim
-[submodule ".vim/bundle/vim-jsx"]
-	path = .vim/bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx
 [submodule ".vim/bundle/vim-rubocop"]
 	path = .vim/bundle/vim-rubocop
 	url = https://github.com/ngmy/vim-rubocop
@@ -76,3 +48,6 @@
 [submodule ".vim/bundle/fzf"]
 	path = .vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.vim
+[submodule ".vim/bundle/vim-polyglot"]
+	path = .vim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
