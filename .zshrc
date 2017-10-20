@@ -23,7 +23,6 @@ source ~/.zsh/functions/_git_prompt
 
 export PS1='%{$fg[magenta]%}%m%{$fg[white]%}:%{$fg[cyan]%}%1~%{$fg[white]%}`git-prompt`%{$fg[white]%}%# '
 
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
 
 export NVM_DIR="$HOME/.nvm"

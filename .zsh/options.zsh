@@ -1,8 +1,8 @@
 typeset -U path manpath gem_home gem_path
-path=(~/.bin /usr/local/bin $path)
+path=(~/.bin /usr/local/bin /usr/local/sbin $path)
 path=(/usr/local/opt/coreutils/libexec/gnubin $path)
 manpath=(/usr/local/opt/coreutils/libexec/gnuman/ $manpath)
-cdpath=(~/src ~/Dropbox ~/src/work $cdpath)
+cdpath=(~/src ~/Dropbox $cdpath)
 
 HISTFILE=~/.zsh_history
 HISTIGNORE='k:ls:lm:bg:fg:jobs:pwd:kill:declare:history:cd:cd :&: *:'
