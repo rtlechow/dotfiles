@@ -13,6 +13,7 @@ homebrew_installed_packages:
   - coreutils
   - ctags
   - diff-so-fancy
+  - fzf
   - gcc
   - gist
   - git
@@ -21,6 +22,7 @@ homebrew_installed_packages:
   - hub
   - less
   - mutt
+  - notmuch
   - offlineimap
   - pv
   - pwgen
