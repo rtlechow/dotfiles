@@ -160,7 +160,14 @@ let g:table_mode_corner = '|'
 let g:dbext_default_history_file = '~/.dbext_history'
 let g:rails_erb_yaml = 1
 
+" CTRL-A CTRL-Q to select all and build quickfix list
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
 let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
@@ -168,3 +175,4 @@ nmap <Leader>f :Files<CR>
 nmap <Leader>c :Tags<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>g :Ag<CR>
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
