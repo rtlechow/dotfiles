@@ -122,3 +122,6 @@ Blizzard/
 Amazon Drive/
 Arena Tracker/
 .op/
+.terraform
+.terraform.d
+terraform.tfstate
