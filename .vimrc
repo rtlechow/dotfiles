@@ -47,6 +47,8 @@ set diffopt=filler,vertical
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Store backup files in separate directory instead of all over filesystem.
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Store swap files in separate directory instead of all over file system.
 
+nnoremap ; :
+
 " Sudo write
 noremap <leader>W :w !sudo tee %<CR>
 
