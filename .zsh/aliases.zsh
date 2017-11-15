@@ -1,5 +1,5 @@
 function provision() {
-  ansible-galaxy install -vvv -r ~/.provision/requirements.yaml
+  ansible-galaxy install -vvv -r ~/.provision/requirements.yaml # --force to reinstall roles
   ansible-playbook -K ~/.provision/playbook.yml
 }
 

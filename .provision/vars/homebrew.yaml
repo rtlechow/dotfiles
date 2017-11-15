@@ -17,10 +17,12 @@ homebrew_installed_packages:
   - gcc
   - gist
   - git
+  - git-cal
   - git-extras
   - gnupg
   - hub
   - less
+  - mas
   - mutt
   - notmuch
   - offlineimap
@@ -35,10 +37,12 @@ homebrew_installed_packages:
   - wget
   - zsh
 homebrew_cask_apps:
+  - 1password-cli
   - backblaze
   - battle-net
   - cyberduck
   - disk-inventory-x
+  - docker-toolbox
   - dropbox
   - flux
   - google-chrome
