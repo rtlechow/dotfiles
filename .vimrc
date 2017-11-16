@@ -157,6 +157,9 @@ let test#strategy = {
 let g:jsx_ext_required = 0
 let g:table_mode_corner = '|'
 let g:dbext_default_history_file = '~/.dbext_history'
+let g:dbext_default_profile_mysql = 'type=MYSQL:user=root:passwd=password:dbname=format:host=192.168.99.100'
+let g:dbext_default_profile = 'mysql'
+autocmd VimEnter * DBCompleteTables
 let g:rails_erb_yaml = 1
 
 " CTRL-A CTRL-Q to select all and build quickfix list
