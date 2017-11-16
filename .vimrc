@@ -114,9 +114,6 @@ nnoremap <silent> <leader>C :set nolist!<CR>
 nnoremap <leader>i :!irb<CR>
 nnoremap <leader>r :!ruby %<CR>
 
-" Drop to shell.
-nnoremap <leader>s :sh<CR>
-
 " Improve autocomplete menu color.
 highlight Pmenu ctermbg=238 gui=bold
 
