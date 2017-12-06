@@ -94,9 +94,7 @@ nnoremap <leader>V :tabnew ~/.vimrc<CR>
 nnoremap <silent> <leader>R :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " imaps
-imap uu _
 imap hh <space>=><space>
-imap aa @
 
 " Toggle search highlighting.
 nnoremap <silent> <leader>H :set invhls hls?<CR>
@@ -177,3 +175,6 @@ nmap <Leader>c :Tags<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>g :Ag<CR>
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+
+let vim_markdown_preview_github=1
+let vim_markdown_preview_browser='Google Chrome'
