@@ -57,3 +57,6 @@
 [submodule ".vim/bundle/vim-db"]
 	path = .vim/bundle/vim-db
 	url = https://github.com/tpope/vim-db
+[submodule ".vim/bundle/vim-rhubarb"]
+	path = .vim/bundle/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb
