@@ -1,5 +1,6 @@
 set t_Co=256
 set rtp+=/usr/local/opt/fzf
+source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 colorscheme molokai
 let mapleader="," " Remap mapleader from \ to , because \ is not in a standard position on all keyboards. The ',' command does exist in Vim (see |,|), but you probably never use it.
