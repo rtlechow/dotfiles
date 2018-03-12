@@ -54,3 +54,6 @@
 [submodule ".vim/bundle/vim-ruby"]
 	path = .vim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby
+[submodule ".vim/bundle/vim-db"]
+	path = .vim/bundle/vim-db
+	url = https://github.com/tpope/vim-db
