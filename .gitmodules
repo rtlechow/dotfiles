@@ -51,12 +51,12 @@
 [submodule ".vim/bundle/vim-ruby"]
 	path = .vim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby
-[submodule ".vim/bundle/vim-db"]
-	path = .vim/bundle/vim-db
-	url = https://github.com/tpope/vim-db
 [submodule ".vim/bundle/vim-rhubarb"]
 	path = .vim/bundle/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb
 [submodule ".vim/bundle/vim-pathogen"]
 	path = .vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
+[submodule ".vim/bundle/vim-dadbod"]
+	path = .vim/bundle/vim-dadbod
+	url = https://github.com/tpope/vim-dadbod.git
