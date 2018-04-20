@@ -110,7 +110,7 @@ nnoremap <silent> <leader>C :set nolist!<CR>
 
 " Ruby
 nnoremap <leader>i :!irb<CR>
-nnoremap <leader>r :!ruby %<CR>
+nnoremap <leader>r :!%<CR>
 
 " Improve autocomplete menu color.
 highlight Pmenu ctermbg=238 gui=bold
