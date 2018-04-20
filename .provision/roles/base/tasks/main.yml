@@ -3,3 +3,9 @@
     name: rtl
     shell: /usr/local/bin/zsh
 - script: ../../../vars/osx-setup.sh
+
+- name: rails logrotate
+  template:
+    src: templates/newsyslogd.j2
+    dest: /etc/newsyslog.d/rails.conf
+  become: true
