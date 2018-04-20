@@ -44,6 +44,7 @@ alias -g A='| ack '
 # Mac OSX
 alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+alias battery='ioreg -r -l -k "BatteryPercent" | egrep "BatteryPercent|Product\""'
 
 # Ruby
 alias be='bundle exec'
