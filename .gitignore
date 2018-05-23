@@ -125,3 +125,12 @@ Arena Tracker/
 .terraform
 .terraform.d
 terraform.tfstate
+.tig_history
+.password-store/
+.parsec/
+.notmuch-config
+.newsboat/
+.grip/
+.circleci/
+.chromedriver-helper/
+.babel.json
