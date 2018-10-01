@@ -44,6 +44,7 @@ alias -g A='| ack '
 # Mac OSX
 alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+alias battery='ioreg -r -l -k "BatteryPercent" | egrep "BatteryPercent|Product\""'
 
 # Ruby
 alias be='bundle exec'
@@ -105,6 +106,14 @@ function git-delete-squashed() {
       echo 'Aborting'
     fi
   fi
+}
+function git_largest() {
+  git rev-list --objects --all \
+  | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
+  | awk '/^blob/ {print substr($0,6)}' \
+  | sort --numeric-sort --key=2 \
+  | cut --complement --characters=13-40 \
+  | numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
 }
 
 # Postgres

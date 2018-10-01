@@ -6,6 +6,7 @@
 --exclude=**public/*
 --exclude=**vendor/*
 --exclude=*.min.js
+--exclude=node_modules
 --languages=-sql,html
 --regex-Ruby=/(^|^[[:blank:]]*)task[ \t\:']*([A-Za-z0-9_]*)/\2/t,tasks/
 --regex-Ruby=/(^|^[[:blank:]]*)namespace[ \t\:]*([A-Za-z0-9_]*)/\2/n,namespaces/

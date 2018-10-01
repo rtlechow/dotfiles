@@ -1,2 +1,1 @@
-set author-width = 3
 bind stash D !?git stash drop %(stash)

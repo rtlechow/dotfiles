@@ -19,7 +19,6 @@
   last = log -1 HEAD
   m = merge
   p = pull
-  pr = pull-request
   ps = push
   r = rebase
   s = status -s

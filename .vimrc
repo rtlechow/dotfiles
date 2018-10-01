@@ -38,9 +38,18 @@ set scrolloff=3 " Start scrolling three lines before horizontal border of window
 set shortmess=atI " Shorten command line text and other info tokens.
 set splitbelow splitright
 set ls=2
-set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set autowrite
 set grepprg=ack
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+augroup myvimrc
+  autocmd!
+  autocmd QuickFixCmdPost [^l]* cwindow
+  autocmd QuickFixCmdPost l*    lwindow
+augroup END
 set diffopt=filler,vertical
 
 " The following is bad on shared systems because other vim sessions could clobber each other.
@@ -110,7 +119,7 @@ nnoremap <silent> <leader>C :set nolist!<CR>
 
 " Ruby
 nnoremap <leader>i :!irb<CR>
-nnoremap <leader>r :!ruby %<CR>
+nnoremap <leader>r :!%<CR>
 
 " Improve autocomplete menu color.
 highlight Pmenu ctermbg=238 gui=bold

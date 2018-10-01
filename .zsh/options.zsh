@@ -49,3 +49,4 @@ bindkey -v
 bindkey 'jj' vi-cmd-mode
 bindkey '^A' vi-beginning-of-line
 bindkey '^E' vi-end-of-line
+bindkey '^[[Z' reverse-menu-complete
