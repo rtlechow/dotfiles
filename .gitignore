@@ -134,3 +134,6 @@ terraform.tfstate
 .circleci/
 .chromedriver-helper/
 .babel.json
+.hunspell*
+.fpp/
+.electron/

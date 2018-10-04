@@ -35,6 +35,7 @@ function d() {
 alias tl='tail -f log/*'
 alias v='vim'
 alias sv='sudo vim'
+alias s='ssh'
 alias untgz='tar -zxvf'
 alias pwgen='pwgen -A -B -n'
 alias pw='printf "%s-%s-%s-%s\n" $(grep -v "[A-Z]" /usr/share/dict/words | shuf -n 4)'
