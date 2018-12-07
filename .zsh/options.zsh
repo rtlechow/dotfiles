@@ -48,6 +48,10 @@ stty -ixoff
 
 bindkey -v
 bindkey 'jj' vi-cmd-mode
-bindkey '^A' vi-beginning-of-line
-bindkey '^E' vi-end-of-line
-bindkey '^[[Z' reverse-menu-complete
+bindkey -M viins '^a' vi-beginning-of-line
+bindkey -M viins '^e' vi-end-of-line
+bindkey '^[[z' reverse-menu-complete
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey '^p' up-history
+bindkey '^n' down-history
+bindkey '^w' backward-kill-word

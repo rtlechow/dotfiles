@@ -91,7 +91,7 @@ alias gps='git push'
 alias grm='git rm'
 alias gs='git status -sb'
 alias git_remove_missing_files="gs | awk '/deleted:(.*)/ {print $3}' | xargs git rm"
-alias update_submodules='git submodule foreach git pull origin master'
+alias update_submodules='git submodule foreach "git checkout master && git pull origin master"'
 function git-delete-squashed() {
   if [[ $* =~ 'dry' ]]
   then
