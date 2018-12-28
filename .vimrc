@@ -152,7 +152,7 @@ map <leader>gs :Gstatus<cr>
 map <leader>gb :Gblame<cr>
 command -nargs=? -bar Gshow call setqflist(map(systemlist("git show --pretty='' --name-only <args>"), '{"filename": v:val, "lnum": 1}'))
 
-let g:vimrubocop_rubocop_cmd = "git ls-files -m | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs rubocop "
+let g:vimrubocop_rubocop_cmd = "git diff --name-only HEAD | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs rubocop "
 
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
