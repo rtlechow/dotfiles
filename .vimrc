@@ -163,6 +163,7 @@ let test#strategy = {
   \ 'file':    'dispatch',
   \ 'suite':   'basic'
 \}
+let g:dispatch_quickfix_height = 20
 
 let g:jsx_ext_required = 0
 let g:table_mode_corner = '|'
@@ -185,6 +186,7 @@ nmap <Leader>c :Tags<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>g :Ag<CR>
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+let $FZF_DEFAULT_COMMAND='fd --type f'
 
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
