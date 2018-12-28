@@ -36,6 +36,7 @@
   prune-all = !git remote | xargs -n 1 git remote prune
   rank = shortlog -sn --no-merges
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+  conflict = diff --name-only --diff-filter U
 [core]
   pager = diff-so-fancy | less
   whitespace = trailing-space
