@@ -1,0 +1,16 @@
+--tag-relative=yes
+--recurse=yes
+--exclude=db
+--exclude=log
+--exclude=public
+--exclude=vendor
+--exclude=node_modules
+--exclude=*.min.js
+--languages=-sql,html
+
+--regex-ruby=/(^|;)[ \t]*event\(? *:([[:alnum:]_]+)/\2/f,function,aasm_event/
+--regex-ruby=/(^|;)[ \t]*event\(? *:([[:alnum:]_]+)/\2!/f,function,aasm_event/
+--regex-ruby=/(^|;)[ \t]*event\(? *:([[:alnum:]_]+)/\2?/f,function,aasm_event/
+--regex-ruby=/(^|;)[ \t]*(named_)?scope\(? *:([[:alnum:]_]+)/\3/f,function,named_scope/
+--regex-ruby=/(^|;)[ \t]*(skip_)?(before|after|around)_action\(? *:([[:alnum:]_]+)/\4/f,function,actioncontroller_callback/
+--regex-ruby=/(^|;)[ \t]*(before|after|around)_(validation|save|create|commit|rollback|update|destroy)\(? *:([[:alnum:]_]+)/\4/f,function,activerecord_callback/
