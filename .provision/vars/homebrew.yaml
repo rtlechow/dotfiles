@@ -13,6 +13,7 @@ homebrew_installed_packages:
   - coreutils
   - ctags
   - diff-so-fancy
+  - fd
   - fzf
   - gcc
   - gist
@@ -21,16 +22,21 @@ homebrew_installed_packages:
   - git-extras
   - gnupg
   - hub
+  - jq
   - less
   - mas
   - mutt
+  - ncdu
+  - nnn
   - notmuch
   - offlineimap
+  - plantuml
   - pv
   - pwgen
   - spaceman-diff
   - ssh-copy-id
   - tmux
+  - universal-ctags
   - urlview
   - vim
   - watch
