@@ -33,6 +33,7 @@
 .mysql_history
 .ncftp/
 .offlineimap/
+.rncache/
 .rspec
 .ruby_inline/
 .rvm/
@@ -45,6 +46,7 @@
 .vim/.netrw*
 .xinitrc
 .xsession-errors
+.yarnrc
 .zcompdump
 .zlogin
 .zsh_history
