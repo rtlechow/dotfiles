@@ -1,62 +1,45 @@
-[submodule ".vim/bundle/trailing-whitespace"]
-	path = .vim/bundle/trailing-whitespace
-	url = https://github.com/vim-scripts/trailing-whitespace.git
-  ignore = all
-[submodule ".vim/bundle/vim-rails"]
-	path = .vim/bundle/vim-rails
-	url = https://github.com/tpope/vim-rails.git
-  ignore = all
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-  ignore = all
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround
-  ignore = all
-[submodule ".vim/bundle/vim-eunuch"]
-	path = .vim/bundle/vim-eunuch
-	url = https://github.com/tpope/vim-eunuch.git
-[submodule ".vim/bundle/vim-rvm"]
-	path = .vim/bundle/vim-rvm
-	url = https://github.com/tpope/vim-rvm.git
-[submodule ".vim/bundle/jellybeans.vim"]
-	path = .vim/bundle/jellybeans.vim
-	url = https://github.com/nanotech/jellybeans.vim
-[submodule ".vim/bundle/vim-rbenv"]
-	path = .vim/bundle/vim-rbenv
-	url = git://github.com/tpope/vim-rbenv.git
-[submodule ".vim/bundle/vim-rubocop"]
-	path = .vim/bundle/vim-rubocop
-	url = https://github.com/ngmy/vim-rubocop
-[submodule ".vim/bundle/vim-test"]
-	path = .vim/bundle/vim-test
+[submodule ".vim/pack/foo/start/vim-table-mode"]
+	path = .vim/pack/foo/start/vim-table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode.git
+[submodule ".vim/pack/foo/start/vim-test"]
+	path = .vim/pack/foo/start/vim-test
 	url = https://github.com/janko-m/vim-test
-	ignore = dirty
-[submodule ".vim/bundle/vim-dispatch"]
-	path = .vim/bundle/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch
-[submodule ".vim/bundle/table-mode"]
-	path = .vim/bundle/table-mode
-	url = git@github.com:dhruvasagar/vim-table-mode.git
-[submodule ".vim/bundle/fzf"]
-	path = .vim/bundle/fzf
+[submodule ".vim/pack/foo/start/fzf"]
+	path = .vim/pack/foo/start/fzf
 	url = https://github.com/junegunn/fzf.vim
-[submodule ".vim/bundle/vim-polyglot"]
-	path = .vim/bundle/vim-polyglot
+[submodule ".vim/pack/foo/start/vim-polyglot"]
+	path = .vim/pack/foo/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
-[submodule ".vim/bundle/vim-markdown-preview"]
-	path = .vim/bundle/vim-markdown-preview
-	url = https://github.com/JamshedVesuna/vim-markdown-preview
-[submodule ".vim/bundle/vim-ruby"]
-	path = .vim/bundle/vim-ruby
-	url = https://github.com/vim-ruby/vim-ruby
-[submodule ".vim/bundle/vim-rhubarb"]
-	path = .vim/bundle/vim-rhubarb
-	url = https://github.com/tpope/vim-rhubarb
-[submodule ".vim/bundle/vim-pathogen"]
-	path = .vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen
-[submodule ".vim/bundle/vim-dadbod"]
-	path = .vim/bundle/vim-dadbod
+[submodule ".vim/pack/foo/start/vim-dadbod"]
+	path = .vim/pack/foo/start/vim-dadbod
 	url = https://github.com/tpope/vim-dadbod.git
+[submodule ".vim/pack/foo/start/vim-dispatch"]
+	path = .vim/pack/foo/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
+[submodule ".vim/pack/foo/start/vim-eunuch"]
+	path = .vim/pack/foo/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
+[submodule ".vim/pack/foo/start/vim-fugitive"]
+	path = .vim/pack/foo/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/pack/foo/start/vim-rails"]
+	path = .vim/pack/foo/start/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule ".vim/pack/foo/start/vim-rbenv"]
+	path = .vim/pack/foo/start/vim-rbenv
+	url = https://github.com/tpope/vim-rbenv.git
+[submodule ".vim/pack/foo/start/vim-rhubarb"]
+	path = .vim/pack/foo/start/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb
+[submodule ".vim/pack/foo/start/vim-surround"]
+	path = .vim/pack/foo/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule ".vim/pack/foo/start/vim-ruby"]
+	path = .vim/pack/foo/start/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby
+[submodule ".vim/pack/foo/start/trailing-whitespace"]
+	path = .vim/pack/foo/start/trailing-whitespace
+	url = https://github.com/vim-scripts/trailing-whitespace
+[submodule ".vim/pack/foo/start/papercolor-theme"]
+	path = .vim/pack/foo/start/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme
