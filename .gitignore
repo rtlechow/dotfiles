@@ -140,3 +140,4 @@ terraform.tfstate
 .hunspell*
 .fpp/
 .electron/
+.jira.d/
