@@ -141,3 +141,4 @@ terraform.tfstate
 .fpp/
 .electron/
 .jira.d/
+.vim/pack/*/start/tags*
