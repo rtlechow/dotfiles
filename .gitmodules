@@ -43,3 +43,6 @@
 [submodule ".vim/pack/foo/start/papercolor-theme"]
 	path = .vim/pack/foo/start/papercolor-theme
 	url = https://github.com/NLKNguyen/papercolor-theme
+[submodule ".vim/pack/foo/start/vim-markdown"]
+	path = .vim/pack/foo/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
