@@ -142,3 +142,6 @@ terraform.tfstate
 .electron/
 .jira.d/
 .vim/pack/*/start/tags*
+.httpie/
+.docker-sync-global.yml
+.viminfo.tmp
