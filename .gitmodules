@@ -52,3 +52,6 @@
 [submodule ".vim/pack/foo/start/snow"]
 	path = .vim/pack/foo/start/snow
 	url = https://github.com/nightsense/snow
+[submodule ".vim/pack/foo/start/vim-scriptease"]
+	path = .vim/pack/foo/start/vim-scriptease
+	url = https://github.com/tpope/vim-scriptease
