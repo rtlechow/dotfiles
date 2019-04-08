@@ -55,3 +55,6 @@
 [submodule ".vim/pack/foo/start/vim-scriptease"]
 	path = .vim/pack/foo/start/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease
+[submodule ".vim/pack/foo/start/vim-ruby-refactoring"]
+	path = .vim/pack/foo/start/vim-ruby-refactoring
+	url = https://github.com/ecomba/vim-ruby-refactoring.git
