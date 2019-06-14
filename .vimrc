@@ -167,6 +167,7 @@ let g:jsx_ext_required = 0
 let g:table_mode_corner = '|'
 let g:dbext_default_history_file = '~/.dbext_history'
 let g:rails_erb_yaml = 1
+set confirm " vim-rails :AV create a spec if missing
 
 " CTRL-A CTRL-Q to select all and build quickfix list
 function! s:build_quickfix_list(lines)
