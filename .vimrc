@@ -159,8 +159,8 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 let test#strategy = {
-  \ 'nearest': 'dispatch',
-  \ 'file':    'dispatch',
+  \ 'nearest': 'vimterminal',
+  \ 'file':    'vimterminal',
   \ 'suite':   'basic'
 \}
 let g:dispatch_quickfix_height = 20
