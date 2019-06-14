@@ -7,9 +7,11 @@ set history=1000 " Increase history from 20 default to 1000
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 set nonu " Disable line numbers.
 set noerrorbells " Disable error bells.
-" Too slow on large ruby files. set foldmethod=syntax " Markers are used to specify folds.
-set foldenable
-set foldlevel=1
+
+set foldmethod=manual
+set nofoldenable
+autocmd FileType markdown setlocal foldmethod=syntax
+
 set esckeys " Allow cursor keys in insert mode.
 set nohlsearch " Enable search result highlighting.
 set incsearch " Highlight dynamically as pattern is typed.
