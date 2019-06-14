@@ -1,5 +1,7 @@
+export KEYTIMEOUT=1
 export EDITOR='vim'
 export LESS='-RFX'
+export PAGER='less'
 export RUBYOPT='rubygems'
 export JAVA_HOME='/Library/Java/Home'
 export GREP_OPTIONS='--color=auto --exclude-dir=.git'

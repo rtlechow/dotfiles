@@ -27,3 +27,7 @@ eval "$(rbenv init - --no-rehash)"
 
 export NVM_DIR="$HOME/.nvm"
 source "/usr/local/opt/nvm/nvm.sh" --no-use
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^x' edit-command-line
