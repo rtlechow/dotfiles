@@ -145,3 +145,7 @@ terraform.tfstate
 .httpie/
 .docker-sync-global.yml
 .viminfo.tmp
+.azure*
+.bigqueryrc
+.boto
+.vsts
