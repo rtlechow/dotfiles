@@ -61,3 +61,12 @@
 [submodule ".vim/pack/foo/start/vim-markdown"]
 	path = .vim/pack/foo/start/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+[submodule ".vim/pack/foo/start/goyo"]
+	path = .vim/pack/foo/start/goyo
+	url = https://github.com/junegunn/goyo.vim
+[submodule ".vim/pack/foo/start/vim-bundler"]
+	path = .vim/pack/foo/start/vim-bundler
+	url = https://github.com/tpope/vim-bundler
+[submodule ".vim/pack/foo/start/splitjoin"]
+	path = .vim/pack/foo/start/splitjoin
+	url = https://github.com/AndrewRadev/splitjoin.vim
