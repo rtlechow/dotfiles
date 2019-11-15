@@ -1,0 +1,1 @@
+bind stash D !?git stash drop %(stash)
