@@ -38,7 +38,7 @@ set scrolloff=3 " Start scrolling three lines before horizontal border of window
 set shortmess=atI " Shorten command line text and other info tokens.
 set splitbelow splitright
 set ls=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r(%{FugitiveHead()})%=%-14.(%l,%c%V%)\ %P
 set autowrite
 set grepprg=ack
 if executable("rg")
@@ -51,6 +51,9 @@ augroup myvimrc
   autocmd QuickFixCmdPost l*    lwindow
 augroup END
 set diffopt=filler,vertical
+if has("patch-8.1.0360")
+  set diffopt=filler,internal,algorithm:histogram,indent-heuristic
+endif
 
 " The following is bad on shared systems because other vim sessions could clobber each other.
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Store backup files in separate directory instead of all over filesystem.
@@ -183,9 +186,13 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 nmap <Leader>f :Files<CR>
-nmap <Leader>c :Tags<CR>
+nmap <Leader>ag :Ag<CR>
+nmap <Leader>rg :Rg<CR>
+nmap <Leader>l :Lines<CR>
+nmap <Leader>ft :Tags<CR>
+nmap <Leader>fbt :BTags<CR>
 nmap <Leader>b :Buffers<CR>
-nmap <Leader>g :Ag<CR>
+nmap <Leader>h :Helptags<CR>
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 let $FZF_DEFAULT_COMMAND='fd --type f'
 
