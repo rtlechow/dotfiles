@@ -9,10 +9,12 @@ homebrew_upgrade_all_packages: true
 homebrew_installed_packages:
   - ack
   - ansible
+  - browsh
   - cloc
   - coreutils
   - ctags
   - diff-so-fancy
+  - extract_url
   - fd
   - fzf
   - gcc
@@ -20,7 +22,12 @@ homebrew_installed_packages:
   - git
   - git-cal
   - git-extras
+  - git-lfs
+  - git-secrets
+  - git-sizer
   - gnupg
+  - go
+  - graphviz
   - hub
   - jq
   - less
@@ -34,26 +41,34 @@ homebrew_installed_packages:
   - pup
   - pv
   - pwgen
+  - ripgrep
+  - shellcheck
   - spaceman-diff
   - ssh-copy-id
+  - tig
   - tmux
   - universal-ctags
   - urlview
+  - vale
   - vim
   - watch
   - wget
+  - youtube-dl
   - zsh
 homebrew_cask_apps:
   - 1password-cli
   - backblaze
   - battle-net
   - cyberduck
-  - disk-inventory-x
-  - docker-toolbox
+  - docker
   - dropbox
   - flux
+  - gimp
   - google-chrome
+  - grandperspective
   - iterm2-beta
+  - minecraft
+  - openemu
   - skype
   - sequel-pro
   - spectacle
