@@ -89,7 +89,6 @@ noremap Y y$
 map <Leader>, <C-^>
 map <Leader>] :bnext<CR>
 map <Leader>[ :bprev<CR>
-map <Leader>ls :buffers<CR>
 
 " Insert newline
 map <S-Enter> O<ESC>
@@ -188,9 +187,9 @@ let g:fzf_action = {
 nmap <Leader>f :Files<CR>
 nmap <Leader>ag :Ag<CR>
 nmap <Leader>rg :Rg<CR>
-nmap <Leader>l :Lines<CR>
-nmap <Leader>ft :Tags<CR>
-nmap <Leader>fbt :BTags<CR>
+nmap <Leader><Leader>l :Lines<CR>
+nmap <Leader><Leader>t :Tags<CR>
+nmap <Leader><Leader>bt :BTags<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>h :Helptags<CR>
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
