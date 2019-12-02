@@ -59,14 +59,19 @@ homebrew_cask_apps:
   - 1password-cli
   - backblaze
   - battle-net
+  - blender
+  - calibre
   - cyberduck
   - docker
   - dropbox
+  - dwarf-fortress-lmp
+  - dwarf-fortress-lnp
   - flux
   - gimp
   - google-chrome
   - grandperspective
   - iterm2-beta
+  - licecap
   - minecraft
   - openemu
   - skype
@@ -78,3 +83,4 @@ homebrew_cask_apps:
   - virtualbox
   - virtualbox-extension-pack
   - vlc
+  - yacreader
