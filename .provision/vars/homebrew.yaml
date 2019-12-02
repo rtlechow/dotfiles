@@ -1,10 +1,7 @@
 homebrew_taps:
-  - caskroom/cask
-  - homebrew/binary
-  - homebrew/dupes
+  - homebrew/cask-cask
   - homebrew/versions
-  - homebrew/completions
-  - caskroom/versions
+  - homebrew/cask-versions
 homebrew_upgrade_all_packages: true
 homebrew_installed_packages:
   - ack
