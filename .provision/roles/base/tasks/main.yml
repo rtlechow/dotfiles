@@ -1,7 +1,3 @@
-- name: change shell
-  user:
-    name: rtl
-    shell: /usr/local/bin/zsh
 - script: ../../../vars/osx-setup.sh
 
 - name: rails logrotate

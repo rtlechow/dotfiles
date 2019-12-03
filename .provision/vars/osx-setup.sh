@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
 # TODO:
-# chsh /etc/shells
 # remap capslock to control
 # show volume in menubar
 # iterm config (native fullscreen, 24pt)
+
+# change shell
+sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
+chsh -s /usr/local/bin/zsh
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
