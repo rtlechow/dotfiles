@@ -2,7 +2,6 @@ homebrew_upgrade_all_packages: true
 homebrew_installed_packages:
   - ack
   - ansible
-  - browsh
   - cloc
   - coreutils
   - ctags
@@ -30,7 +29,6 @@ homebrew_installed_packages:
   - nnn
   - notmuch
   - offlineimap
-  - plantuml
   - pup
   - pv
   - pwgen
@@ -40,7 +38,6 @@ homebrew_installed_packages:
   - ssh-copy-id
   - tig
   - tmux
-  - universal-ctags
   - urlview
   - vale
   - vim
