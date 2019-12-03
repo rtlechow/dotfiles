@@ -49,6 +49,7 @@ homebrew_installed_packages:
   - youtube-dl
   - zsh
 homebrew_cask_apps:
+  - 1password
   - 1password-cli
   - backblaze
   - battle-net
@@ -58,7 +59,6 @@ homebrew_cask_apps:
   - docker
   - dropbox
   - dwarf-fortress-lmp
-  - dwarf-fortress-lnp
   - flux
   - gimp
   - google-chrome
