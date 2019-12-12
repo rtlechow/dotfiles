@@ -28,6 +28,7 @@ homebrew_installed_packages:
   - ncdu
   - nnn
   - notmuch
+  - nvm
   - offlineimap
   - pup
   - pv

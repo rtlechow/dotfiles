@@ -3,7 +3,7 @@
 # TODO:
 # remap capslock to control
 # show volume in menubar
-# iterm config (native fullscreen, 24pt)
+# iterm config (disable native fullscreen, 24pt)
 
 # change shell
 sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
