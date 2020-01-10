@@ -21,6 +21,7 @@ homebrew_installed_packages:
   - go
   - graphviz
   - hub
+  - jid
   - jq
   - less
   - mas
@@ -35,6 +36,7 @@ homebrew_installed_packages:
   - pwgen
   - ripgrep
   - shellcheck
+  - shyaml
   - spaceman-diff
   - ssh-copy-id
   - tig
@@ -44,6 +46,7 @@ homebrew_installed_packages:
   - vim
   - watch
   - wget
+  - xsv
   - youtube-dl
   - zsh
 homebrew_cask_apps:
@@ -70,6 +73,7 @@ homebrew_cask_apps:
   - spectacle
   - spotify
   - steam
+  - the-unarchiver
   - transmission
   - virtualbox
   - virtualbox-extension-pack

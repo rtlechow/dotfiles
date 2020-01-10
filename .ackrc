@@ -2,7 +2,6 @@
 --nogroup
 --ignore-dir=log
 --ignore-dir=tmp
---ignore-dir=vendor
 --ignore-dir=migrations
 --ignore-dir=coverage
 --type-set=haml=.haml

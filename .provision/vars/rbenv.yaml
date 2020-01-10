@@ -4,9 +4,9 @@ rbenv_group: rtl
 rbenv:
   env: user
   version: v1.1.1
-  default_ruby: 2.6
+  default_ruby: 2.7
   rubies:
-    - version: 2.6
+    - version: 2.7
 rbenv_users:
   - rtl
 rbenv_plugins:
