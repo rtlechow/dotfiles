@@ -40,6 +40,9 @@ set splitbelow splitright
 set ls=2
 set statusline=%<%f\ %h%m%r(%{FugitiveHead()})%=%-14.(%l,%c%V%)\ %P
 set autowrite
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_winsize=75
 set grepprg=ack
 if executable("rg")
   set grepprg=rg\ --vimgrep\ --no-heading
