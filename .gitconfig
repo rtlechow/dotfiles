@@ -19,6 +19,7 @@
   last = log -1 HEAD
   m = merge
   p = pull
+  patch = --no-pager diff --no-color
   ps = push
   r = rebase
   s = status -s
@@ -92,10 +93,5 @@
   command = spaceman-diff
 [commit]
 	verbose = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [fetch]
 	prune = true

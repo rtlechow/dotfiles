@@ -23,9 +23,25 @@ source ~/.zsh/functions/_git_prompt
 
 export PS1='%{$fg[magenta]%}%m%{$fg[white]%}:%{$fg[cyan]%}%1~%{$fg[white]%}`git-prompt`%{$fg[white]%}%# '
 
+function zle-keymap-select() {
+  zle reset-prompt
+  zle -R
+}
+
+zle -N zle-keymap-select
+
+function vi_mode_prompt_info() {
+  echo "${${KEYMAP/vicmd/[% NORMAL]%}/(main|viins)/}"
+}
+
+# define right prompt, regardless of whether the theme defined it
+RPS1='$(vi_mode_prompt_info)'
+RPS2=$RPS1
+
 eval "$(rbenv init - --no-rehash)"
 
 export NVM_DIR="$HOME/.nvm"
+export PATH="$NVM_DIR/versions/node/v$(<$NVM_DIR/alias/default)/bin:$PATH" # make some node binary available w/o loading slow nvm
 source "/usr/local/opt/nvm/nvm.sh" --no-use
 
 autoload -U edit-command-line
