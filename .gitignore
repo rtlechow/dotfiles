@@ -152,3 +152,6 @@ terraform.tfstate
 .mono/
 .psql_history
 .webdrivers/
+.hs-tree-data
+.kube/
+.vale/

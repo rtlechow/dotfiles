@@ -1,44 +1,13 @@
 require 'irb/ext/save-history'
+require 'irb/completion'
 IRB.conf[:SAVE_HISTORY] = 200
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
-
-# Allow requiring gems outside of Gemfiles
-### START debundle.rb ###
-# MIT License
-# Copyright (c) Conrad Irwin <conrad.irwin@gmail.com>
-# Copyright (c) Jan Lelis <mail@janlelis.de>
-module Debundle
-  VERSION = '1.1.0'
-  def self.debundle!
-    return unless defined?(Bundler)
-    return unless Gem.post_reset_hooks.reject!{ |hook|
-      hook.source_location.first =~ %r{/bundler/}
-    }
-    if defined? Bundler::EnvironmentPreserver
-      ENV.replace(Bundler::EnvironmentPreserver.new(ENV, %w(GEM_PATH)).backup)
-    end
-    Gem.clear_paths
-
-    load 'rubygems/core_ext/kernel_require.rb'
-    load 'rubygems/core_ext/kernel_gem.rb'
-  rescue
-    warn "DEBUNDLE.RB FAILED"
-    raise
-  end
-end
-Debundle.debundle!
-### END debundle.rb ###
-
-require 'irb/completion'
-require 'irb/ext/save-history'
-require 'rubygems'
+IRB.conf[:PROMPT_MODE] = :SIMPLE
+IRB.conf[:AUTO_INDENT] = true
 
 Dir.glob(File.expand_path('~/.local/irb*.rb', __FILE__)).each do |file|
   require file
 end
-
-IRB.conf[:PROMPT_MODE] = :SIMPLE
-IRB.conf[:AUTO_INDENT] = true
 
 class Object
   # list methods which aren't in superclass
@@ -68,4 +37,8 @@ end
 
 def r
   reload!
+end
+
+def m(klass)
+  klass.public_instance_methods - Object.public_instance_methods
 end
