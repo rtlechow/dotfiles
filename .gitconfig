@@ -5,7 +5,9 @@
 [alias]
   a = add
   au = add -u
-  b = branch -v --sort=authordate
+  b = branch -v --sort=committerdate
+  bd = branch -d
+  br = checkout -b
   bl = blame
   ca = commit --amend
   cb = checkout -b
