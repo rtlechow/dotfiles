@@ -155,3 +155,4 @@ terraform.tfstate
 .hs-tree-data
 .kube/
 .vale/
+go/
