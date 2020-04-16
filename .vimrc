@@ -204,3 +204,8 @@ let vim_markdown_preview_browser='Google Chrome'
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 silent! helptags ALL
 set tags^=./.git/tags;
+
+let g:ale_fixers = {
+\  '*': ['remove_trailing_lines', 'trim_whitespace'],
+\  'ruby': ['rubocop'],
+\}
