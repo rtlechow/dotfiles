@@ -68,6 +68,7 @@ homebrew_cask_apps:
   - licecap
   - minecraft
   - openemu
+  - q
   - skype
   - sequel-pro
   - spectacle
@@ -78,4 +79,5 @@ homebrew_cask_apps:
   - virtualbox
   - virtualbox-extension-pack
   - vlc
+  - xsv
   - yacreader
