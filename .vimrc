@@ -1,6 +1,14 @@
+if &term =~# '^screen'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 set t_Co=256
-set rtp+=/usr/local/opt/fzf
+set termguicolors
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
 colorscheme molokai
+
+set rtp+=/usr/local/opt/fzf
 let mapleader="," " Remap mapleader from \ to , because \ is not in a standard position on all keyboards. The ',' command does exist in Vim (see |,|), but you probably never use it.
 let $PAGER='' " Clear variable inside vim. This is to handle the case where you start Vim normally and want to use Vim's 'Man' function.
 set history=1000 " Increase history from 20 default to 1000
