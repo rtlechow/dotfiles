@@ -24,6 +24,7 @@ homebrew_installed_packages:
   - jid
   - jq
   - less
+  - librsvg
   - mas
   - mutt
   - ncdu
@@ -46,12 +47,15 @@ homebrew_installed_packages:
   - vim
   - watch
   - wget
+  - wrk
   - xsv
   - youtube-dl
   - zsh
 homebrew_cask_apps:
   - 1password
   - 1password-cli
+  - anki
+  - another-redis-desktop-manager
   - backblaze
   - battle-net
   - blender
@@ -63,17 +67,24 @@ homebrew_cask_apps:
   - flux
   - gimp
   - google-chrome
+  - google-cloud-sdk
   - grandperspective
+  - inkscape
   - iterm2-beta
+  - kindle
   - licecap
+  - macdown
   - minecraft
+  - obs-virtualcam
   - openemu
   - q
-  - skype
+  - rectangle
   - sequel-pro
-  - spectacle
+  - skype
   - spotify
   - steam
+  - streamlabs-obs
+  - table-tool
   - the-unarchiver
   - transmission
   - virtualbox

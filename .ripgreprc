@@ -1,4 +1,0 @@
---glob=!*.min.js
---max-columns=200
---max-columns-preview
---max-filesize=50K

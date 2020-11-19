@@ -64,7 +64,7 @@ function h() {
 # Git
 alias g='git'
 eval "$(hub alias -s)"
-alias fix='git diff --name-only | uniq | xargs $EDITOR'
+alias fix='git diff --name-only | uniq | xargs $EDITOR -o'
 alias ga='git add'
 alias gb='g b'
 alias gba='git branch -a -v'
@@ -91,7 +91,7 @@ alias gps='git push'
 alias grm='git rm'
 alias gs='git status -sb'
 alias git_remove_missing_files="gs | awk '/deleted:(.*)/ {print $3}' | xargs git rm"
-alias update_submodules='git submodule foreach "git checkout master && git pull origin master"'
+alias update_submodules='git submodule foreach "git pull origin"'
 function git-delete-squashed() {
   if [[ $* =~ 'dry' ]]
   then
@@ -146,3 +146,7 @@ function gg() {
     grep -Irl $1 . | xargs grep --color=auto -I $2
   fi
 }
+
+alias icat='imgcat'
+alias isvg='rsvg-convert | icat'
+alias idot='dot -Efontsize=18 -Efontname=sans -Nfontname=sans -Tpng -Gbgcolor=black -Gcolor=white -Ecolor=white -Efontcolor=white -Ncolor=white -Nfontcolor=white | icat'
