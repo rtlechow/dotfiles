@@ -4,7 +4,6 @@ homebrew_installed_packages:
   - ansible
   - cloc
   - coreutils
-  - ctags
   - diff-so-fancy
   - extract_url
   - fd
@@ -43,6 +42,7 @@ homebrew_installed_packages:
   - tig
   - tmux
   - urlview
+  - { name: 'universal-ctags/universal-ctags/universal-ctags', install_options: '--HEAD' }
   - vale
   - vim
   - watch
@@ -75,7 +75,7 @@ homebrew_cask_apps:
   - licecap
   - macdown
   - minecraft
-  - obs-virtualcam
+  - obs
   - openemu
   - q
   - rectangle
