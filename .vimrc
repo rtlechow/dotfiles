@@ -108,7 +108,7 @@ map <S-Enter> O<ESC>
 set pastetoggle=<leader>p
 map <leader>p :set invpaste paste?<CR>
 
-map <silent> <leader>y :<C-u>silent '<,'>w !pbcopy<CR>
+map <silent> <leader>y "+y
 
 " Open ~/.vimrc
 nnoremap <leader>V :tabnew ~/.vimrc<CR>
@@ -171,6 +171,7 @@ nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
+"let test#vim#term_position = '20belowright'
 let test#strategy = {
   \ 'nearest': 'vimterminal',
   \ 'file':    'vimterminal',
@@ -213,6 +214,9 @@ au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 silent! helptags ALL
 set tags^=./.git/tags;
 
+let g:ale_linters = {
+\  'ruby': ['rubocop'],
+\}
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
 \  'ruby': ['rubocop'],

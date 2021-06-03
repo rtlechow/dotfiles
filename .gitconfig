@@ -40,10 +40,12 @@
   rank = shortlog -sn --no-merges
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
   conflict = diff --name-only --diff-filter U
+	hub = !hub
 [core]
   pager = diff-so-fancy | less -iFMRSX --pattern='^(commit|diff|modified|added|removed)' +r
   whitespace = trailing-space
   excludesfile = ~/.gitignore_global
+	attributesfile = /Users/rtl/.gitattributes
 [color]
   ui = auto
 [color "branch"]
