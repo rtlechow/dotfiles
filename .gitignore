@@ -157,3 +157,8 @@ terraform.tfstate
 .vale/
 go/
 icloud
+.puma-dev/
+.qutebrowser/
+.rpw/
+.purple/
+.alacritty.yml
