@@ -206,6 +206,7 @@ nmap <Leader>b :Buffers<CR>
 nmap <Leader>h :Helptags<CR>
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 let $FZF_DEFAULT_COMMAND='fd --type f'
+let g:fzf_buffers_jump = 1
 
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
