@@ -1,0 +1,8 @@
+--hidden
+-g=!.git/*
+-g=!**/*.min.js
+-g=!**/*-min.js
+-g=!**/*.pack.js
+-g=!*.svg
+-g=!vendor/**
+-g=!public/admin/swagger/**
