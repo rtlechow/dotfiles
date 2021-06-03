@@ -4,9 +4,6 @@
 [submodule ".vim/pack/foo/start/vim-test"]
 	path = .vim/pack/foo/start/vim-test
 	url = https://github.com/janko-m/vim-test
-[submodule ".vim/pack/foo/start/fzf"]
-	path = .vim/pack/foo/start/fzf
-	url = https://github.com/junegunn/fzf.vim
 [submodule ".vim/pack/foo/start/vim-polyglot"]
 	path = .vim/pack/foo/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
