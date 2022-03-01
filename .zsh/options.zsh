@@ -4,7 +4,7 @@ path=(/usr/local/opt/coreutils/libexec/gnubin $path)
 path=(/usr/local/opt/mysql-client/bin $path)
 path=($GOPATH/bin $path)
 manpath=(/usr/local/opt/coreutils/libexec/gnuman/ $manpath)
-cdpath=(~/src ~/Dropbox $cdpath)
+cdpath=(~/src $cdpath)
 
 HISTFILE=~/.zsh_history
 HISTIGNORE='k:ls:lm:bg:fg:jobs:pwd:kill:declare:history:cd:cd :&: *:'

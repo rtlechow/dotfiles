@@ -8,7 +8,7 @@
   b = branch -v --sort=committerdate
   bd = branch -d
   br = checkout -b
-  bl = blame
+  bl = blame -w -M
   ca = commit --amend
   cb = checkout -b
   ch = checkout

@@ -70,7 +70,7 @@ alias gb='g b'
 alias gba='git branch -a -v'
 alias gbd='git branch -d'
 alias gbr='git checkout -b'
-alias gbl='git blame'
+alias gbl='git blame -w -M'
 alias gch='git checkout'
 function gch() {
   if [ -z "$1" ]
@@ -92,6 +92,7 @@ alias grm='git rm'
 alias gs='git status -sb'
 alias git_remove_missing_files="gs | awk '/deleted:(.*)/ {print $3}' | xargs git rm"
 alias update_submodules='git submodule foreach "git pull origin"'
+alias gdelsquashed='npx @teppeis/git-delete-squashed'
 function git-delete-squashed() {
   if [[ $* =~ 'dry' ]]
   then
@@ -102,7 +103,7 @@ function git-delete-squashed() {
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
       echo 'Continuing'
-      git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
+      git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
     else
       echo 'Aborting'
     fi

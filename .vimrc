@@ -132,7 +132,7 @@ nnoremap <silent> <leader>C :set nolist!<CR>
 
 " Ruby
 nnoremap <leader>i :!irb<CR>
-nnoremap <leader>r :!%<CR>
+nnoremap <leader>r :!"%"<CR>
 
 " Improve autocomplete menu color.
 highlight Pmenu ctermbg=238 gui=bold
@@ -161,8 +161,8 @@ inoremap <s-tab> <c-n>
 
 autocmd FileType gitcommit setlocal spell
 autocmd BufReadPost fugitive://* set bufhidden=delete
-map <leader>gs :Gstatus<cr>
-map <leader>gb :Gblame<cr>
+map <leader>gs :Git status<cr>
+map <leader>gb :Git blame<cr>
 command -nargs=? -bar Gshow call setqflist(map(systemlist("git show --pretty='' --name-only <args>"), '{"filename": v:val, "lnum": 1}'))
 
 let g:vimrubocop_rubocop_cmd = "git diff --name-only HEAD | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs rubocop "
@@ -204,7 +204,7 @@ nmap <Leader><Leader>t :Tags<CR>
 nmap <Leader><Leader>bt :BTags<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>h :Helptags<CR>
-let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+let $FZF_DEFAULT_OPTS = '--layout=reverse --bind ctrl-a:select-all'
 let $FZF_DEFAULT_COMMAND='fd --type f'
 let g:fzf_buffers_jump = 1
 
@@ -225,3 +225,6 @@ let g:ale_fixers = {
 let g:ale_lint_on_text_changed=0
 let g:ale_lint_on_insert_leave=0
 let g:ale_lint_on_enter=0
+let g:ale_pattern_options = {
+\   '.*/\.rbenv/.*$': {'ale_enabled': 0},
+\}
