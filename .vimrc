@@ -12,7 +12,7 @@ set rtp+=/usr/local/opt/fzf
 let mapleader="," " Remap mapleader from \ to , because \ is not in a standard position on all keyboards. The ',' command does exist in Vim (see |,|), but you probably never use it.
 let $PAGER='' " Clear variable inside vim. This is to handle the case where you start Vim normally and want to use Vim's 'Man' function.
 set history=1000 " Increase history from 20 default to 1000
-set hidden " When a buffer is brought to foreground, remember undo history and marks.
+set nohidden
 set nonu " Disable line numbers.
 set noerrorbells " Disable error bells.
 
@@ -208,6 +208,14 @@ let $FZF_DEFAULT_OPTS = '--layout=reverse --bind ctrl-a:select-all'
 let $FZF_DEFAULT_COMMAND='fd --type f'
 let g:fzf_buffers_jump = 1
 
+xnoremap <expr> <Plug>(DBExe)     db#op_exec()
+nnoremap <expr> <Plug>(DBExe)     db#op_exec()
+nnoremap <expr> <Plug>(DBExeLine) db#op_exec() . '_'
+xmap <leader>db  <Plug>(DBExe)
+nmap <leader>db  <Plug>(DBExe)
+omap <leader>db  <Plug>(DBExe)
+nmap <leader>dbb <Plug>(DBExeLine)
+
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
 
@@ -228,3 +236,5 @@ let g:ale_lint_on_enter=0
 let g:ale_pattern_options = {
 \   '.*/\.rbenv/.*$': {'ale_enabled': 0},
 \}
+
+source ~/.local/local.vim
