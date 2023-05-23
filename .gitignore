@@ -162,3 +162,11 @@ icloud
 .rpw/
 .purple/
 .alacritty.yml
+.android/
+.ngrok2/
+.tldrc/
+.visidata/
+.vscode-insiders/
+.zcompcache/
+.zfrepo
+.zsh_sessions/

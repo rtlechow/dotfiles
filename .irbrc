@@ -1,9 +1,10 @@
 require 'irb/ext/save-history'
 require 'irb/completion'
-IRB.conf[:SAVE_HISTORY] = 200
+IRB.conf[:SAVE_HISTORY] = 10000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 IRB.conf[:AUTO_INDENT] = true
+IRB.conf[:USE_COLORIZE] = false
 
 Dir.glob(File.expand_path('~/.local/irb*.rb', __FILE__)).each do |file|
   require file

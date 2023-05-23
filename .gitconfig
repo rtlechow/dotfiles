@@ -71,6 +71,7 @@
   tool = vimdiff
 [push]
 	default = current
+	autoSetupRemote = true
 [branch]
   autosetuprebase = always
 	autosetupmerge = always

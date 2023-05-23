@@ -105,8 +105,8 @@ map <Leader>[ :bprev<CR>
 map <S-Enter> O<ESC>
 
 " Toggle paste
-set pastetoggle=<leader>p
-map <leader>p :set invpaste paste?<CR>
+set pastetoggle=<leader><leader>p
+map <leader><leader>p :set invpaste paste?<CR>
 
 map <silent> <leader>y "+y
 
@@ -161,7 +161,7 @@ inoremap <s-tab> <c-n>
 
 autocmd FileType gitcommit setlocal spell
 autocmd BufReadPost fugitive://* set bufhidden=delete
-map <leader>gs :Git status<cr>
+nnoremap <leader>gs :0Git<cr>:normal gU<cr>
 map <leader>gb :Git blame<cr>
 command -nargs=? -bar Gshow call setqflist(map(systemlist("git show --pretty='' --name-only <args>"), '{"filename": v:val, "lnum": 1}'))
 
@@ -202,6 +202,7 @@ nmap <Leader>rg :Rg<CR>
 nmap <Leader><Leader>l :Lines<CR>
 nmap <Leader><Leader>t :Tags<CR>
 nmap <Leader><Leader>bt :BTags<CR>
+nmap <Leader><Leader>co :Commits<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>h :Helptags<CR>
 let $FZF_DEFAULT_OPTS = '--layout=reverse --bind ctrl-a:select-all'

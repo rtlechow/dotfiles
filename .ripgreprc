@@ -6,3 +6,5 @@
 -g=!*.svg
 -g=!vendor/**
 -g=!public/admin/swagger/**
+--max-columns=80
+--max-columns-preview
