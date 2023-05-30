@@ -9,9 +9,11 @@ homebrew_installed_packages:
   - fd
   - fzf
   - gcc
+  - gh
   - gist
   - git
   - git-cal
+  - git-delta
   - git-extras
   - git-lfs
   - git-secrets
@@ -19,6 +21,9 @@ homebrew_installed_packages:
   - gnupg
   - go
   - graphviz
+  - heroku
+  - htmlq
+  - httpie
   - hub
   - hyperfine
   - jid
@@ -32,13 +37,17 @@ homebrew_installed_packages:
   - notmuch
   - nvm
   - offlineimap
+  - pandoc
   - pup
   - pv
   - pwgen
+  - q
+  - rbspy
   - ripgrep
   - shellcheck
   - shyaml
   - spaceman-diff
+  - sqlite
   - ssh-copy-id
   - tig
   - tmux
@@ -46,6 +55,7 @@ homebrew_installed_packages:
   - { name: 'universal-ctags/universal-ctags/universal-ctags', install_options: '--HEAD' }
   - vale
   - vim
+  - visidata
   - watch
   - wget
   - wrk
@@ -61,8 +71,8 @@ homebrew_cask_apps:
   - battle-net
   - blender
   - calibre
+  - cloudytabs
   - cyberduck
-  - docker
   - dropbox
   - dwarf-fortress-lmp
   - flux
@@ -72,22 +82,31 @@ homebrew_cask_apps:
   - grandperspective
   - inkscape
   - iterm2-beta
+  - java
+  - keepassxc
   - kindle
+  - leocad
   - licecap
   - macdown
   - minecraft
+  - ngrok
   - obs
   - openemu
   - q
+  - qutebrowser
   - rectangle
   - sequel-pro
+  - signal
   - skype
   - spotify
   - steam
   - streamlabs-obs
   - table-tool
+  - tableplus
+  - telegram
   - the-unarchiver
   - transmission
+  - vagrant
   - virtualbox
   - virtualbox-extension-pack
   - vlc
