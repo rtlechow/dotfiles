@@ -6,8 +6,8 @@
 # iterm config (disable native fullscreen, 24pt)
 
 # change shell
-sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
-chsh -s /usr/local/bin/zsh
+sudo sh -c "echo '/bin/zsh' >> /etc/shells"
+chsh -s /bin/zsh
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -79,3 +79,6 @@ defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -boo
 # Disable the all too sensitive backswipe on Magic Mouse
 defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
 defaults write com.google.Chrome.canary AppleEnableMouseSwipeNavigateWithScrolls -bool false
+
+# `provision` needs homebrew and ansible installed
+# vim plugins need `git submodule update --init --recursive`

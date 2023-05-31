@@ -77,6 +77,8 @@
 	autosetupmerge = always
 [credential]
 	helper = osxkeychain
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
 [init]
 	templatedir = ~/.git_template
 [github]
@@ -100,3 +102,5 @@
 	verbose = true
 [fetch]
 	prune = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true

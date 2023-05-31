@@ -1,4 +1,4 @@
-- src: geerlingguy.homebrew
-  version: master
-- src: zzet.rbenv
-  version: master
+collections:
+  - name: geerlingguy.mac
+roles:
+  - name: zzet.rbenv
