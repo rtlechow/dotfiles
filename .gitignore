@@ -170,3 +170,10 @@ icloud
 .zcompcache/
 .zfrepo
 .zsh_sessions/
+.dotnet/
+.luarocks/
+.nuget/
+.rdbg_history
+.spotdl-cache
+.swiftpm/
+.wrangler/

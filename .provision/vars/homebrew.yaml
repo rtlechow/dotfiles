@@ -4,6 +4,7 @@ homebrew_installed_packages:
   - ansible
   - cloc
   - coreutils
+  - dockutil
   - diff-so-fancy
   - extract_url
   - fd
