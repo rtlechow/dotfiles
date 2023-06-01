@@ -14,5 +14,5 @@ git pull origin master
 git submodule update --init --recursive
 
 # Everything else
-brew install ansible
+brew install hub ansible
 provision
