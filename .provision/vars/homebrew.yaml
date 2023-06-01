@@ -22,7 +22,6 @@ homebrew_installed_packages:
   - gnupg
   - go
   - graphviz
-  - heroku
   - htmlq
   - httpie
   - hub
@@ -43,7 +42,6 @@ homebrew_installed_packages:
   - pup
   - pv
   - pwgen
-  - q
   - rbspy
   - ripgrep
   - shellcheck
@@ -54,10 +52,9 @@ homebrew_installed_packages:
   - tig
   - tmux
   - urlview
-  - { name: 'universal-ctags/universal-ctags/universal-ctags', install_options: '--HEAD' }
+  - universal-ctags
   - vale
   - vim
-  - visidata
   - watch
   - wget
   - wrk
