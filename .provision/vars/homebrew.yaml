@@ -1,4 +1,6 @@
 homebrew_upgrade_all_packages: true
+homebrew_taps:
+  - microsoft/git
 homebrew_installed_packages:
   - ack
   - ansible
@@ -66,6 +68,7 @@ homebrew_cask_apps:
   - cyberduck
   - dropbox
   - flux
+  - git-credential-manager-core
   - google-chrome
   - google-cloud-sdk
   - grandperspective
