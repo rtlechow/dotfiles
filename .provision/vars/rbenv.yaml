@@ -4,16 +4,15 @@ rbenv_group: rtl
 rbenv:
   env: user
   version: v1.2.0
-  default_ruby: 3.1
+  default_ruby: 3.1.4
   rubies:
-    - version: 3.1
+    - version: 3.1.4
 rbenv_users:
   - rtl
 rbenv_plugins:
   - { name: "rbenv-aliases", repo: "https://github.com/tpope/rbenv-aliases.git", version: "master" }
-  - { name: "rbenv-ctags", repo: "https://github.com/tpope/rbenv-ctags.git", version: "master" }
   - { name: "rbenv-default-gems", repo: "https://github.com/rbenv/rbenv-default-gems.git", version: "master" }
-  - { name: "rbenv-installer", repo: "https://github.com/rbenv/rbenv-installer.git", version: "master" }
+  - { name: "rbenv-installer", repo: "https://github.com/rbenv/rbenv-installer.git", version: "main" }
   - { name: "rbenv-update", repo: "https://github.com/rkh/rbenv-update.git", version: "master" }
   - { name: "rbenv-use", repo: "https://github.com/rkh/rbenv-use.git", version: "master" }
   - { name: "rbenv-vars", repo: "https://github.com/rbenv/rbenv-vars.git", version: "master" }

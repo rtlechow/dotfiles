@@ -6,5 +6,6 @@
     - vars/rbenv.yaml
 
   roles:
+    - zzet.rbenv
     - geerlingguy.mac.homebrew
     - base
