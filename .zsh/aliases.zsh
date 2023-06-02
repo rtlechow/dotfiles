@@ -28,6 +28,7 @@ alias b='bundle'
 alias dc='docker-compose'
 alias dcl='docker-compose logs -f --tail 10'
 alias dm='docker-machine'
+alias kp='keepassxc-cli'
 alias p='ps aux | grep -v grep | grep -E'
 function d() {
   curl dict://dict.org/d:$1 | less
