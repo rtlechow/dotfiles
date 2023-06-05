@@ -4,6 +4,9 @@
 # remap capslock to control
 # show volume in menubar
 # iterm config (disable native fullscreen, 24pt)
+# start Rectangle.App
+# touch ~/.local/local.vim
+# sudo scutil --set HostName putar
 
 # change shell
 sudo sh -c "echo '/bin/zsh' >> /etc/shells"

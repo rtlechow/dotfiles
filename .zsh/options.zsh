@@ -1,10 +1,16 @@
 typeset -U path manpath gem_home gem_path
+
 path=(~/.bin /usr/local/bin /usr/local/sbin $path)
 path=(/opt/homebrew/opt/coreutils/libexec/gnubin $path)
+path=(/opt/homebrew/opt/gnu-sed/libexec/gnubin $path)
+path=(/opt/homebrew/opt/mysql@5.7/bin $path) # New Homebrew path; mysql@5.7 doesn't get symlinked
 path=(/usr/local/opt/coreutils/libexec/gnubin $path)
 path=(/usr/local/opt/mysql-client/bin $path)
 path=($GOPATH/bin $path)
+
 manpath=(/usr/local/opt/coreutils/libexec/gnuman/ $manpath)
+manpath=(/opt/homebrew/opt/coreutils/libexec/gnuman/ $manpath)
+
 cdpath=(~/src $cdpath)
 
 HISTFILE=~/.zsh_history

@@ -7,4 +7,4 @@ export GREP_OPTIONS='--color=auto --exclude-dir=.git'
 export GREP_COLOR='0;32'
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
-export GOPATH=$HOME/go
+export GOPATH="$HOME/go"

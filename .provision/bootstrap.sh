@@ -18,3 +18,5 @@ git submodule update --init --recursive
 
 # Ansible asks for sudoer password at the start, and before installing vagrant (just after the-unarchiver)
 provision
+
+nvm install --lts

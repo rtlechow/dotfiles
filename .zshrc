@@ -3,6 +3,8 @@ configs=(
   env.sh
   options.zsh
   aliases.zsh
+  rbenv.zsh
+  nvm.zsh
   ../.localrc
 )
 for f in $configs; do
@@ -37,13 +39,6 @@ function vi_mode_prompt_info() {
 # define right prompt, regardless of whether the theme defined it
 RPS1='$(vi_mode_prompt_info)'
 RPS2=$RPS1
-
-eval "$(rbenv init - --no-rehash)"
-
-export NVM_DIR="$HOME/.nvm"
-export PATH="$NVM_DIR/versions/node/v$(<$NVM_DIR/alias/default)/bin:$PATH" # make some node binary available w/o loading slow nvm
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh" --no-use # Homebrew's old nvm install path
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" # Homebrew's newer nvm install path
 
 autoload -U edit-command-line
 zle -N edit-command-line

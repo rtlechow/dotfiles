@@ -1,6 +1,7 @@
 homebrew_upgrade_all_packages: true
 homebrew_taps:
   - microsoft/git
+  - heroku/brew
 homebrew_installed_packages:
   - ack
   - ansible
@@ -24,6 +25,7 @@ homebrew_installed_packages:
   - gnupg
   - go
   - graphviz
+  - heroku
   - htmlq
   - httpie
   - hub
@@ -44,6 +46,7 @@ homebrew_installed_packages:
   - pup
   - pv
   - pwgen
+  - rbenv
   - rbspy
   - ripgrep
   - shellcheck
