@@ -1,6 +1,8 @@
 typeset -U path manpath gem_home gem_path
 
+# In Homebrew 3.0.0, Intel-based defaults to /usr/local, Apple silicon defaults to /opt/homebrew
 path=(~/.bin /usr/local/bin /usr/local/sbin $path)
+path=(/opt/homebrew/bin $path)
 path=(/opt/homebrew/opt/coreutils/libexec/gnubin $path)
 path=(/opt/homebrew/opt/gnu-sed/libexec/gnubin $path)
 path=(/opt/homebrew/opt/mysql@5.7/bin $path) # New Homebrew path; mysql@5.7 doesn't get symlinked

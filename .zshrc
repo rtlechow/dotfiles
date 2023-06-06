@@ -20,6 +20,10 @@ autoload -Uz colors && colors
 eval `dircolors ~/.dir_colors`
 
 fpath=(~/.zsh/functions $fpath)
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
 autoload -U ~/.zsh/functions/*(:t)
 source ~/.zsh/functions/_git_prompt
 

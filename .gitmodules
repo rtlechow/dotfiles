@@ -76,3 +76,15 @@
 [submodule ".vim/pack/foo/start/fzf.vim"]
 	path = .vim/pack/foo/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule ".vim/pack/foo/start/vim-dadbod-ui"]
+	path = .vim/pack/foo/start/vim-dadbod-ui
+	url = https://github.com/kristijanhusak/vim-dadbod-ui
+[submodule ".vim/pack/foo/start/vim-dotenv"]
+	path = .vim/pack/foo/start/vim-dotenv
+	url = https://github.com/tpope/vim-dotenv.git
+[submodule ".vim/pack/foo/start/vim-dadbod-completion"]
+	path = .vim/pack/foo/start/vim-dadbod-completion
+	url = https://github.com/kristijanhusak/vim-dadbod-completion.git
+[submodule ".vim/pack/foo/start/vim-heroku"]
+	path = .vim/pack/foo/start/vim-heroku
+	url = https://github.com/tpope/vim-heroku.git
