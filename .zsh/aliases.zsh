@@ -63,7 +63,6 @@ function h() {
 
 # Git
 alias g='git'
-eval "$(hub alias -s)"
 alias fix='git diff --name-only | uniq | xargs $EDITOR -o'
 alias ga='git add'
 alias gb='g b'
