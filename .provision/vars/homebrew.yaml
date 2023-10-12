@@ -69,7 +69,7 @@ homebrew_cask_apps:
   - google-chrome
   - google-cloud-sdk
   - grandperspective
-  - iterm2
+  - iterm2-beta
   - keepassxc
   - ngrok
   - obs

@@ -76,3 +76,12 @@
 [submodule ".vim/pack/foo/start/fzf.vim"]
 	path = .vim/pack/foo/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule ".vim/pack/foo/start/vim-hexokinase"]
+	path = .vim/pack/foo/start/vim-hexokinase
+	url = https://github.com/RRethy/vim-hexokinase
+[submodule ".vim/pack/foo/start/copilot"]
+	path = .vim/pack/foo/start/copilot
+	url = https://github.com/github/copilot.vim.git
+[submodule ".vim/pack/foo/start/vim-vinegar"]
+	path = .vim/pack/foo/start/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git

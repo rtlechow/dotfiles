@@ -238,4 +238,6 @@ let g:ale_pattern_options = {
 \   '.*/\.rbenv/.*$': {'ale_enabled': 0},
 \}
 
+let g:Hexokinase_highlighters = ['backgroundfull']
+
 source ~/.local/local.vim
