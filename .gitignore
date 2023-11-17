@@ -177,3 +177,9 @@ icloud
 .spotdl-cache
 .swiftpm/
 .wrangler/
+.terminfo/
+.ollama/
+.tor/
+.mylogin.cnf
+.aspnet/
+.BurpSuite/
