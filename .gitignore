@@ -183,3 +183,4 @@ icloud
 .mylogin.cnf
 .aspnet/
 .BurpSuite/
+.conda/

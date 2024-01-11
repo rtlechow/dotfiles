@@ -34,21 +34,6 @@
 [submodule ".vim/pack/foo/start/trailing-whitespace"]
 	path = .vim/pack/foo/start/trailing-whitespace
 	url = https://github.com/vim-scripts/trailing-whitespace
-[submodule ".vim/pack/foo/start/papercolor-theme"]
-	path = .vim/pack/foo/start/papercolor-theme
-	url = https://github.com/NLKNguyen/papercolor-theme
-[submodule ".vim/pack/foo/start/stellarized"]
-	path = .vim/pack/foo/start/stellarized
-	url = https://github.com/nightsense/stellarized
-[submodule ".vim/pack/foo/start/space-vim-theme"]
-	path = .vim/pack/foo/start/space-vim-theme
-	url = https://github.com/liuchengxu/space-vim-theme
-[submodule ".vim/pack/foo/start/material"]
-	path = .vim/pack/foo/start/material
-	url = https://github.com/kaicataldo/material.vim
-[submodule ".vim/pack/foo/start/snow"]
-	path = .vim/pack/foo/start/snow
-	url = https://github.com/nightsense/snow
 [submodule ".vim/pack/foo/start/vim-scriptease"]
 	path = .vim/pack/foo/start/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease
