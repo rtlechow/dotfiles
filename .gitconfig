@@ -5,7 +5,7 @@
 [alias]
   a = add
   au = add -u
-  b = branch -v --sort=committerdate
+  b = branch -v
   bd = branch -d
   br = checkout -b
   bl = blame -w -M
@@ -75,6 +75,7 @@
 [branch]
   autosetuprebase = always
 	autosetupmerge = always
+	sort = -committerdate
 [credential]
 	helper = osxkeychain
 	helper = 
@@ -102,5 +103,14 @@
 	verbose = true
 [fetch]
 	prune = true
+[column]
+	ui = auto
+[credential "https://git.heroku.com"]
+	provider = generic
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

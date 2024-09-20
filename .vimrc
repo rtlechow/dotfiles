@@ -146,19 +146,6 @@ ab ubr #!/usr/bin/ruby
 " Backspace by words.
 map <Bs> bdw.
 
-" Remap the tab key to do autocompletion or indentation depending on the
-" context (from http://www.vim.org/tips/tip.php?tip_id=102)
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
-
 autocmd FileType gitcommit setlocal spell
 autocmd BufReadPost fugitive://* set bufhidden=delete
 nnoremap <leader>gs :0Git<cr>:normal gU<cr>

@@ -76,3 +76,9 @@
 [submodule ".vim/pack/foo/start/vim-dadbod-completion"]
 	path = .vim/pack/foo/start/vim-dadbod-completion
 	url = https://github.com/kristijanhusak/vim-dadbod-completion.git
+[submodule ".vim/pack/foo/start/fugitive-azure-devops"]
+	path = .vim/pack/foo/start/fugitive-azure-devops
+	url = https://github.com/cedarbaum/fugitive-azure-devops.vim.git
+[submodule ".vim/pack/foo/start/vim-dotenv"]
+	path = .vim/pack/foo/start/vim-dotenv
+	url = https://github.com/tpope/vim-dotenv
