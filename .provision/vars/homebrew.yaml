@@ -38,6 +38,7 @@ homebrew_installed_packages:
   - notmuch
   - nvm
   - offlineimap
+  - oha
   - pandoc
   - pup
   - pv
@@ -62,9 +63,7 @@ homebrew_installed_packages:
 homebrew_cask_apps:
   - 1password
   - 1password-cli
-  - another-redis-desktop-manager
   - cyberduck
-  - dropbox
   - flux
   - google-chrome
   - google-cloud-sdk
@@ -75,11 +74,10 @@ homebrew_cask_apps:
   - obs
   - qutebrowser
   - rectangle
-  - sequel-pro
+  - sequel-ace
   - streamlabs-obs
   - table-tool
   - tableplus
   - the-unarchiver
-  - vagrant
   - vlc
   - yacreader
