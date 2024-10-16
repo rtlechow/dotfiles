@@ -65,6 +65,7 @@ homebrew_cask_apps:
   - 1password-cli
   - cyberduck
   - flux
+  - git-credential-manager
   - google-chrome
   - google-cloud-sdk
   - grandperspective
