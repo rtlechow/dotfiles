@@ -92,7 +92,13 @@ alias gps='git push'
 alias grm='git rm'
 alias gs='git status -sb'
 alias git_remove_missing_files="gs | awk '/deleted:(.*)/ {print $3}' | xargs git rm"
-alias update_submodules='git submodule foreach "git pull origin"'
+function update_submodules() {
+  # Pull latest changes from the default branch (main/master)
+  git submodule foreach 'git checkout $(git symbolic-ref --short refs/remotes/origin/HEAD | sed "s@^origin/@@"); git pull origin $(git symbolic-ref --short refs/remotes/origin/HEAD | sed "s@^origin/@@")'
+
+  # Initialize and update all submodules
+  git submodule update --init --recursive
+}
 alias gdelsquashed='npx @teppeis/git-delete-squashed'
 function git-delete-squashed() {
   if [[ $* =~ 'dry' ]]
