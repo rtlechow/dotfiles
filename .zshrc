@@ -1,6 +1,15 @@
+export KEYTIMEOUT=1
+export EDITOR='vim'
+export LESS='-RFX'
+export PAGER='less'
+export JAVA_HOME='/Library/Java/Home'
+export GREP_OPTIONS='--color=auto --exclude-dir=.git'
+export GREP_COLOR='0;32'
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+export GOPATH=$HOME/go
+
 shdir=~/.zsh
 configs=(
-  env.sh
   options.zsh
   aliases.zsh
   ../.localrc
