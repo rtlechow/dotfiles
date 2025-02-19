@@ -6,7 +6,8 @@ set t_Co=256
 set termguicolors
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
-colorscheme molokai
+let g:molokai_original = 1
+colorscheme catppuccin_frappe
 
 set rtp+=/usr/local/opt/fzf
 let mapleader="," " Remap mapleader from \ to , because \ is not in a standard position on all keyboards. The ',' command does exist in Vim (see |,|), but you probably never use it.

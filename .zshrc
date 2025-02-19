@@ -21,6 +21,10 @@ done
 zstyle ':completion:*:cd:*' ignore-parents parent pwd # cd will never select the parent directory (e.g.: cd ../<TAB>)
 zstyle ':completion:*' completer _expand _complete
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+fi
+fpath=(/opt/homebrew/share/zsh/site-functions /usr/local/share/zsh/site-functions $fpath)
 autoload -Uz compaudit compinit && compinit
 autoload -Uz colors && colors
 

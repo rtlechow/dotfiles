@@ -94,3 +94,6 @@
 [submodule ".vim/pack/foo/start/onedark"]
 	path = .vim/pack/foo/start/onedark
 	url = https://github.com/joshdick/onedark.vim
+[submodule ".vim/pack/foo/start/catppuccin.vim"]
+	path = .vim/pack/foo/start/catppuccin.vim
+	url = https://github.com/catppuccin/vim.git
