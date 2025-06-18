@@ -2,7 +2,6 @@ if &term =~# '^screen'
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
-set t_Co=256
 set termguicolors
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
@@ -10,7 +9,7 @@ let g:molokai_original = 1
 colorscheme catppuccin_frappe
 
 set rtp+=/usr/local/opt/fzf
-let mapleader="," " Remap mapleader from \ to , because \ is not in a standard position on all keyboards. The ',' command does exist in Vim (see |,|), but you probably never use it.
+let g:mapleader=',' " Remap mapleader from \ to , because \ is not in a standard position on all keyboards. The ',' command does exist in Vim (see |,|), but you probably never use it.
 let $PAGER='' " Clear variable inside vim. This is to handle the case where you start Vim normally and want to use Vim's 'Man' function.
 set history=1000 " Increase history from 20 default to 1000
 set nohidden
@@ -21,14 +20,11 @@ set foldmethod=manual
 set nofoldenable
 autocmd FileType markdown setlocal foldmethod=syntax
 
-set esckeys " Allow cursor keys in insert mode.
 set nohlsearch " Enable search result highlighting.
 set incsearch " Highlight dynamically as pattern is typed.
-set noinsertmode " Don't start vim in insert mode.
-set magic " Enable extended regexes.
 set report=0 " Show all changes.
 set ruler " Show the cursor position.
-set shortmess=I " Don't show the intro message when starting vim.
+set shortmess=atI " Shorten command line text and other info tokens.
 set showmode " Show the current mode.
 set nostartofline " Don't jump to the start of the line when moving around.
 set title " Show the filename in the window titlebar.
@@ -44,7 +40,6 @@ set backspace=start,indent,eol
 set ignorecase " In searches, ignore case of lower case letters.
 set smartcase " Override ignorecase if search contains upper case letters.
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
-set shortmess=atI " Shorten command line text and other info tokens.
 set splitbelow splitright
 set ls=2
 set statusline=%<%f\ %h%m%r(%{FugitiveHead()})%=%-14.(%l,%c%V%)\ %P
@@ -57,6 +52,8 @@ if executable("rg")
   set grepprg=rg\ --vimgrep\ --no-heading
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprev<CR>
 augroup myvimrc
   autocmd!
   autocmd QuickFixCmdPost [^l]* cwindow
@@ -86,12 +83,7 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-" Set syntax highlighting options.
-syntax on
-
 " Set filetype highlighting and configuration.
-filetype on
-filetype plugin on
 filetype indent on
 
 " Make Y work as expected
@@ -117,9 +109,6 @@ nnoremap <leader>V :tabnew ~/.vimrc<CR>
 " Reload ~/.vimrc and activate changes (have to save first)
 nnoremap <silent> <leader>R :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-" imaps
-imap hh <space>=><space>
-
 " Toggle search highlighting.
 nnoremap <silent> <leader>H :set invhls hls?<CR>
 
@@ -134,9 +123,6 @@ nnoremap <silent> <leader>C :set nolist!<CR>
 " Ruby
 nnoremap <leader>i :!irb<CR>
 nnoremap <leader>r :!"%"<CR>
-
-" Improve autocomplete menu color.
-highlight Pmenu ctermbg=238 gui=bold
 
 " Abbreviations.
 ab ubpy #!/usr/bin/python
@@ -229,3 +215,15 @@ let g:ale_pattern_options = {
 let g:Hexokinase_highlighters = ['backgroundfull']
 
 source ~/.local/local.vim
+
+autocmd WinEnter,BufWinEnter,WinNew * if &filetype == 'netrw' | vertical resize 30 | endif
+
+let $NVM_DIR = expand('~/.nvm')
+if filereadable($NVM_DIR . '/nvm.sh')
+  let node_path = systemlist('bash -c "source ' . $NVM_DIR . '/nvm.sh && nvm which node"')[0]
+  let node_bin = fnamemodify(node_path, ':h')
+  let $PATH = node_bin . ':' . $PATH
+endif
+
+imap <silent><script><expr> <Tab> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
