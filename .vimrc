@@ -133,6 +133,17 @@ ab ubr #!/usr/bin/ruby
 " Backspace by words.
 map <Bs> bdw.
 
+" CTRL-A CTRL-Q to select all and build quickfix list
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+autocmd WinEnter,BufWinEnter,WinNew * if &filetype == 'netrw' | vertical resize 30 | endif
+source ~/.local/local.vim
+
+" plugins
 autocmd FileType gitcommit setlocal spell
 autocmd BufReadPost fugitive://* set bufhidden=delete
 nnoremap <leader>gs :0Git<cr>:normal gU<cr>
@@ -159,12 +170,6 @@ let g:dbext_default_history_file = '~/.dbext_history'
 let g:rails_erb_yaml = 1
 set confirm " vim-rails :AV create a spec if missing
 
-" CTRL-A CTRL-Q to select all and build quickfix list
-function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
-endfunction
 let g:fzf_action = {
   \ 'ctrl-q': function('s:build_quickfix_list'),
   \ 'ctrl-t': 'tab split',
@@ -180,7 +185,7 @@ nmap <Leader><Leader>co :Commits<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>h :Helptags<CR>
 let $FZF_DEFAULT_OPTS = '--layout=reverse --bind ctrl-a:select-all'
-let $FZF_DEFAULT_COMMAND='fd --type f'
+let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --color=auto --no-ignore-vcs'
 let g:fzf_buffers_jump = 1
 
 xnoremap <expr> <Plug>(DBExe)     db#op_exec()
@@ -213,10 +218,6 @@ let g:ale_pattern_options = {
 \}
 
 let g:Hexokinase_highlighters = ['backgroundfull']
-
-source ~/.local/local.vim
-
-autocmd WinEnter,BufWinEnter,WinNew * if &filetype == 'netrw' | vertical resize 30 | endif
 
 let $NVM_DIR = expand('~/.nvm')
 if filereadable($NVM_DIR . '/nvm.sh')
