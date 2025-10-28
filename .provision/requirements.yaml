@@ -1,4 +1,0 @@
-collections:
-  - name: geerlingguy.mac
-roles:
-  - name: zzet.rbenv
