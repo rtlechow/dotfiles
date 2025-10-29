@@ -7,7 +7,6 @@ brew "watch"
 brew "zsh"
 
 # Development tools
-brew "direnv"
 brew "gcc"
 brew "gnupg"
 brew "shellcheck"
