@@ -1,9 +1,11 @@
+pp "Loading ~/.irbrc"
+
 require 'irb/completion'
 IRB.conf[:SAVE_HISTORY] = 10000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 IRB.conf[:AUTO_INDENT] = true
-IRB.conf[:USE_COLORIZE] = false
+IRB.conf[:USE_COLORIZE] = true
 
 Dir.glob(File.expand_path('~/.local/irb*.rb', __FILE__)).each do |file|
   require file
@@ -41,4 +43,15 @@ end
 
 def m(klass)
   klass.public_instance_methods - Object.public_instance_methods
+end
+
+if ENV['DBG']
+  require 'debug'
+  at_exit do
+    if $! # Checks for the last raised exception
+      puts "Unhandled exception: #{$!.class} - #{$!.message}"
+      puts $!.backtrace.join("\n")
+      debugger # Start the debugger session
+    end
+  end
 end

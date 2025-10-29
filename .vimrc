@@ -226,5 +226,7 @@ if filereadable($NVM_DIR . '/nvm.sh')
   let $PATH = node_bin . ':' . $PATH
 endif
 
-imap <silent><script><expr> <Tab> copilot#Accept("\<CR>")
-let g:copilot_no_tab_map = v:true
+augroup copilot_config
+  autocmd!
+  autocmd User CopilotPlugin imap <silent><script><expr> <Tab> copilot#Accept("\<CR>")
+augroup END

@@ -1,1 +1,4 @@
 .rake_tasks
+.claude/
+*.local.md
+.opencode/

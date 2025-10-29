@@ -82,6 +82,7 @@
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [init]
 	templatedir = ~/.git_template
+	defaultBranch = main
 [github]
 	user = rtlechow
 [ghi]
