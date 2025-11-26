@@ -97,3 +97,9 @@
 [submodule ".vim/pack/foo/start/catppuccin.vim"]
 	path = .vim/pack/foo/start/catppuccin.vim
 	url = https://github.com/catppuccin/vim.git
+[submodule ".zsh/plugins/fast-syntax-highlighting"]
+	path = .zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
+[submodule ".zsh/plugins/zsh-autosuggestions"]
+	path = .zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
