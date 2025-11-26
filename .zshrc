@@ -3,7 +3,6 @@ export EDITOR='vim'
 export LESS='-RFX'
 export PAGER='less'
 export JAVA_HOME='/Library/Java/Home'
-export GREP_OPTIONS='--color=auto --exclude-dir=.git'
 export GREP_COLOR='0;32'
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 export GOPATH=$HOME/go
@@ -28,13 +27,13 @@ fpath=(/opt/homebrew/share/zsh/site-functions /usr/local/share/zsh/site-function
 autoload -Uz compaudit compinit && compinit
 autoload -Uz colors && colors
 
-eval `dircolors ~/.dir_colors`
+[[ -f ~/.dir_colors ]] && eval "$(dircolors ~/.dir_colors)"
 
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
-source ~/.zsh/functions/_git_prompt
+[[ -f ~/.zsh/functions/_git_prompt ]] && source ~/.zsh/functions/_git_prompt
 
-export PS1='%{$fg[magenta]%}%m%{$fg[white]%}:%{$fg[cyan]%}%1~%{$fg[white]%}`git-prompt`%{$fg[white]%}%# '
+export PS1='%{$fg[magenta]%}%m%{$fg[white]%}:%{$fg[cyan]%}%1~%{$fg[white]%}$(git-prompt)%{$fg[white]%}%# '
 
 function zle-keymap-select() {
   zle reset-prompt
@@ -55,6 +54,6 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^x^x' edit-command-line
 
-. "$HOME/.local/bin/env"
+[[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
 
-eval "$(/opt/homebrew/bin/mise activate zsh)"
+command -v mise >/dev/null 2>&1 && eval "$(/opt/homebrew/bin/mise activate zsh)"

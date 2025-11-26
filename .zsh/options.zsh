@@ -7,10 +7,9 @@ manpath=(/usr/local/opt/coreutils/libexec/gnuman/ $manpath)
 cdpath=(~/src $cdpath)
 
 HISTFILE=~/.zsh_history
-HISTIGNORE='k:ls:lm:bg:fg:jobs:pwd:kill:declare:history:cd:cd :&: *:'
-HISTSIZE=10000
+HISTSIZE=200000
+SAVEHIST=200000
 REPORTTIME=10
-SAVEHIST=10000
 
 setopt autopushd
 setopt nobeep
@@ -32,13 +31,16 @@ setopt menu_complete
 setopt appendhistory
 setopt incappendhistory
 setopt sharehistory
-setopt histverify
 setopt nohistbeep
 setopt extendedhistory
 setopt histignorealldups
 setopt histignorespace
 setopt histreduceblanks
 setopt histverify
+setopt hist_find_no_dups
+setopt hist_expire_dups_first
+setopt hist_save_no_dups
+setopt hist_fcntl_lock
 
 # Disable C-s C-q for use on other bindings
 # https://coderwall.com/p/ltiqsq

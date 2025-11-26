@@ -5,7 +5,6 @@ function provision() {
 
 # Basic directory navigation
 alias ..='cd ..'
-alias ...='../..'
 alias ls='ls --color=auto'
 alias lh='ls -lh'
 alias la='ls -A'
@@ -13,7 +12,7 @@ alias lah='ls -lAh'
 alias l='ls -CF'
 alias cls='clear && ll'
 alias du1='du -h --max-depth=1'
-alias lc="cl"
+alias lc="llm cmd"
 function cl() {
  if [ $# = 0 ]; then
   cd && ls
@@ -52,19 +51,17 @@ alias battery='ioreg -r -l -k "BatteryPercent" | egrep "BatteryPercent|Product\"
 alias be='bundle exec'
 
 # History
-alias h="history | grep "
 function h() {
   if [ -z "$1" ]
   then
-    history | grep -v "  h" | sed 's/[ \t]*$//' | sort -k 2 -r | uniq -f 1 | sort -n
+    history
   else
-    history | grep -v "  h" | grep $1 | sed 's/[ \t]*$//' | sort -k 2 -r | uniq -f 1 | sort -n
+    history | grep "$1"
   fi
 }
 
 # Git
 alias g='git'
-eval "$(hub alias -s)"
 alias fix='git diff --name-only | uniq | xargs $EDITOR -o'
 alias ga='git add'
 alias gb='g b'
@@ -72,13 +69,12 @@ alias gba='git branch -a -v'
 alias gbd='git branch -d'
 alias gbr='git checkout -b'
 alias gbl='git blame -w -M'
-alias gch='git checkout'
 function gch() {
   if [ -z "$1" ]
   then
-    git checkout master
+    git checkout $(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@' || echo master)
   else
-    git checkout $1
+    git checkout "$1"
   fi
 }
 alias gco='git commit -v -m'
@@ -125,25 +121,6 @@ function git_largest() {
   | numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
 }
 
-# Postgres
-alias -g pgup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias -g pgdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-
-# MySQL
-alias -g myup='mysql.server start'
-alias -g mydown='mysql.server stop'
-
-# Apache
-alias -g ap='sudo apachectl'
-alias -g apup='sudo apachectl start'
-alias -g apdown='sudo apachectl stop'
-alias -g aprestart='sudo apachectl restart'
-
-# Aptitude
-alias sa='sudo aptitude'
-alias sai='sudo aptitude install'
-alias sau='sudo aptitude update'
-
 function f() {
   if [ ! -z $1 ]; then
     find . -not -iwholename '*.git*' -name "*${*}*"
@@ -158,3 +135,44 @@ function gg() {
 alias icat='imgcat'
 alias isvg='rsvg-convert | icat'
 alias idot='dot -Efontsize=18 -Efontname=sans -Nfontname=sans -Tpng -Gbgcolor=black -Gcolor=white -Ecolor=white -Efontcolor=white -Ncolor=white -Nfontcolor=white | icat'
+
+generate_test_videos() {
+  local n=${1:-5}  # Default to 5 videos if no argument is given
+  for ((i=1; i<=n; i++)); do
+    ffmpeg -f lavfi -i color=c=black:s=320x240:d=2 -vf "
+      drawtext=text='$i':
+      x=w/2+20*sin(2*PI*t):
+      y=h/2+20*cos(2*PI*t):
+      fontsize=60:
+      fontcolor=white" \
+      -c:v libx264 -t 2 -pix_fmt yuv420p "test_$i.mp4"
+  done
+}
+
+generate_test_images() {
+  local n=${1:-5}  # Default to 5 images if no argument is given
+  for ((i=1; i<=n; i++)); do
+    ffmpeg -f lavfi -i color=c=black:s=320x240 -vf "
+      drawtext=text='$i':
+      x=(w-text_w)/2:
+      y=(h-text_h)/2:
+      fontsize=60:
+      fontcolor=white" \
+      -frames:v 1 "test_$i.png"
+  done
+}
+
+s3gir() {
+  local BUCKET="s3://backup-rtl"
+  for path in "$@"; do
+    if [ -d "$path" ]; then
+      aws s3 cp "$path" "$BUCKET/" --recursive --storage-class GLACIER_IR
+    else
+      aws s3 cp "$path" "$BUCKET/" --storage-class GLACIER_IR
+    fi
+  done
+}
+
+alias mdev='MISE_ENV=dev mise x --'
+alias mstaging='MISE_ENV=staging mise x --'
+alias mprod='MISE_ENV=prod mise x --'
