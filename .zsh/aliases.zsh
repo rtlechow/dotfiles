@@ -74,7 +74,7 @@ function gch() {
   then
     git checkout $(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@' || echo master)
   else
-    git checkout "$1"
+    git checkout "$@"
   fi
 }
 alias gco='git commit -v -m'

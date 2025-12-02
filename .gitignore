@@ -184,3 +184,17 @@ icloud
 .aspnet/
 .BurpSuite/
 .conda/
+.yarn/
+.vibetunnel/
+.vault-token
+.spotdl/
+.newrelic/
+.gemini/
+.codex/
+.cursor/
+.claude*
+.opencode*
+.lmstudio*
+.parallel/
+.templateengine/
+.bun/

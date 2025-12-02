@@ -1,0 +1,6 @@
+--type f
+--hidden
+--follow
+--exclude .git
+--color=auto
+--no-ignore-vcs
