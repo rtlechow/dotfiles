@@ -1,3 +1,8 @@
+# Taps
+tap "huseyinbabal/tap"
+tap "nikitabobko/tap"
+tap "puma/puma"
+
 # Core utilities
 brew "coreutils"
 brew "findutils"
@@ -103,6 +108,7 @@ cask "iterm2"
 cask "ngrok"
 
 # Database clients
+brew "harlequin"
 cask "sequel-ace"
 cask "tableplus"
 
@@ -124,8 +130,11 @@ cask "obsidian"
 cask "rectangle"
 
 # Mac App Store apps (requires mas CLI)
-# Uncomment and add App Store apps as needed
-# mas "App Name", id: 123456789
+mas "Azure VPN Client", id: 1553936137
+mas "GamepadMapper", id: 1517291304
+mas "Keynote", id: 409183694
+mas "Tailscale", id: 1475387142
+mas "Xcode", id: 497799835
 
 # Additional packages from current brew installation
 brew "ast-grep"
@@ -160,6 +169,7 @@ brew "rclone"
 brew "s3cmd"
 brew "socat"
 brew "strongswan"
+brew "taws"
 brew "terraform"
 brew "tesseract"
 brew "transmission-cli"

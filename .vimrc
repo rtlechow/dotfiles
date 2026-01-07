@@ -141,7 +141,6 @@ function! s:build_quickfix_list(lines)
 endfunction
 
 autocmd WinEnter,BufWinEnter,WinNew * if &filetype == 'netrw' | vertical resize 30 | endif
-source ~/.local/local.vim
 
 " plugins
 autocmd FileType gitcommit setlocal spell
@@ -167,6 +166,9 @@ let g:dispatch_quickfix_height = 20
 let g:jsx_ext_required = 0
 let g:table_mode_corner = '|'
 let g:dbext_default_history_file = '~/.dbext_history'
+" vim-dadbod-ui: Use mysql-client instead of mysql server for native_password plugin support
+let $PATH = '/opt/homebrew/opt/mysql-client/bin:' . $PATH
+let $MYSQL_PLUGIN_DIR = '/opt/homebrew/opt/mysql-client/lib/plugin'
 let g:rails_erb_yaml = 1
 set confirm " vim-rails :AV create a spec if missing
 
