@@ -33,6 +33,24 @@ fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
 [[ -f ~/.zsh/functions/_git_prompt ]] && source ~/.zsh/functions/_git_prompt
 
+# Git completion for custom functions
+_gch() {
+  local curcontext="$curcontext" state line
+  typeset -A opt_args
+
+  _arguments -C \
+    '*::branch:->branch'
+
+  case $state in
+    branch)
+      local -a branches
+      branches=(${(f)"$(git branch --format='%(refname:short)' 2>/dev/null)"})
+      _describe 'branch' branches
+      ;;
+  esac
+}
+compdef _gch gch
+
 # Load zsh plugins
 [[ -f ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -f ~/.zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]] && source ~/.zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
@@ -59,5 +77,9 @@ zle -N edit-command-line
 bindkey '^x^x' edit-command-line
 
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
+
+# Initialize zoxide (smart cd with frecency-based directory jumping)
+command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
+command -v zoxide >/dev/null 2>&1 && alias cd='z'
 
 command -v mise >/dev/null 2>&1 && eval "$(/opt/homebrew/bin/mise activate zsh)"

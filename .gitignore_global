@@ -3,3 +3,4 @@
 *.local.md
 .opencode/
 doc/tags
+.ruby-build

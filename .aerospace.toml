@@ -69,11 +69,11 @@ automatically-unhide-macos-hidden-apps = true
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace dev'
+run = ['move-node-to-workspace dev', 'fullscreen']
 
 [[on-window-detected]]
 if.app-id = 'com.brave.Browser'
-run = 'move-node-to-workspace web'
+run = ['layout floating', 'move-node-to-workspace web']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.MobileSMS'

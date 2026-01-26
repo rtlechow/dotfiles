@@ -37,6 +37,7 @@ brew "ack"
 brew "fd"
 brew "fzf"
 brew "ripgrep"
+brew "zoxide"
 
 # Data and text processing
 brew "htmlq"
@@ -58,6 +59,7 @@ brew "wrk"
 # System and monitoring
 brew "cloc"
 brew "dockutil"
+brew "duti"
 brew "hyperfine"
 brew "mas"
 brew "ncdu"
