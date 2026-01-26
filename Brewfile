@@ -133,7 +133,6 @@ cask "obsidian"
 cask "rectangle"
 
 # Mac App Store apps (requires mas CLI)
-mas "Azure VPN Client", id: 1553936137
 mas "GamepadMapper", id: 1517291304
 mas "Keynote", id: 409183694
 mas "Tailscale", id: 1475387142
