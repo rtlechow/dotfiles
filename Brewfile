@@ -119,7 +119,7 @@ cask "vlc"
 cask "yacreader"
 
 # System utilities
-cask "flux"
+cask "flux-app"
 cask "obsidian"
 cask "rectangle"
 
