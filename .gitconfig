@@ -2,116 +2,214 @@
   name = R.T. Lechow
   email = rtlechow@gmail.com
   signingkey = E04FBCAB
-[alias]
-  a = add
-  au = add -u
-  b = branch -v
-  bd = branch -d
-  br = checkout -b
-  bl = blame -w -M
-  ca = commit --amend
-  cb = checkout -b
-  ch = checkout
-  ci = commit
-  cl = clean
-  cp = cherry-pick
-  d = diff
-  dc = diff --cached
-  l = log -p
-  last = log -1 HEAD
-  m = merge
-  p = pull
-  patch = --no-pager diff --no-color
-  ps = push
-  r = rebase
-  s = status -s
-  sta = stash
-  unstage = reset HEAD --
-  w = whatchanged
-  wt = "!f() { git worktree add .worktrees/$1 $1; }; f"
-  wtn = "!f() { git worktree add -b $1 .worktrees/$1; }; f"
-  web = instaweb --httpd=webrick
-  webstop = instaweb --httpd=webrick --stop
-  serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
-  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
-  add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
-  graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
-  prettylog = "log --graph --pretty=format:\"%Cred%h%Creset — %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative"
-  track = checkout --track -b
-  prune-all = !git remote | xargs -n 1 git remote prune
-  rank = shortlog -sn --no-merges
-  whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
-  conflict = diff --name-only --diff-filter U
-	hub = !hub
+
+[github]
+  user = rtlechow
+
 [core]
   pager = delta
   whitespace = trailing-space
   excludesfile = ~/.gitignore_global
-	attributesfile = ~/.gitattributes
+  attributesfile = ~/.gitattributes
+
+[init]
+  templatedir = ~/.git_template
+  defaultBranch = main
+
 [color]
   ui = auto
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
-  plain = blue
-[color "diff"]
-  plain = normal
-  meta = yellow
-  frag = magenta
-  old = red
-  new = green
-  commit = cyan
-  whitespace = yellow red
-[color "status"]
-  header = blue
-  added = green
-  changed = yellow
-  untracked = cyan
-  nobranch = red
-[merge]
-  tool = vimdiff
-[push]
-	default = current
-  followTags = true
-	autoSetupRemote = true
-[branch]
-  autosetuprebase = always
-	autosetupmerge = always
-	sort = -committerdate
-[init]
-	templatedir = ~/.git_template
-	defaultBranch = main
-[github]
-	user = rtlechow
+
+[column]
+  ui = auto
+
 [status]
-	displaycommentprefix = true
-[merge "ours"]
-	driver = true
-[diff]
-  indentHeuristic = true
-  submodule = diff
+  displaycommentprefix = true
+
 [delta]
   navigate = true
   dark = true
+  line-numbers = true
+  side-by-side = false
+
 [interactive]
-	diffFilter = delta --color-only
-[commit]
-	verbose = true
+  diffFilter = delta --color-only
+
+[diff]
+  indentHeuristic = true
+  submodule = diff
+  algorithm = histogram
+  colorMoved = default
+
+[merge]
+  tool = vimdiff
+  conflictStyle = zdiff3
+
+[merge "ours"]
+  driver = true
+
+[rerere]
+  enabled = true
+
+[branch]
+  autosetuprebase = always
+  autosetupmerge = always
+  sort = -committerdate
+
 [fetch]
-	prune = true
-[column]
-	ui = auto
+  prune = true
+  fsckobjects = false
+
+[pull]
+  rebase = true
+
+[push]
+  default = current
+  followTags = true
+  autoSetupRemote = true
+
+[tag]
+  sort = -version:refname
+
+[rebase]
+  autosquash = true
+  autostash = true
+
+[commit]
+  verbose = true
+
+[transfer]
+  fsckobjects = false
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
 [credential "https://github.com"]
-	helper = !/opt/homebrew/bin/gh auth git-credential
+  helper = !/opt/homebrew/bin/gh auth git-credential
+
 [credential "https://gist.github.com"]
-	helper = !/opt/homebrew/bin/gh auth git-credential
-[credential "https://git.heroku.com"]
-	provider = generic
+  helper = !/opt/homebrew/bin/gh auth git-credential
+
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+  useHttpPath = true
+
+[credential "https://git.heroku.com"]
+  provider = generic
+
+[url "git@github.com:"]
+  insteadOf = gh:
+
+[url "https://github.com/"]
+  insteadOf = github:
+
+[alias]
+  a = add
+  au = add -u
+  ap = add -p
+
+  b = branch -v
+  bd = branch -d
+  bD = branch -D
+  br = checkout -b
+  track = checkout --track -b
+
+  ch = checkout
+  cb = checkout -b
+
+  c = commit
+  ci = commit
+  ca = commit --amend
+  can = commit --amend --no-edit
+  cane = commit --amend --no-edit
+
+  d = diff
+  dc = diff --cached
+  ds = diff --staged
+  dw = diff --word-diff
+  patch = --no-pager diff --no-color
+
+  s = status -s
+  st = status
+
+  l = log -p
+  last = log -1 HEAD
+  ll = log --oneline
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+  prettylog = log --graph --pretty=format:"%Cred%h%Creset — %s %Cgreen(%cr)%Creset" --abbrev-commit --date=relative
+
+  sta = stash
+  stl = stash list
+  stp = stash pop
+  stshow = stash show -p
+
+  r = rebase
+  ri = rebase -i
+  rc = rebase --continue
+  ra = rebase --abort
+
+  p = pull
+  ps = push
+  psf = push --force-with-lease
+  psu = push -u origin HEAD
+
+  m = merge
+  ma = merge --abort
+
+  cp = cherry-pick
+  cpc = cherry-pick --continue
+  cpa = cherry-pick --abort
+
+  cl = clean
+
+  bl = blame -w -M
+
+  unstage = reset HEAD --
+  undo = reset --soft HEAD^
+  uncommit = reset --soft HEAD^
+
+  wt = "!f() { git worktree add .worktrees/$1 $1; }; f"
+  wtn = "!f() { git worktree add -b $1 .worktrees/$1; }; f"
+  wtl = worktree list
+  wtp = worktree prune
+
+  whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+  w = whatchanged
+
+  conflict = diff --name-only --diff-filter=U
+  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+  add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+
+  prune-all = !git remote | xargs -n 1 git remote prune
+
+  rank = shortlog -sn --no-merges
+  contributors = shortlog -sn --no-merges
+
+  graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+
+  # Quick commit all changes
+  caa = commit -a --amend
+  cam = commit -am
+
+  # List aliases
+  aliases = config --get-regexp alias
+
+  # Find commits by message
+  fm = "!git log --all --grep"
+
+  # Find commits by code
+  fc = "!git log --all -S"
+
+  # Create new branch and switch to it
+  new = checkout -b
+
+  # Push current branch and set upstream
+  publish = push -u origin HEAD
+
+  # Delete merged branches (except main/master/develop)
+  cleanup = "!git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d"
+
+  # Show branches ordered by last commit
+  recent = branch --sort=-committerdate --format='%(committerdate:relative)%09%(refname:short)'
