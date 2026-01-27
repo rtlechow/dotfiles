@@ -28,6 +28,8 @@
   sta = stash
   unstage = reset HEAD --
   w = whatchanged
+  wt = "!f() { git worktree add .worktrees/$1 $1; }; f"
+  wtn = "!f() { git worktree add -b $1 .worktrees/$1; }; f"
   web = instaweb --httpd=webrick
   webstop = instaweb --httpd=webrick --stop
   serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
@@ -42,10 +44,10 @@
   conflict = diff --name-only --diff-filter U
 	hub = !hub
 [core]
-  pager = diff-so-fancy | less -iFMRSX --pattern='^(commit|diff|modified|added|removed)' +r
+  pager = delta
   whitespace = trailing-space
   excludesfile = ~/.gitignore_global
-	attributesfile = /Users/rtl/.gitattributes
+	attributesfile = ~/.gitattributes
 [color]
   ui = auto
 [color "branch"]
@@ -71,22 +73,17 @@
   tool = vimdiff
 [push]
 	default = current
+  followTags = true
 	autoSetupRemote = true
 [branch]
   autosetuprebase = always
 	autosetupmerge = always
 	sort = -committerdate
-[credential]
-	helper = osxkeychain
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
 [init]
 	templatedir = ~/.git_template
 	defaultBranch = main
 [github]
 	user = rtlechow
-[ghi]
-	token = !security find-internet-password -a rtlechow -s github.com -l 'ghi token' -w
 [status]
 	displaycommentprefix = true
 [merge "ours"]
@@ -94,24 +91,27 @@
 [diff]
   indentHeuristic = true
   submodule = diff
+[delta]
+  navigate = true
+  dark = true
 [interactive]
-	diffFilter = less
-[diff-so-fancy]
-	markEmptyLines = false
-[diff "spaceman-diff"]
-  command = spaceman-diff
+	diffFilter = delta --color-only
 [commit]
 	verbose = true
 [fetch]
 	prune = true
 [column]
 	ui = auto
-[credential "https://git.heroku.com"]
-	provider = generic
-[credential "https://dev.azure.com"]
-	useHttpPath = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential "https://github.com"]
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://git.heroku.com"]
+	provider = generic
+[credential "https://dev.azure.com"]
+	useHttpPath = true
