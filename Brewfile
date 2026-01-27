@@ -25,15 +25,10 @@ brew "git-extras"
 brew "git-lfs"
 brew "git-secrets"
 brew "git-sizer"
-brew "diff-so-fancy"
 brew "gh"
-brew "gist"
-brew "hub"
-brew "spaceman-diff"
 brew "tig"
 
 # Search and file tools
-brew "ack"
 brew "fd"
 brew "fzf"
 brew "ripgrep"
@@ -83,7 +78,6 @@ brew "rbspy"
 
 # Security and credentials
 brew "pwgen"
-brew "ssh-copy-id"
 
 # Editors and development
 brew "universal-ctags"
@@ -106,8 +100,6 @@ cask "qutebrowser"
 
 # Development tools
 cask "git-credential-manager"
-cask "google-cloud-sdk"
-cask "iterm2"
 cask "ngrok"
 
 # Database clients
@@ -123,7 +115,6 @@ cask "the-unarchiver"
 
 # Media and streaming
 cask "obs"
-cask "streamlabs-obs"
 cask "vlc"
 cask "yacreader"
 
@@ -143,7 +134,6 @@ brew "ast-grep"
 brew "azure-cli"
 brew "circleci"
 brew "container-diff"
-brew "docker-compose"
 brew "ffmpeg"
 brew "git-filter-repo"
 brew "glow"
