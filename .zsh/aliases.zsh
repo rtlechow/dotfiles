@@ -6,9 +6,7 @@ function provision() {
 # Basic directory navigation
 alias ..='cd ..'
 alias ls='ls --color=auto'
-alias lh='ls -lh'
-alias la='ls -A'
-alias lah='ls -lAh'
+alias ll='ls -lh'
 alias l='ls -CF'
 alias cls='clear && ll'
 alias du1='du -h --max-depth=1'
@@ -22,11 +20,9 @@ function cl() {
 }
 
 # Common apps
-alias a='ack'
 alias b='bundle'
-alias dc='docker-compose'
-alias dcl='docker-compose logs -f --tail 10'
-alias dm='docker-machine'
+alias dc='docker compose'
+alias dcl='docker compose logs -f --tail 10'
 alias kp='keepassxc-cli'
 alias p='ps aux | grep -v grep | grep -E'
 function d() {
@@ -40,7 +36,7 @@ alias untgz='tar -zxvf'
 alias pwgen='pwgen -A -B -n'
 alias pw='printf "%s-%s-%s-%s\n" $(grep -v "[A-Z]" /usr/share/dict/words | shuf -n 4)'
 alias irc='ssh irc -t tmux a'
-alias -g A='| ack '
+alias -g A='| rg '
 
 # Mac OSX
 alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
@@ -81,7 +77,7 @@ alias gco='git commit -v -m'
 alias gca='git commit -a -v -m'
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gl='git log'
+alias gl='git log --ext-diff'
 alias gmv='git mv'
 alias gp='git pull'
 alias gps='git push'
@@ -95,23 +91,52 @@ function update_submodules() {
   # Initialize and update all submodules
   git submodule update --init --recursive
 }
-alias gdelsquashed='npx @teppeis/git-delete-squashed'
-function git-delete-squashed() {
-  if [[ $* =~ 'dry' ]]
-  then
-    echo "Dry run"
-    git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && echo $branch; done
-  else
-    read -q "REPLY?Wet run, continue?"
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-      echo 'Continuing'
-      git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done
-    else
-      echo 'Aborting'
+
+function gdelsquashed() {
+  local default_branch=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
+  if [ -z "$default_branch" ]; then
+    default_branch="main"
+  fi
+
+  local dry_run=false
+  if [[ "$1" == "--dry-run" || "$1" == "-n" ]]; then
+    dry_run=true
+    echo "Dry run - branches that would be deleted:"
+  fi
+
+  git checkout -q "$default_branch" 2>/dev/null || { echo "Error: Could not checkout $default_branch"; return 1; }
+
+  git for-each-ref refs/heads/ --format='%(refname:short)' | while read branch; do
+    if [ "$branch" = "$default_branch" ]; then
+      continue
     fi
+
+    local merge_base=$(git merge-base "$default_branch" "$branch" 2>/dev/null)
+    if [ -z "$merge_base" ]; then
+      continue
+    fi
+
+    local tree=$(git rev-parse "$branch^{tree}" 2>/dev/null)
+    if [ -z "$tree" ]; then
+      continue
+    fi
+
+    local cherry=$(git cherry "$default_branch" $(git commit-tree "$tree" -p "$merge_base" -m _) 2>/dev/null)
+    if [[ "$cherry" == "-"* ]]; then
+      if [ "$dry_run" = true ]; then
+        echo "  $branch"
+      else
+        git branch -D "$branch"
+        echo "Deleted: $branch"
+      fi
+    fi
+  done
+
+  if [ "$dry_run" = false ]; then
+    echo "Done. Deleted squashed branches."
   fi
 }
+
 function git_largest() {
   git rev-list --objects --all \
   | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
@@ -123,12 +148,7 @@ function git_largest() {
 
 function f() {
   if [ ! -z $1 ]; then
-    find . -not -iwholename '*.git*' -name "*${*}*"
-  fi
-}
-function gg() {
-  if [ ! -z $1 ]; then
-    grep -Irl $1 . | xargs grep --color=auto -I $2
+    fd "$*"
   fi
 }
 

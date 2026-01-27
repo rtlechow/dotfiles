@@ -7,7 +7,6 @@
   user = rtlechow
 
 [core]
-  pager = delta
   whitespace = trailing-space
   excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes
@@ -25,20 +24,22 @@
 [status]
   displaycommentprefix = true
 
-[delta]
-  navigate = true
-  dark = true
-  line-numbers = true
-  side-by-side = false
-
-[interactive]
-  diffFilter = delta --color-only
-
 [diff]
+  external = difft
+  tool = difftastic
   indentHeuristic = true
   submodule = diff
   algorithm = histogram
   colorMoved = default
+
+[difftool]
+  prompt = false
+
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+  difftool = true
 
 [merge]
   tool = vimdiff
@@ -128,17 +129,20 @@
   dc = diff --cached
   ds = diff --staged
   dw = diff --word-diff
+  dt = difftool
+  dts = difftool --staged
   patch = --no-pager diff --no-color
 
   s = status -s
   st = status
 
-  l = log -p
+  l = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff \"$@\"; }; f"
   last = log -1 HEAD
   ll = log --oneline
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
   prettylog = log --graph --pretty=format:"%Cred%h%Creset — %s %Cgreen(%cr)%Creset" --abbrev-commit --date=relative
+  ldft = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff \"$@\"; }; f"
 
   sta = stash
   stl = stash list
