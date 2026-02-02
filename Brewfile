@@ -3,6 +3,7 @@ tap "anomalyco/tap"
 tap "huseyinbabal/tap"
 tap "nikitabobko/tap"
 tap "puma/puma"
+tap "steipete/tap"
 
 # Core utilities
 brew "coreutils"
@@ -35,6 +36,7 @@ brew "ripgrep"
 brew "zoxide"
 
 # Data and text processing
+brew "gum"
 brew "htmlq"
 brew "jid"
 brew "jq"
@@ -59,6 +61,7 @@ brew "hyperfine"
 brew "mas"
 brew "ncdu"
 brew "nnn"
+brew "steipete/tap/peekaboo"
 brew "pstree"
 brew "pv"
 
