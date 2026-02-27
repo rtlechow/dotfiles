@@ -15,7 +15,7 @@ function cl() {
  if [ $# = 0 ]; then
   cd && ls
  else
-  cd "$*" && lh
+  cd "$*" && ll
  fi
 }
 
