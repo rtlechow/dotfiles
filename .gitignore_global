@@ -4,3 +4,5 @@
 .opencode/
 doc/tags
 .ruby-build
+mise.local.toml
+pitchfork.local.toml

@@ -88,8 +88,8 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
-# Position Dock on left side (maximizes vertical screen space)
-defaults write com.apple.dock orientation left
+# Position Dock at bottom of screen
+defaults write com.apple.dock orientation bottom
 
 # Disable Dock animations
 defaults write com.apple.dock expose-animation-duration -float 0

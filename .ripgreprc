@@ -6,5 +6,6 @@
 -g=!*.svg
 -g=!vendor/**
 -g=!public/admin/swagger/**
+-g=!*worktrees/**
 --max-columns=80
 --max-columns-preview

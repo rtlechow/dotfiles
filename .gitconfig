@@ -10,6 +10,20 @@
   whitespace = trailing-space
   excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes
+  pager = delta
+  #untrackedCache = true
+  #fsmonitor = true
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  features = catppuccin-frappe
+  navigate = true
+  line-numbers = true
+
+[include]
+  path = ~/.config/delta/catppuccin.gitconfig
 
 [init]
   templatedir = ~/.git_template
@@ -25,7 +39,7 @@
   displaycommentprefix = true
 
 [diff]
-  external = difft
+  # external = difft  # disabled: delta is now the diff pager (Catppuccin Frappé)
   tool = difftastic
   indentHeuristic = true
   submodule = diff
@@ -98,6 +112,7 @@
 
 [credential "https://git.heroku.com"]
   provider = generic
+	helper = !heroku git:credentials
 
 [url "git@github.com:"]
   insteadOf = gh:
@@ -217,3 +232,5 @@
 
   # Show branches ordered by last commit
   recent = branch --sort=-committerdate --format='%(committerdate:relative)%09%(refname:short)'
+[credential]
+	helper = manager

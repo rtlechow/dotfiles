@@ -42,6 +42,9 @@ alias -g A='| rg '
 alias funhide='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias fhide='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 alias battery='ioreg -r -l -k "BatteryPercent" | egrep "BatteryPercent|Product\""'
+# coreutils uptime reads a bogus BOOT_TIME from macOS utmpx (reports 1976);
+# BSD uptime uses the kern.boottime sysctl instead
+alias uptime='/usr/bin/uptime'
 
 # Ruby
 alias be='bundle exec'
@@ -77,7 +80,7 @@ alias gco='git commit -v -m'
 alias gca='git commit -a -v -m'
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gl='git log --ext-diff'
+alias gl='git log --shortstat --ext-diff'
 alias gmv='git mv'
 alias gp='git pull'
 alias gps='git push'
@@ -193,6 +196,25 @@ s3gir() {
   done
 }
 
-alias mdev='MISE_ENV=dev mise x --'
+# AWS profile switching
+alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)'
+alias awswho='aws sts get-caller-identity'
+
+alias mdev='MISE_ENV=development mise x --'
 alias mstaging='MISE_ENV=staging mise x --'
-alias mprod='MISE_ENV=prod mise x --'
+alias mprod='MISE_ENV=production mise x --'
+
+function git-force-delete-branch() {
+    local branch=$1
+    # Find the path of the worktree associated with this branch
+    local wt_path=$(git worktree list --porcelain | grep -B 2 "refs/heads/$branch" | grep "^worktree " | awk '{print $2}')
+
+    if [ -n "$wt_path" ]; then
+        echo "Removing worktree at $wt_path..."
+        git worktree remove --force "$wt_path"
+    fi
+
+    echo "Deleting branch $branch..."
+    git branch -D "$branch"
+}
+alias git-bdf=git-force-delete-branch

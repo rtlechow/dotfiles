@@ -197,3 +197,15 @@ icloud
 .parallel/
 .templateengine/
 .bun/
+.google_authenticator
+.sentryclirc
+.laravel-vapor/
+.pi/
+.agent-browser/
+.shootproof/
+.cargo/
+.rustup/
+.hunk/
+.homebrew/
+.storybook/
+.percona-toolkit.uuid
